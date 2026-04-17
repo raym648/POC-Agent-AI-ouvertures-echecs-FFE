@@ -1,0 +1,12 @@
+# POC-Agent-AI-ouvertures-echecs-FFE/requirements.txt
+
+# Backend API
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Data / IA (préparation future)
+pydantic==2.6.4
+numpy==1.26.4
+
+# Utilitaires
+python-dotenv==1.0.1

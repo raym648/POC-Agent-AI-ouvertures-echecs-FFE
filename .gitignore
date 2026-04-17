@@ -1,0 +1,18 @@
+
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# Variables sensibles
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.pid

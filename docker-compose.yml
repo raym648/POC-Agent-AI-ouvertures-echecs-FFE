@@ -1,0 +1,22 @@
+# POC-Agent-AI-ouvertures-echecs-FFE/docker-compose.yml
+
+version: '3.9'
+
+services:
+  backend:
+    # Construction du conteneur depuis le dossier backend
+    build: ./backend
+
+    # Nom explicite du conteneur (utile pour debug)
+    container_name: fastapi_app
+
+    # Mapping des ports (host:container)
+    ports:
+      - "${BACKEND_PORT}:8000"
+
+    # Chargement des variables d’environnement
+    env_file:
+      - .env
+
+    # Redémarrage automatique en cas de crash
+    restart: always
