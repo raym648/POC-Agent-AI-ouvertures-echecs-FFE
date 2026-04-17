@@ -29,12 +29,20 @@ chmod +x setup_env.sh
 ```
 ---
 
-### 3. Lancer les services
+### 3. Installation de make et de docker-compose (si nécessaire)
 ```bash
-docker-compose up --build
+sudo apt update
+sudo apt install -y make
+sudo apt  install docker-compose
+```
+---
+
+### 4. Lancer les services
+```bash
+make docker-up
 ```
 
-### 3. Accéder à l’API
+### 5. Accéder à l’API
 *Healthcheck :*
 ```bash
 http://localhost:8000/api/v1/healthcheck
@@ -43,4 +51,9 @@ http://localhost:8000/api/v1/healthcheck
 *Documentation Swagger :*
 ```bash
 http://localhost:8000/docs
+```
+
+*Frontend :*
+```bash
+http://localhost:4200
 ```
