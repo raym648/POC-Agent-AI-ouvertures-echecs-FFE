@@ -8,7 +8,7 @@ setup:
 	bash setup_env.sh
 
 run:
-	source .venv/bin/activate && uvicorn backend.app.main:app --reload
+	.venv/bin/uvicorn backend.app.main:app --reload
 
 docker-up:
 	docker-compose up --build

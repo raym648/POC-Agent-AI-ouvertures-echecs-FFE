@@ -4,19 +4,27 @@ version: '3.9'
 
 services:
   backend:
-    # Construction du conteneur depuis le dossier backend
     build: ./backend
-
-    # Nom explicite du conteneur (utile pour debug)
     container_name: fastapi_app
 
-    # Mapping des ports (host:container)
     ports:
-      - "${BACKEND_PORT}:8000"
+      - "${BACKEND_PORT:-8000}:8000"
 
-    # Chargement des variables d’environnement
     env_file:
       - .env
 
-    # Redémarrage automatique en cas de crash
-    restart: always
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: angular_app
+
+    ports:
+      - "${FRONTEND_PORT:-4200}:4200"
+
+    volumes:
+      - ./frontend:/app
+
+    command: ["npm", "run", "start"]
+
+    restart: unless-stopped
