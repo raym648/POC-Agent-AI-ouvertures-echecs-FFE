@@ -1,12 +1,35 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/requirements.txt
 
-# Backend API
+# ================================
+# 🚀 Backend API
+# ================================
 fastapi==0.110.0
 uvicorn[standard]==0.29.0
 
-# Data / IA (préparation future)
+# ================================
+# 🧠 Data / AI
+# ================================
 pydantic==2.6.4
 numpy==1.26.4
 
-# Utilitaires
+# ================================
+# ♟️ Chess logic
+# ================================
+python-chess==1.999
+
+# ================================
+# 🌐 HTTP clients
+# ================================
+requests==2.31.0
+httpx==0.27.0
+
+# ================================
+# ⚙️ Configuration / env
+# ================================
 python-dotenv==1.0.1
+
+# ================================
+# 🤖 Agents / orchestration
+# ================================
+langgraph==0.0.40
+langchain==0.1.16

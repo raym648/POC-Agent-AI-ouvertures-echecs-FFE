@@ -8,12 +8,21 @@ services:
     container_name: fastapi_app
 
     ports:
-      - "${BACKEND_PORT:-8000}:8000"
+      - "${BACKEND_PORT:-8000}:${BACKEND_PORT:-8000}"
 
     env_file:
       - .env
 
     restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT:-8000}/docs"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - app-network
 
   frontend:
     build: ./frontend
@@ -25,6 +34,15 @@ services:
     volumes:
       - ./frontend:/app
 
-    command: ["npm", "run", "start"]
+    command: sh -c "npm install && npm run start"
+
+    depends_on:
+      - backend
 
     restart: unless-stopped
+
+    networks:
+      - app-network
+
+networks:
+  app-network:
