@@ -8,15 +8,26 @@ Ce fichier expose :
 - la base pour ajouter des routes futures (IA, Stockfish, etc.)
 """
 
+
 from fastapi import FastAPI
+
+# Import des routes
+from app.api.v1 import moves, evaluate, agent
+
 
 # Initialisation de l'application FastAPI
 # title : nom de l’API visible dans la documentation Swagger
 # version : version du service
 app = FastAPI(
-    title="Chess AI Backend",
-    version="1.0.0"
+    title="Agent IA Échecs",
+    version="1.0.0",
+    description="API d'analyse d'échecs basée sur Lichess + Stockfish + LangGraph"  # noqa: E501
 )
+
+# Enregistrement des routes
+app.include_router(moves.router, prefix="/api/v1")
+app.include_router(evaluate.router, prefix="/api/v1")
+app.include_router(agent.router, prefix="/api/v1")
 
 
 # Endpoint de base pour vérifier que l'API est fonctionnelle
@@ -28,17 +39,15 @@ def healthcheck():
     Returns:
         dict: statut du service
     """
-    return {
-        "status": "ok"
-    }
+    return {"status": "ok"}
 
 
-# Endpoint racine optionnel (utile pour debug rapide)
+# Endpoint racine (utile pour debug rapide)
 @app.get("/")
 def root():
     """
     Endpoint racine pour vérifier que le serveur répond.
     """
     return {
-        "message": "Chess AI Backend is running"
+        "message": "API Agent IA Échecs opérationnelle"
     }

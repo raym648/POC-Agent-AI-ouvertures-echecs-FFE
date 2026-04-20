@@ -1,24 +1,56 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/Dockerfile
 
-# Image Python légère et stable
+# ================================
+# 🐍 Base image légère Python
+# ================================
 FROM python:3.11-slim
 
-# Définition du répertoire de travail dans le conteneur
+# ================================
+# ⚙️ Variables d'environnement
+# ================================
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+# ================================
+# 📁 Working directory
+# ================================
 WORKDIR /app
 
-# Copie du fichier des dépendances
+# ================================
+# 🔧 Installation des dépendances système
+# ================================
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    stockfish \
+    gcc \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# ================================
+# 📦 Installation des dépendances Python
+# ================================
 COPY requirements.txt .
 
-# Installation des dépendances
-# --no-cache-dir : évite de stocker les caches → image plus légère
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
-# Copie du code source dans le conteneur
+# ================================
+# 📁 Copie du code source
+# ================================
 COPY . .
 
-# Exposition du port interne du conteneur
+# ================================
+# 🔒 Création d’un utilisateur non-root
+# ================================
+RUN useradd -m appuser
+USER appuser
+
+# ================================
+# 🌐 Exposition du port
+# ================================
 EXPOSE 8000
 
-# Commande de lancement de l'application
-# uvicorn lance le serveur FastAPI
+# ================================
+# 🚀 Commande de lancement
+# ================================
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
