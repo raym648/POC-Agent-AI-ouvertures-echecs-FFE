@@ -13,6 +13,13 @@ from fastapi import FastAPI
 
 # Import des routes
 from app.api.v1 import moves, evaluate, agent
+from backend.app.api.v1.vector_search import router as vector_router
+
+# from backend.app.api.v1.moves import router as moves_router
+# from backend.app.api.v1.evaluate import router as evaluate_router
+# from backend.app.api.v1.agent import router as agent_router
+
+# from backend.app.api.v1.vector_search import router as vector_router
 
 
 # Initialisation de l'application FastAPI
@@ -24,10 +31,20 @@ app = FastAPI(
     description="API d'analyse d'échecs basée sur Lichess + Stockfish + LangGraph"  # noqa: E501
 )
 
+
 # Enregistrement des routes
 app.include_router(moves.router, prefix="/api/v1")
 app.include_router(evaluate.router, prefix="/api/v1")
 app.include_router(agent.router, prefix="/api/v1")
+
+app.include_router(vector_router, prefix="/api/v1")
+
+# app.include_router(moves_router, prefix="/api/v1")
+# app.include_router(evaluate_router, prefix="/api/v1")
+# app.include_router(agent_router, prefix="/api/v1")
+
+# RAG
+# app.include_router(vector_router, prefix="/api/v1")
 
 
 # Endpoint de base pour vérifier que l'API est fonctionnelle
