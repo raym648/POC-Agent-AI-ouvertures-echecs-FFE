@@ -13,6 +13,9 @@ services:
     env_file:
       - .env
 
+    depends_on:
+      - milvus
+
     restart: unless-stopped
 
     healthcheck:
@@ -38,6 +41,22 @@ services:
 
     depends_on:
       - backend
+
+    restart: unless-stopped
+
+    networks:
+      - app-network
+
+  # 🔥 AJOUT RAG
+  milvus:
+    image: milvusdb/milvus:v2.3.3
+    container_name: milvus
+
+    ports:
+      - "19530:19530"
+
+    environment:
+      - ETCD_USE_EMBED=true
 
     restart: unless-stopped
 

@@ -8,7 +8,7 @@ Utilise l'agent LangGraph mais force le fallback Stockfish.
 
 from fastapi import APIRouter, HTTPException
 
-from app.agents.langgraph_agent import run_agent
+from backend.app.agents.langgraph_agent import run_agent
 
 router = APIRouter(
     prefix="/evaluate",
