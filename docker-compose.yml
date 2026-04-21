@@ -1,6 +1,6 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/docker-compose.yml
 
-version: '3.9'
+# version: '3.9'
 
 services:
   backend:

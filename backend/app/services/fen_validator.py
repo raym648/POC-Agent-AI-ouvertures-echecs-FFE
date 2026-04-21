@@ -16,7 +16,19 @@ def validate_fen(fen: str) -> bool:
         bool: True si valide, sinon False
     """
     try:
-        chess.Board(fen)  # tentative de création d’un plateau
+        board = chess.Board(fen)  # tentative de création d’un plateau
+
+        # Vérifications supplémentaires
+        if not board.is_valid():
+            return False
+
+        # Vérifie qu'il y a exactement 2 rois
+        if len(board.pieces(chess.KING, chess.WHITE)) != 1:
+            return False
+        if len(board.pieces(chess.KING, chess.BLACK)) != 1:
+            return False
+
         return True
+
     except ValueError:
         return False
