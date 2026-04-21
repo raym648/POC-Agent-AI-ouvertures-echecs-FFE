@@ -11,7 +11,7 @@ run:
 	.venv/bin/uvicorn backend.app.main:app --reload
 
 docker-up:
-	docker-compose up --build
+	docker compose up --build
 
 docker-down:
 	docker-compose down

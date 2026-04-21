@@ -10,9 +10,9 @@ Cet endpoint utilise toute la logique décisionnelle :
 Lichess → fallback Stockfish
 """
 
+
 from fastapi import APIRouter, HTTPException
 
-# Import de l'agent LangGraph
 from app.agents.langgraph_agent import run_agent
 
 router = APIRouter(
@@ -22,7 +22,7 @@ router = APIRouter(
 
 
 @router.get("/analyze/{fen}")
-def analyze_position(fen: str):
+async def analyze_position(fen: str):
     """
     Analyse complète d'une position via LangGraph.
 
@@ -34,7 +34,8 @@ def analyze_position(fen: str):
     """
 
     try:
-        result = run_agent(fen)
+        # ✅ FIX : await obligatoire
+        result = await run_agent(fen)
 
         # Gestion des erreurs métier
         if "error" in result and result["error"]:

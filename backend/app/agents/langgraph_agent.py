@@ -14,44 +14,51 @@ Lichess = mémoire (théorie)
 Stockfish = raisonnement (calcul)
 """
 
+
 # ================================
 # Imports
 # ================================
 from typing import TypedDict, Optional, List, Dict, Any
 
-# LangGraph
 from langgraph.graph import StateGraph, END
 
 # Services métier
-from app.services.lichess_service import get_lichess_moves
-from app.services.stockfish_service import evaluate_position
+from app.services.lichess_service import LichessService
+from app.services.stockfish_service import StockfishService
 
 # Validation FEN
 from app.services.fen_validator import validate_fen
 
 
 # ================================
-# Définition de l'état du graphe
+# Initialisation des services
+# ================================
+
+lichess_service = LichessService()
+
+# ⚠️ Adapter le path selon ton Docker
+stockfish_service = StockfishService(
+    path="/usr/games/stockfish",
+    depth=15
+)
+
+
+# ================================
+# State
 # ================================
 class AgentState(TypedDict):
-    """
-    Représente l'état partagé entre les nœuds du graphe.
-    """
     fen: str
     is_valid: bool
     moves: Optional[List[Dict[str, Any]]]
-    evaluation: Optional[float]
-    source: Optional[str]  # "lichess" ou "stockfish"
+    evaluation: Optional[Dict[str, Any]]  # ✅ dict (corrigé)
+    source: Optional[str]
     error: Optional[str]
 
 
 # ================================
-# Node 1 — Validation FEN
+# Node 1 — Validation
 # ================================
 def validate_fen_node(state: AgentState) -> AgentState:
-    """
-    Vérifie si le FEN est valide.
-    """
     fen = state["fen"]
 
     try:
@@ -70,19 +77,16 @@ def validate_fen_node(state: AgentState) -> AgentState:
 
 
 # ================================
-# Node 2 — Appel Lichess
+# Node 2 — Lichess (async)
 # ================================
-def lichess_node(state: AgentState) -> AgentState:
-    """
-    Interroge l'API Lichess pour récupérer les coups théoriques.
-    """
+async def lichess_node(state: AgentState) -> AgentState:
     if not state["is_valid"]:
         return state
 
     fen = state["fen"]
 
     try:
-        moves = get_lichess_moves(fen)
+        moves = await lichess_service.extract_moves(fen)
 
         if moves:
             return {
@@ -98,7 +102,6 @@ def lichess_node(state: AgentState) -> AgentState:
             }
 
     except Exception as e:
-        # Gestion robuste : fallback vers Stockfish
         return {
             **state,
             "moves": [],
@@ -107,27 +110,23 @@ def lichess_node(state: AgentState) -> AgentState:
 
 
 # ================================
-# Node 3 — Stockfish fallback
+# Node 3 — Stockfish
 # ================================
 def stockfish_node(state: AgentState) -> AgentState:
-    """
-    Évalue la position avec Stockfish si Lichess n'a rien retourné.
-    """
     if not state["is_valid"]:
         return state
 
-    # Si déjà trouvé via Lichess → pas besoin de Stockfish
     if state.get("moves"):
         return state
 
     fen = state["fen"]
 
     try:
-        evaluation = evaluate_position(fen)
+        result = stockfish_service.evaluate(fen)
 
         return {
             **state,
-            "evaluation": evaluation,
+            "evaluation": result,
             "source": "stockfish"
         }
 
@@ -139,19 +138,15 @@ def stockfish_node(state: AgentState) -> AgentState:
 
 
 # ================================
-# Node 4 — Formatage réponse finale
+# Node 4 — Format réponse
 # ================================
 def format_response_node(state: AgentState) -> Dict[str, Any]:
-    """
-    Formate la réponse finale retournée par l'agent.
-    """
     if not state["is_valid"]:
         return {
             "fen": state["fen"],
             "error": state["error"]
         }
 
-    # Cas 1 : coups théoriques trouvés
     if state.get("moves"):
         return {
             "fen": state["fen"],
@@ -160,7 +155,6 @@ def format_response_node(state: AgentState) -> Dict[str, Any]:
             "moves": state["moves"]
         }
 
-    # Cas 2 : fallback Stockfish
     return {
         "fen": state["fen"],
         "type": "evaluation",
@@ -170,38 +164,21 @@ def format_response_node(state: AgentState) -> Dict[str, Any]:
 
 
 # ================================
-# Construction du graphe LangGraph
+# Graph
 # ================================
 def build_agent():
-    """
-    Construit et compile le graphe LangGraph.
-    """
-
-    # Initialisation du graphe avec le state
     graph = StateGraph(AgentState)
 
-    # Ajout des nodes
     graph.add_node("validate_fen", validate_fen_node)
     graph.add_node("lichess", lichess_node)
     graph.add_node("stockfish", stockfish_node)
     graph.add_node("format_response", format_response_node)
 
-    # ================================
-    # Définition du flux
-    # ================================
-
-    # Entry point
     graph.set_entry_point("validate_fen")
 
-    # Validation → Lichess
     graph.add_edge("validate_fen", "lichess")
 
-    # Lichess → condition
     def route_after_lichess(state: AgentState):
-        """
-        Si moves trouvés → format
-        Sinon → Stockfish
-        """
         if state.get("moves"):
             return "format_response"
         return "stockfish"
@@ -215,36 +192,22 @@ def build_agent():
         }
     )
 
-    # Stockfish → format
     graph.add_edge("stockfish", "format_response")
-
-    # Fin
     graph.add_edge("format_response", END)
 
-    # Compilation
     return graph.compile()
 
 
 # ================================
-# Instance globale de l'agent
+# Instance globale
 # ================================
 agent = build_agent()
 
 
 # ================================
-# Fonction utilitaire principale
+# Run (async-safe)
 # ================================
-def run_agent(fen: str) -> Dict[str, Any]:
-    """
-    Fonction principale pour exécuter l'agent.
-
-    Args:
-        fen (str): Position d'échecs au format FEN
-
-    Returns:
-        Dict: Résultat structuré (moves ou évaluation)
-    """
-
+async def run_agent(fen: str) -> Dict[str, Any]:
     initial_state: AgentState = {
         "fen": fen,
         "is_valid": False,
@@ -254,7 +217,5 @@ def run_agent(fen: str) -> Dict[str, Any]:
         "error": None
     }
 
-    # Invocation du graphe
-    result = agent.invoke(initial_state)
-
-    return result
+    # ✅ FIX critique : async invoke
+    return await agent.ainvoke(initial_state)
