@@ -12,8 +12,7 @@ Ce fichier expose :
 from fastapi import FastAPI
 
 # Import des routes
-from app.api.v1 import moves, evaluate, agent
-from backend.app.api.v1.vector_search import router as vector_router
+from app.api.v1 import moves, evaluate, agent, vector_search, videos
 
 # from backend.app.api.v1.moves import router as moves_router
 # from backend.app.api.v1.evaluate import router as evaluate_router
@@ -37,7 +36,8 @@ app.include_router(moves.router, prefix="/api/v1")
 app.include_router(evaluate.router, prefix="/api/v1")
 app.include_router(agent.router, prefix="/api/v1")
 
-app.include_router(vector_router, prefix="/api/v1")
+app.include_router(vector_search.router, prefix="/api/v1")
+app.include_router(videos.router, prefix="/api/v1")
 
 # app.include_router(moves_router, prefix="/api/v1")
 # app.include_router(evaluate_router, prefix="/api/v1")

@@ -6,7 +6,6 @@ Agent LangGraph avec :
 - Stockfish → évaluation
 - Milvus → RAG
 - Hugging Face LLM → explication naturelle
-- YouTube → vidéos pédagogiques (NEW)
 """
 
 # ================================
@@ -27,9 +26,6 @@ from app.rag.milvus_service import milvus_service
 # 🔥 Hugging Face
 from transformers import pipeline
 
-# 🎥 YouTube node
-from app.agents.video_node import video_retriever_node
-
 # Config
 from app.core.config import settings
 
@@ -45,9 +41,10 @@ stockfish_service = StockfishService(
 )
 
 # 🔥 LLM Hugging Face
+# 👉 modèle léger et efficace (modifiable)
 llm_pipeline = pipeline(
     "text-generation",
-    model=settings.HF_MODEL_NAME,
+    model=settings.HF_MODEL_NAME,  # ex: "mistralai/Mistral-7B-Instruct"
     device=0 if settings.HF_DEVICE == "cuda" else -1,
     max_new_tokens=300,
     temperature=0.4
@@ -69,12 +66,6 @@ class AgentState(TypedDict):
 
     # 🔥 LLM
     explanation: Optional[str]
-
-    # 🎥 YouTube
-    videos: Optional[List[Dict[str, Any]]]
-    
-    # ♟️ Opening détectée
-    opening: Optional[str]
 
 
 # ================================
@@ -158,23 +149,20 @@ def rag_node(state: AgentState) -> AgentState:
 
 
 # ================================
-# 🎥 Node 5 — YouTube Retriever
-# ================================
-def should_fetch_videos(state: AgentState) -> bool:
-    """
-    Déclenchement si contexte exploitable.
-    """
-    return state.get("moves") is not None or state.get("evaluation") is not None  # noqa: E501
-
-
-# ================================
-# 🔥 Node 6 — LLM Hugging Face
+# 🔥 Node 5 — LLM Hugging Face
 # ================================
 def llm_node(state: AgentState) -> AgentState:
+    """
+    Génère une explication naturelle via Hugging Face.
+    """
+
     if not state["is_valid"]:
         return state
 
     try:
+        # =========================
+        # Construction du prompt
+        # =========================
         moves_text = ""
         if state.get("moves"):
             moves_text = " ".join([m.get("san", "") for m in state["moves"][:5]])  # noqa: E501
@@ -187,12 +175,6 @@ def llm_node(state: AgentState) -> AgentState:
         if state.get("rag_context"):
             rag_text = "\n".join([
                 str(doc.get("text", "")) for doc in state["rag_context"]
-            ])
-
-        videos_text = ""
-        if state.get("videos"):
-            videos_text = "\n".join([
-                f"- {v['title']} ({v['url']})" for v in state["videos"][:3]
             ])
 
         prompt = f"""
@@ -212,15 +194,17 @@ Evaluation:
 Context:
 {rag_text}
 
-Relevant videos:
-{videos_text}
-
 Give a pedagogical explanation.
 """
 
+        # =========================
+        # Appel Hugging Face
+        # =========================
         outputs = llm_pipeline(prompt)
 
         generated_text = outputs[0]["generated_text"]
+
+        # Nettoyage (important)
         explanation = generated_text.replace(prompt, "").strip()
 
         return {
@@ -237,55 +221,7 @@ Give a pedagogical explanation.
 
 
 # ================================
-# ♟️ Node 7 — Opening Detector
-# ================================
-def opening_detector_node(state: AgentState) -> AgentState:
-    """
-    Détecte l'ouverture d'échecs à partir des moves (Lichess)
-    ou fallback heuristique.
-    """
-
-    if not state["is_valid"]:
-        return state
-
-    try:
-        opening = None
-
-        # =========================
-        # 1. Cas idéal : Lichess fournit l’ouverture
-        # =========================
-        if state.get("moves"):
-            first_moves = " ".join([m.get("san", "") for m in state["moves"][:3]])  # noqa: E501
-
-            # Heuristique simple (POC)
-            if "e4 c5" in first_moves:
-                opening = "Sicilian Defense"
-            elif "e4 e5 Nf3 Nc6 Bb5" in first_moves:
-                opening = "Ruy Lopez"
-            elif "d4 d5 c4" in first_moves:
-                opening = "Queen's Gambit"
-
-        # =========================
-        # 2. Fallback
-        # =========================
-        if not opening:
-            opening = "chess opening strategy"
-
-        return {
-            **state,
-            "opening": opening
-        }
-
-    except Exception as e:
-        return {
-            **state,
-            "opening": None,
-            "error": str(e)
-        }
-
-
-# ================================
-# Node 7 — Format final
+# Node 6 — Format final
 # ================================
 def format_response_node(state: AgentState) -> Dict[str, Any]:
 
@@ -307,9 +243,7 @@ def format_response_node(state: AgentState) -> Dict[str, Any]:
     if state.get("rag_context"):
         response["rag"] = state["rag_context"]
 
-    if state.get("videos"):
-        response["videos"] = state["videos"]
-
+    # 🔥 Explication finale
     if state.get("explanation"):
         response["explanation"] = state["explanation"]
 
@@ -326,10 +260,8 @@ def build_agent():
     graph.add_node("lichess", lichess_node)
     graph.add_node("stockfish", stockfish_node)
     graph.add_node("rag", rag_node)
-    graph.add_node("video_retriever", video_retriever_node)
     graph.add_node("llm", llm_node)
     graph.add_node("format", format_response_node)
-    graph.add_node("opening_detector", opening_detector_node)
 
     graph.set_entry_point("validate_fen")
 
@@ -344,27 +276,15 @@ def build_agent():
         "lichess",
         route,
         {
-            "rag": "opening_detector",
+            "rag": "rag",
             "stockfish": "stockfish"
         }
     )
 
     graph.add_edge("stockfish", "rag")
-    graph.add_edge("opening_detector", "rag")
-
-    # 🎥 insertion YouTube
-    graph.add_conditional_edges(
-        "rag",
-        should_fetch_videos,
-        {
-            True: "video_retriever",
-            False: "llm"
-        }
-    )
-
-    graph.add_edge("video_retriever", "llm")
 
     # 🔥 pipeline final
+    graph.add_edge("rag", "llm")
     graph.add_edge("llm", "format")
     graph.add_edge("format", END)
 
@@ -390,9 +310,7 @@ async def run_agent(fen: str) -> Dict[str, Any]:
         "source": None,
         "error": None,
         "rag_context": None,
-        "explanation": None,
-        "videos": None,
-        "opening": None,
+        "explanation": None
     }
 
     return await agent.ainvoke(state)
