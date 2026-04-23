@@ -1,0 +1,79 @@
+/*POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.css*/
+
+/* ================================
+   Conteneur principal échiquier
+================================ */
+.board {
+  display: flex;
+  flex-direction: column;          /* empile échiquier + bouton */
+  align-items: center;             /* centrage horizontal */
+  justify-content: center;         /* centrage vertical */
+  gap: 16px;                       /* espace entre éléments */
+  height: 100%;
+}
+
+/* ================================
+   Composant ngx-chessground
+================================ */
+ngx-chessground {
+  width: 500px;                    /* taille fixe pour desktop */
+  height: 500px;
+  max-width: 90vw;                 /* responsive */
+  max-height: 90vw;
+  border-radius: 12px;             /* coins arrondis */
+  overflow: hidden;                /* évite débordement pièces */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* effet profondeur */
+  background-color: #2e2e2e;       /* fallback sombre */
+}
+
+/* Flèches (brush green) */
+.cg-shape.green {
+  stroke: #22c55e !important;
+  stroke-width: 6px;
+  opacity: 0.8;
+}
+
+/* Highlight cases */
+.cg-square.last-move {
+  background-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+/* ================================
+   Bouton Reset
+================================ */
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;       /* bleu moderne */
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover */
+button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Click */
+button:active {
+  transform: scale(0.98);
+}
+
+/* ================================
+   Responsive (mobile/tablette)
+================================ */
+@media (max-width: 768px) {
+  ngx-chessground {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  button {
+    width: 100%;
+  }
+}
