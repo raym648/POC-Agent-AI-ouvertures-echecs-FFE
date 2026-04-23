@@ -1,0 +1,50 @@
+<!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/recommendations/recommendations.component.html -->
+
+<div *ngIf="loading()">Chargement...</div>
+
+<div *ngIf="error()">{{ error() }}</div>
+
+<div *ngIf="data() as d">
+
+  <h2>Source : {{ d.source }}</h2>
+
+  <!-- Coups -->
+  <div *ngIf="d.type === 'theory'">
+    <h3>Coups recommandés</h3>
+    <ul>
+      <li *ngFor="let m of d.moves">
+        {{ m.san }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Evaluation -->
+  <div *ngIf="d.type === 'evaluation'">
+    <h3>Évaluation</h3>
+    <p>Score : {{ d.evaluation?.score }}</p>
+    <p>Meilleur coup : {{ d.evaluation?.best_move }}</p>
+  </div>
+
+  <!-- Explication -->
+  <div *ngIf="d.explanation">
+    <h3>Explication IA</h3>
+    <p>{{ d.explanation }}</p>
+  </div>
+
+  <!-- RAG -->
+  <div *ngIf="d.rag">
+    <h3>Contexte</h3>
+    <p *ngFor="let r of d.rag">{{ r.text }}</p>
+  </div>
+
+  <!-- Vidéos -->
+  <div *ngIf="d.videos">
+    <h3>Vidéos</h3>
+    <div *ngFor="let v of d.videos">
+      <a [href]="v.url" target="_blank">
+        {{ v.title }}
+      </a>
+    </div>
+  </div>
+
+</div>

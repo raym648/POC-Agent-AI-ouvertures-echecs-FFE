@@ -1,0 +1,17 @@
+<!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.html -->
+
+<div class="board">
+
+  <!-- <ngx-chessground
+    [fen]="''"
+    (moveChange)="onMove($event)">
+  </ngx-chessground> -->
+
+  <ngx-chessground
+    [config]="boardConfig"
+    (moveChange)="onMove($event)">
+  </ngx-chessground>
+
+  <button (click)="reset()">Reset</button>
+
+</div>
