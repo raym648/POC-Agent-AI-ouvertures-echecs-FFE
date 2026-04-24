@@ -1,6 +1,5 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/services/youtube_service.py
 
-# POC-Agent-AI-ouvertures-echecs-FFE/backend/app/services/youtube_service.py
 
 import os
 from googleapiclient.discovery import build

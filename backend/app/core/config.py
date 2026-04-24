@@ -29,7 +29,9 @@ def get_bool_env(var_name: str, default: bool = False) -> bool:
 
 class Settings:
 
-    # Lichess
+    # ================================
+    # ♟️ LICHESS
+    # ================================
     LICHESS_CLOUD_EVAL_URL: str = os.getenv(
         "LICHESS_CLOUD_EVAL_URL",
         "https://lichess.org/api/cloud-eval"
@@ -37,7 +39,9 @@ class Settings:
 
     HTTP_TIMEOUT: int = get_int_env("HTTP_TIMEOUT", 5)
 
-    # Stockfish
+    # ================================
+    # ♟️ STOCKFISH
+    # ================================
     STOCKFISH_PATH: str = os.getenv(
         "STOCKFISH_PATH",
         "/usr/games/stockfish"
@@ -45,17 +49,49 @@ class Settings:
 
     STOCKFISH_DEPTH: int = get_int_env("STOCKFISH_DEPTH", 15)
 
-    # App
+    # 👉 AJOUT (mode Docker)
+    STOCKFISH_HOST: str = os.getenv("STOCKFISH_HOST", "")
+    STOCKFISH_PORT: str = os.getenv("STOCKFISH_PORT", "stdin")
+
+    # ================================
+    # 🗄️ MONGODB (AJOUT)
+    # ================================
+    MONGO_URI: str = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+    MONGO_DB: str = os.getenv("MONGO_DB", "chess_db")
+
+    # ================================
+    # 🔎 MILVUS (AJOUT)
+    # ================================
+    MILVUS_HOST: str = os.getenv("MILVUS_HOST", "localhost")
+    MILVUS_PORT: int = get_int_env("MILVUS_PORT", 19530)
+
+    # ================================
+    # 🌐 BACKEND INTERNAL URL (AJOUT)
+    # ================================
+    BACKEND_INTERNAL_URL: str = os.getenv(
+        "BACKEND_INTERNAL_URL",
+        "http://localhost:8000"
+    )
+
+    # ================================
+    # ⚙️ APPLICATION
+    # ================================
     DEBUG: bool = get_bool_env("DEBUG", False)
     APP_NAME: str = os.getenv("APP_NAME", "Chess AI Agent")
     API_VERSION: str = os.getenv("API_VERSION", "v1")
 
     BACKEND_PORT: int = get_int_env("BACKEND_PORT", 8000)
 
-    # Agent
+    ENV: str = os.getenv("ENV", "development")  # 👉 AJOUT
+
+    # ================================
+    # 🤖 AGENT
+    # ================================
     ENABLE_AGENT: bool = get_bool_env("ENABLE_AGENT", False)
 
-    # Limits
+    # ================================
+    # 📊 LIMITES
+    # ================================
     MAX_MOVES_RETURNED: int = get_int_env("MAX_MOVES_RETURNED", 5)
     EXTERNAL_API_TIMEOUT: int = get_int_env("EXTERNAL_API_TIMEOUT", 5)
 
