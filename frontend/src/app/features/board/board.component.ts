@@ -13,6 +13,7 @@ import { Chessground } from 'chessground';
 import type { Api } from 'chessground/api';
 import type { DrawShape } from 'chessground/draw';
 import type { Key } from 'chessground/types';
+import type { Square } from 'chess.js';
 
 import { Subject, debounceTime } from 'rxjs';
 import { Chess } from 'chess.js';
@@ -47,7 +48,11 @@ export class BoardComponent implements OnInit, AfterViewInit {
       if (!fen) return;
 
       this.cg.set({
-        fen: fen === 'start' ? undefined : fen
+        fen: fen === 'start' ? undefined : fen,
+        movable: {
+          color: 'both',
+          dests: this.buildDests()
+        }
       });
     });
 
@@ -66,7 +71,7 @@ export class BoardComponent implements OnInit, AfterViewInit {
         return;
       }
 
-      const chess = new Chess(this.store.fen());
+      const chess = new Chess(this.store.fen() === 'start' ? undefined : this.store.fen());
       const shapes: DrawShape[] = [];
 
       data.moves.slice(0, 3).forEach((m: any) => {
@@ -102,6 +107,7 @@ export class BoardComponent implements OnInit, AfterViewInit {
       movable: {
         free: false,
         color: 'both',
+        dests: this.buildDests(),
         events: {
           after: (from: string, to: string) => this.onMove({ from, to })
         }
@@ -159,9 +165,42 @@ export class BoardComponent implements OnInit, AfterViewInit {
 
     this.cg?.set({
       fen: undefined,
+      movable: {
+        color: 'both',
+        dests: this.buildDests()
+      },
       drawable: {
         autoShapes: []
       }
     });
+  }
+
+  private buildDests(): Map<Key, Key[]> {
+    const fen = this.store.fen();
+    const chess = new Chess(fen === 'start' ? undefined : fen);
+    const dests = new Map<Key, Key[]>();
+
+    const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] as const;
+    const ranks = ['1', '2', '3', '4', '5', '6', '7', '8'] as const;
+
+    for (const file of files) {
+      for (const rank of ranks) {
+        const square = `${file}${rank}` as Square;
+
+        const moves = chess.moves({
+          square,
+          verbose: true
+        });
+
+        if (moves.length) {
+          dests.set(
+            square as Key,
+            moves.map((move) => move.to as Key)
+          );
+        }
+      }
+    }
+
+    return dests;
   }
 }
