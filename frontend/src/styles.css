@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/styles.css */
+
+@import './assets/chessground/chessground.base.css';
+@import './assets/chessground/chessground.brown.css';
+@import './assets/chessground/chessground.cburnett.css';

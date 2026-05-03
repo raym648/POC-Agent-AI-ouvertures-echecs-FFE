@@ -1,7 +1,7 @@
 //  POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/app.component.ts
 
 import { Component } from '@angular/core';
-import { BoardComponent } from './features/board/board.component';
+import { BoardComponent } from '../app/features/board/board.component';
 import { RecommendationsComponent } from './features/recommendations/recommendations.component';
 
 @Component({
