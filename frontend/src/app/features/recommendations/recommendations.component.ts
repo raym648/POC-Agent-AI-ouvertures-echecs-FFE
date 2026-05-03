@@ -2,10 +2,13 @@
 
 import { Component, computed } from '@angular/core';
 import { GameStore } from '../../state/game.store';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-recommendations',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './recommendations.component.html'
 })
 export class RecommendationsComponent {

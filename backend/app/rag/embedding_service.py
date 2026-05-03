@@ -7,7 +7,8 @@ Responsable de transformer du texte en vecteurs numériques exploitables.
 
 from sentence_transformers import SentenceTransformer
 from typing import List
-from backend.app.core.config import settings
+# from backend.app.core.config import settings
+from app.core.config import settings
 
 
 class EmbeddingService:

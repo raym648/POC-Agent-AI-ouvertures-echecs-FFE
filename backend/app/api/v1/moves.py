@@ -9,7 +9,8 @@ les résultats issus de Lichess.
 
 from fastapi import APIRouter, HTTPException
 
-from backend.app.agents.langgraph_agent import run_agent
+# from backend.app.agents.langgraph_agent import run_agent
+from app.agents.langgraph_agent import run_agent
 
 router = APIRouter(
     prefix="/moves",

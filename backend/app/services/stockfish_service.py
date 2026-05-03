@@ -1,6 +1,5 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/services/stockfish_service.py
 
-
 from stockfish import Stockfish
 from app.core.config import settings
 

@@ -9,6 +9,8 @@ Responsable de :
 - Recherche vectorielle
 """
 
+from typing import List, Dict
+
 from pymilvus import (
     connections,
     Collection,
@@ -17,8 +19,8 @@ from pymilvus import (
     DataType,
     utility,
 )
-from typing import List, Dict
-from backend.app.core.config import settings
+
+from app.core.config import settings
 
 
 class MilvusService:
@@ -35,24 +37,34 @@ class MilvusService:
         )
 
     def _get_or_create_collection(self) -> Collection:
+        collection_name = settings.VECTOR_COLLECTION_NAME
 
-        if utility.has_collection(settings.MILVUS_COLLECTION):
-            return Collection(settings.MILVUS_COLLECTION)
+        if utility.has_collection(collection_name):
+            return Collection(collection_name)
 
         fields = [
-            FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),  # noqa: E501
-            FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=2000),
+            FieldSchema(
+                name="id",
+                dtype=DataType.INT64,
+                is_primary=True,
+                auto_id=True,
+            ),
+            FieldSchema(
+                name="text",
+                dtype=DataType.VARCHAR,
+                max_length=2000,
+            ),
             FieldSchema(
                 name="embedding",
                 dtype=DataType.FLOAT_VECTOR,
-                dim=settings.EMBEDDING_DIM,
+                dim=settings.VECTOR_DIMENSION,
             ),
         ]
 
         schema = CollectionSchema(fields)
 
         collection = Collection(
-            name=settings.MILVUS_COLLECTION,
+            name=collection_name,
             schema=schema,
         )
 
@@ -85,10 +97,12 @@ class MilvusService:
         output = []
         for hits in results:
             for hit in hits:
-                output.append({
-                    "text": hit.entity.get("text"),
-                    "score": float(hit.score),
-                })
+                output.append(
+                    {
+                        "text": hit.entity.get("text"),
+                        "score": float(hit.score),
+                    }
+                )
 
         return output
 
