@@ -1,74 +1,92 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/scripts/load_data.py
 
 """
-Script de chargement des données dans Milvus.
-Pipeline complet RAG :
-- Chargement dataset
-- Chunking
+Script de chargement des données Wikichess dans Milvus.
+
+Pipeline RAG corrigé :
+- Chargement dataset structuré
+- Construction d'un document métier canonique
 - Embedding
-- Indexation
+- Indexation Milvus
+
+Principe :
+1 position d'ouverture = 1 document vectorisé
 """
 
+from __future__ import annotations
+
 import json
+from pathlib import Path
+from typing import List
+
 from backend.app.rag.embedding_service import embedding_service
 from backend.app.rag.milvus_service import milvus_service
 
 
-def chunk_text(text: str, chunk_size: int = 300, overlap: int = 50):
-    """
-    Découpe un texte en chunks avec overlap.
-
-    Args:
-        text: texte brut
-        chunk_size: taille des chunks
-        overlap: chevauchement
-
-    Returns:
-        List[str]
-    """
-    words = text.split()
-    chunks = []
-
-    for i in range(0, len(words), chunk_size - overlap):
-        chunk = words[i:i + chunk_size]
-        chunks.append(" ".join(chunk))
-
-    return chunks
+DATASET_PATH = Path("data/chess/wikichess_sample.json")
 
 
-def load_dataset(path: str):
+def load_dataset(path: Path) -> List[dict]:
     """
     Charge le dataset JSON.
 
-    Format attendu:
+    Format attendu :
     [
-        {"text": "..."},
-        {"text": "..."}
+        {
+            "text": "..."
+        }
     ]
     """
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    if not path.exists():
+        raise FileNotFoundError(f"Dataset not found: {path}")
+
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError("Dataset must be a list of JSON objects.")
+
+    return data
 
 
-def main():
+def build_search_text(item: dict) -> str:
     """
-    Pipeline principal.
-    """
-    dataset = load_dataset("data/chess/wikichess_sample.json")
+    Construit un document canonique vectorisable.
 
-    all_chunks = []
+    Priorité :
+    - exploite item['text'] si dataset minimal
+    - normalise et compacte le texte
+    """
+    raw_text = item.get("text", "")
+
+    if not raw_text or not raw_text.strip():
+        return ""
+
+    normalized = " ".join(raw_text.split())
+    return normalized[:4096]
+
+
+def main() -> None:
+    dataset = load_dataset(DATASET_PATH)
+
+    documents: List[str] = []
 
     for item in dataset:
-        chunks = chunk_text(item["text"])
-        all_chunks.extend(chunks)
+        text = build_search_text(item)
 
-    print(f"Nombre de chunks générés: {len(all_chunks)}")
+        if text:
+            documents.append(text)
 
-    embeddings = embedding_service.embed_batch(all_chunks)
+    if not documents:
+        raise ValueError("No valid documents found in dataset.")
 
-    milvus_service.insert_data(all_chunks, embeddings)
+    print(f"Documents préparés pour indexation: {len(documents)}")
 
-    print("✅ Données insérées dans Milvus")
+    embeddings = embedding_service.embed_batch(documents)
+
+    inserted = milvus_service.insert_data(documents, embeddings)
+
+    print(f"✅ Documents insérés dans Milvus: {inserted}")
 
 
 if __name__ == "__main__":
