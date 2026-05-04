@@ -1,15 +1,1334 @@
-
 [
   {
-    "text": "L'ouverture italienne commence par e4 e5 Cf3 Cc6 Fc4. Elle vise un développement rapide et le contrôle du centre."
+    "id": "unk_directory_openings_main_line",
+    "eco": "UNK",
+    "opening": "Directory openings",
+    "variation": "Main Line",
+    "line_san": "1.f3 A80 Dutch A80 Dutch",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Directory openings (Main Line). ﻿ Directory openings Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Chess openings Here is the complete list of chess openings sorted by ECO code. ECO codes (chess openings) A00 Polish (Sokolsky) opening A00 Polish : Tuebingen variation A00 Polish : Outflank variation A00 Benko's Opening A00 Lasker simul special A00 Benko's Opening : reversed Alekhine A00 Grob's attack A00 Grob : Spike attack A00 Grob : Fritz gambit A00 Grob : Romford counter-gambit A00 Clemenz (Mead's, Basman's or de Klerk's) Opening A00 Global Opening A00 Amar (Paris) Opening A00 Amar gambit A00 Dunst (Sleipner, Heinrichsen) Opening A00 Dunst (Sleipner-Heinrichsen",
+    "source_url": "https://ficgs.com/directory_openings.html",
+    "search_text": "Directory openings. Main Line. ECO UNK. Line 1.f3 A80 Dutch A80 Dutch. Directory openings (Main Line). ﻿ Directory openings Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Chess openings Here is the complete list of chess openings sorted by ECO code. ECO codes (chess openings) A00 Polish (Sokolsky) opening A00 Polish : Tuebingen variation A00 Polish : Outflank variation A00 Benko's Opening A00 Lasker simul special A00 Benko's Opening : reversed Alekhine A00 Grob's attack A00 Grob : Spike attack A00 Grob : Fritz gambit A00 Grob : Romford counter-gambit A00 Clemenz (Mead's, Basman's or de Klerk's) Opening A00 Global Opening A00 Amar (Paris) Opening A00 Amar gambit A00 Dunst (Sleipner, Heinrichsen) Opening A00 Dunst (Sleipner-Heinrichsen. Candidate moves:"
   },
   {
-    "text": "La défense sicilienne débute par e4 c5. C'est une ouverture dynamique qui déséquilibre la position dès le début."
+    "id": "unk_novosibirsk_opening_1_nc3_c5_2_d4_cxd4_3_qxd4_nc6_4_qh4_main_line",
+    "eco": "UNK",
+    "opening": "NOVOSIBIRSK OPENING 1. NC3 C5 2. D4 CXD4 3. QXD4 NC6 4. QH4",
+    "variation": "Main Line",
+    "line_san": "1. NC3 C5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "NOVOSIBIRSK OPENING 1. NC3 C5 2. D4 CXD4 3. QXD4 NC6 4. QH4 (Main Line). ﻿ NOVOSIBIRSK OPENING 1. NC3 C5 2. D4 CXD4 3. QXD4 NC6 4. QH4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 23 results for 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 in the games. Game_5426 Game_5425 Game_5424 Game_5423 Game_5422 Game_5421 Game_5420 Game_5419 Game_5418 Game_5417 Game_5416 Game_5415 Game_5414 Game_5413 Game_5412 Game_5411 Game_5410 Game_5409 Game_5408 Game_5407 Game_5406 Game_50 Game_1 There are at least 0 results for 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 in the forum. There are 0 results for 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ]",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4&about=Novosibirsk Opening",
+    "search_text": "NOVOSIBIRSK OPENING 1. NC3 C5 2. D4 CXD4 3. QXD4 NC6 4. QH4. Main Line. ECO UNK. Line 1. NC3 C5 2. NOVOSIBIRSK OPENING 1. NC3 C5 2. D4 CXD4 3. QXD4 NC6 4. QH4 (Main Line). ﻿ NOVOSIBIRSK OPENING 1. NC3 C5 2. D4 CXD4 3. QXD4 NC6 4. QH4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 23 results for 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 in the games. Game_5426 Game_5425 Game_5424 Game_5423 Game_5422 Game_5421 Game_5420 Game_5419 Game_5418 Game_5417 Game_5416 Game_5415 Game_5414 Game_5413 Game_5412 Game_5411 Game_5410 Game_5409 Game_5408 Game_5407 Game_5406 Game_50 Game_1 There are at least 0 results for 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 in the forum. There are 0 results for 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ]. Candidate moves:"
   },
   {
-    "text": "L'ouverture espagnole (Ruy Lopez) commence par e4 e5 Cf3 Cc6 Fb5. Elle exerce une pression sur le cavalier c6."
+    "id": "unk_battambang_opening_1_nc3_e5_2_a3_main_line",
+    "eco": "UNK",
+    "opening": "BATTAMBANG OPENING 1. NC3 E5 2. A3",
+    "variation": "Main Line",
+    "line_san": "1. NC3 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BATTAMBANG OPENING 1. NC3 E5 2. A3 (Main Line). ﻿ BATTAMBANG OPENING 1. NC3 E5 2. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. Nc3 e5 2. a3 in the games. Game_25489 Game_1 There are at least 0 results for 1. Nc3 e5 2. a3 in the forum. There are 0 results for 1. Nc3 e5 2. a3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news & buzz : discover the latest",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nc3 e5 2. a3&about=Battambang Opening",
+    "search_text": "BATTAMBANG OPENING 1. NC3 E5 2. A3. Main Line. ECO UNK. Line 1. NC3 E5 2. BATTAMBANG OPENING 1. NC3 E5 2. A3 (Main Line). ﻿ BATTAMBANG OPENING 1. NC3 E5 2. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. Nc3 e5 2. a3 in the games. Game_25489 Game_1 There are at least 0 results for 1. Nc3 e5 2. a3 in the forum. There are 0 results for 1. Nc3 e5 2. a3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news & buzz : discover the latest. Candidate moves:"
   },
   {
-    "text": "Le gambit dame débute par d4 d5 c4. Les blancs offrent un pion pour obtenir un avantage positionnel."
+    "id": "unk_dunst_sleipner_heinrichsen_opening_1_nc3_e5_main_line",
+    "eco": "UNK",
+    "opening": "DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 E5",
+    "variation": "Main Line",
+    "line_san": "1. NC3 E5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 E5 (Main Line). ﻿ DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 E5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nc3 e5 in the games. Game_151932 Game_145500 Game_144200 Game_142970 Game_141120 Game_139379 Game_139241 Game_138287 Game_136117 Game_136110 Game_135551 Game_133129 Game_131936 Game_128288 Game_125919 Game_125909 Game_125835 Game_125758 Game_123977 Game_121469 Game_121322 Game_120373 Game_120361 Game_120347 Game_98394 Game_96316 Game_96308 Game_96025 Game_92614 Game_91347 Game_90760 Game_88284 Game_87783 Game_84730 Game_84721 Game_83337 Game_82722 Game_82655 Game_80172 Game_79239 Game_78624 Game_7",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nc3 e5&about=Dunst  Sleipner Heinrichsen  Opening",
+    "search_text": "DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 E5. Main Line. ECO UNK. Line 1. NC3 E5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems. DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 E5 (Main Line). ﻿ DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 E5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nc3 e5 in the games. Game_151932 Game_145500 Game_144200 Game_142970 Game_141120 Game_139379 Game_139241 Game_138287 Game_136117 Game_136110 Game_135551 Game_133129 Game_131936 Game_128288 Game_125919 Game_125909 Game_125835 Game_125758 Game_123977 Game_121469 Game_121322 Game_120373 Game_120361 Game_120347 Game_98394 Game_96316 Game_96308 Game_96025 Game_92614 Game_91347 Game_90760 Game_88284 Game_87783 Game_84730 Game_84721 Game_83337 Game_82722 Game_82655 Game_80172 Game_79239 Game_78624 Game_7. Candidate moves:"
+  },
+  {
+    "id": "unk_dunst_sleipner_heinrichsen_opening_1_nc3_main_line",
+    "eco": "UNK",
+    "opening": "DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3",
+    "variation": "Main Line",
+    "line_san": "1. NC3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 (Main Line). ﻿ DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nc3 in the games. Game_151959 Game_151954 Game_151945 Game_151932 Game_150641 Game_150127 Game_149918 Game_149916 Game_149906 Game_149866 Game_149856 Game_149818 Game_149744 Game_149565 Game_149199 Game_149083 Game_149072 Game_149070 Game_149062 Game_149033 Game_149003 Game_149001 Game_148991 Game_148889 Game_148615 Game_148210 Game_148181 Game_148179 Game_148171 Game_148097 Game_148091 Game_148082 Game_147475 Game_147379 Game_147199 Game_147179 Game_146713 Game_145500 Game_145277 Game_144830 Game_14",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nc3&about=Dunst  Sleipner  Heinrichsen  Opening",
+    "search_text": "DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3. Main Line. ECO UNK. Line 1. NC3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 (Main Line). ﻿ DUNST SLEIPNER HEINRICHSEN OPENING 1. NC3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nc3 in the games. Game_151959 Game_151954 Game_151945 Game_151932 Game_150641 Game_150127 Game_149918 Game_149916 Game_149906 Game_149866 Game_149856 Game_149818 Game_149744 Game_149565 Game_149199 Game_149083 Game_149072 Game_149070 Game_149062 Game_149033 Game_149003 Game_149001 Game_148991 Game_148889 Game_148615 Game_148210 Game_148181 Game_148179 Game_148171 Game_148097 Game_148091 Game_148082 Game_147475 Game_147379 Game_147199 Game_147179 Game_146713 Game_145500 Game_145277 Game_144830 Game_14. Candidate moves:"
+  },
+  {
+    "id": "unk_reti_opening_1_nf3_nf6_main_line",
+    "eco": "UNK",
+    "opening": "RETI OPENING 1. NF3 NF6",
+    "variation": "Main Line",
+    "line_san": "1. NF3 NF6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "RETI OPENING 1. NF3 NF6 (Main Line). ﻿ RETI OPENING 1. NF3 NF6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 Nf6 in the games. Game_152147 Game_152097 Game_152046 Game_152039 Game_152027 Game_151944 Game_151916 Game_151913 Game_151866 Game_151805 Game_151796 Game_151756 Game_151678 Game_151527 Game_151523 Game_151469 Game_151465 Game_151438 Game_151396 Game_151279 Game_151274 Game_151259 Game_151255 Game_151248 Game_151213 Game_151208 Game_151184 Game_151031 Game_150776 Game_150750 Game_150747 Game_150737 Game_150727 Game_150721 Game_150581 Game_150552 Game_150501 Game_150395 Game_150385 Game_150259 Game_150247 Game_1501",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nf3 Nf6&about=Reti Opening",
+    "search_text": "RETI OPENING 1. NF3 NF6. Main Line. ECO UNK. Line 1. NF3 NF6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems. RETI OPENING 1. NF3 NF6 (Main Line). ﻿ RETI OPENING 1. NF3 NF6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 Nf6 in the games. Game_152147 Game_152097 Game_152046 Game_152039 Game_152027 Game_151944 Game_151916 Game_151913 Game_151866 Game_151805 Game_151796 Game_151756 Game_151678 Game_151527 Game_151523 Game_151469 Game_151465 Game_151438 Game_151396 Game_151279 Game_151274 Game_151259 Game_151255 Game_151248 Game_151213 Game_151208 Game_151184 Game_151031 Game_150776 Game_150750 Game_150747 Game_150737 Game_150727 Game_150721 Game_150581 Game_150552 Game_150501 Game_150395 Game_150385 Game_150259 Game_150247 Game_1501. Candidate moves:"
+  },
+  {
+    "id": "unk_reti_opening_1_nf3_d5_2_c4_main_line",
+    "eco": "UNK",
+    "opening": "RETI OPENING 1. NF3 D5 2. C4",
+    "variation": "Main Line",
+    "line_san": "1. NF3 D5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "RETI OPENING 1. NF3 D5 2. C4 (Main Line). ﻿ RETI OPENING 1. NF3 D5 2. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 d5 2. c4 in the games. Game_150358 Game_150260 Game_150257 Game_150252 Game_149922 Game_149920 Game_149912 Game_149685 Game_149679 Game_149670 Game_149239 Game_148337 Game_148258 Game_148184 Game_147595 Game_147477 Game_147431 Game_147427 Game_147409 Game_147133 Game_146517 Game_146276 Game_146274 Game_146239 Game_146011 Game_144575 Game_144055 Game_143900 Game_143681 Game_143006 Game_142805 Game_142800 Game_142791 Game_142758 Game_142458 Game_140715 Game_140465 Game_139525 Game_139514 Game_139435 Game_138134",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nf3 d5 2. c4&about=Reti Opening",
+    "search_text": "RETI OPENING 1. NF3 D5 2. C4. Main Line. ECO UNK. Line 1. NF3 D5 2. RETI OPENING 1. NF3 D5 2. C4 (Main Line). ﻿ RETI OPENING 1. NF3 D5 2. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 d5 2. c4 in the games. Game_150358 Game_150260 Game_150257 Game_150252 Game_149922 Game_149920 Game_149912 Game_149685 Game_149679 Game_149670 Game_149239 Game_148337 Game_148258 Game_148184 Game_147595 Game_147477 Game_147431 Game_147427 Game_147409 Game_147133 Game_146517 Game_146276 Game_146274 Game_146239 Game_146011 Game_144575 Game_144055 Game_143900 Game_143681 Game_143006 Game_142805 Game_142800 Game_142791 Game_142758 Game_142458 Game_140715 Game_140465 Game_139525 Game_139514 Game_139435 Game_138134. Candidate moves:"
+  },
+  {
+    "id": "unk_reti_opening_1_nf3_d5_main_line",
+    "eco": "UNK",
+    "opening": "RETI OPENING 1. NF3 D5",
+    "variation": "Main Line",
+    "line_san": "1. NF3 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "RETI OPENING 1. NF3 D5 (Main Line). ﻿ RETI OPENING 1. NF3 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 d5 in the games. Game_152220 Game_152195 Game_152161 Game_152157 Game_152137 Game_152037 Game_152005 Game_151978 Game_151934 Game_151929 Game_151920 Game_151902 Game_151888 Game_151884 Game_151877 Game_151838 Game_151837 Game_151801 Game_151744 Game_151682 Game_151671 Game_151531 Game_151510 Game_151509 Game_151503 Game_151494 Game_151436 Game_151394 Game_151392 Game_151369 Game_151361 Game_151271 Game_151235 Game_151200 Game_151182 Game_151175 Game_151140 Game_151114 Game_151101 Game_151092 Game_151050 Game_150923",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nf3 d5&about=Reti Opening",
+    "search_text": "RETI OPENING 1. NF3 D5. Main Line. ECO UNK. Line 1. NF3 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems. RETI OPENING 1. NF3 D5 (Main Line). ﻿ RETI OPENING 1. NF3 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 d5 in the games. Game_152220 Game_152195 Game_152161 Game_152157 Game_152137 Game_152037 Game_152005 Game_151978 Game_151934 Game_151929 Game_151920 Game_151902 Game_151888 Game_151884 Game_151877 Game_151838 Game_151837 Game_151801 Game_151744 Game_151682 Game_151671 Game_151531 Game_151510 Game_151509 Game_151503 Game_151494 Game_151436 Game_151394 Game_151392 Game_151369 Game_151361 Game_151271 Game_151235 Game_151200 Game_151182 Game_151175 Game_151140 Game_151114 Game_151101 Game_151092 Game_151050 Game_150923. Candidate moves:"
+  },
+  {
+    "id": "unk_reti_opening_1_nf3_d6_main_line",
+    "eco": "UNK",
+    "opening": "RETI OPENING 1. NF3 D6",
+    "variation": "Main Line",
+    "line_san": "1. NF3 D6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "RETI OPENING 1. NF3 D6 (Main Line). ﻿ RETI OPENING 1. NF3 D6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 96 results for 1. Nf3 d6 in the games. Game_145877 Game_144397 Game_143381 Game_142782 Game_142775 Game_142763 Game_142509 Game_142493 Game_142081 Game_141740 Game_140121 Game_139905 Game_139772 Game_138218 Game_135645 Game_129735 Game_126240 Game_125573 Game_119886 Game_119762 Game_119513 Game_116781 Game_115099 Game_115090 Game_113542 Game_112701 Game_110684 Game_107707 Game_99479 Game_96918 Game_96115 Game_96112 Game_94521 Game_93569 Game_90306 Game_85841 Game_85219 Game_82958 Game_82833 Game_80664 Game_78626 Game_78506 Game_78187 Gam",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nf3 d6&about=Reti Opening",
+    "search_text": "RETI OPENING 1. NF3 D6. Main Line. ECO UNK. Line 1. NF3 D6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems. RETI OPENING 1. NF3 D6 (Main Line). ﻿ RETI OPENING 1. NF3 D6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 96 results for 1. Nf3 d6 in the games. Game_145877 Game_144397 Game_143381 Game_142782 Game_142775 Game_142763 Game_142509 Game_142493 Game_142081 Game_141740 Game_140121 Game_139905 Game_139772 Game_138218 Game_135645 Game_129735 Game_126240 Game_125573 Game_119886 Game_119762 Game_119513 Game_116781 Game_115099 Game_115090 Game_113542 Game_112701 Game_110684 Game_107707 Game_99479 Game_96918 Game_96115 Game_96112 Game_94521 Game_93569 Game_90306 Game_85841 Game_85219 Game_82958 Game_82833 Game_80664 Game_78626 Game_78506 Game_78187 Gam. Candidate moves:"
+  },
+  {
+    "id": "unk_reti_opening_1_nf3_main_line",
+    "eco": "UNK",
+    "opening": "RETI OPENING 1. NF3",
+    "variation": "Main Line",
+    "line_san": "1. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "RETI OPENING 1. NF3 (Main Line). ﻿ RETI OPENING 1. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 in the games. Game_152220 Game_152195 Game_152161 Game_152157 Game_152149 Game_152147 Game_152137 Game_152097 Game_152046 Game_152039 Game_152037 Game_152027 Game_152023 Game_152005 Game_151978 Game_151973 Game_151944 Game_151934 Game_151929 Game_151924 Game_151920 Game_151916 Game_151913 Game_151902 Game_151888 Game_151884 Game_151877 Game_151866 Game_151838 Game_151837 Game_151805 Game_151801 Game_151796 Game_151756 Game_151744 Game_151682 Game_151678 Game_151671 Game_151531 Game_151527 Game_151523 Game_151510 Game_",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nf3&about=Reti Opening",
+    "search_text": "RETI OPENING 1. NF3. Main Line. ECO UNK. Line 1. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. RETI OPENING 1. NF3 (Main Line). ﻿ RETI OPENING 1. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. Nf3 in the games. Game_152220 Game_152195 Game_152161 Game_152157 Game_152149 Game_152147 Game_152137 Game_152097 Game_152046 Game_152039 Game_152037 Game_152027 Game_152023 Game_152005 Game_151978 Game_151973 Game_151944 Game_151934 Game_151929 Game_151924 Game_151920 Game_151916 Game_151913 Game_151902 Game_151888 Game_151884 Game_151877 Game_151866 Game_151838 Game_151837 Game_151805 Game_151801 Game_151796 Game_151756 Game_151744 Game_151682 Game_151678 Game_151671 Game_151531 Game_151527 Game_151523 Game_151510 Game_. Candidate moves:"
+  },
+  {
+    "id": "unk_amar_paris_opening_1_nh3_main_line",
+    "eco": "UNK",
+    "opening": "AMAR PARIS OPENING 1. NH3",
+    "variation": "Main Line",
+    "line_san": "1. NH3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "AMAR PARIS OPENING 1. NH3 (Main Line). ﻿ AMAR PARIS OPENING 1. NH3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 58 results for 1. Nh3 in the games. Game_151487 Game_151485 Game_151477 Game_151059 Game_150510 Game_147830 Game_146280 Game_143561 Game_138291 Game_136886 Game_135044 Game_131736 Game_123753 Game_100225 Game_96011 Game_95473 Game_95471 Game_95469 Game_93535 Game_92044 Game_91423 Game_91415 Game_91345 Game_91322 Game_91126 Game_90057 Game_89872 Game_89870 Game_89862 Game_89489 Game_87773 Game_84632 Game_82687 Game_69473 Game_54542 Game_54540 Game_54538 Game_54526 Game_50627 Game_50622 Game_50613 Game_49836 Game_48235 Game_48230 Game_4",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. Nh3&about=Amar  Paris  Opening",
+    "search_text": "AMAR PARIS OPENING 1. NH3. Main Line. ECO UNK. Line 1. NH3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. AMAR PARIS OPENING 1. NH3 (Main Line). ﻿ AMAR PARIS OPENING 1. NH3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 58 results for 1. Nh3 in the games. Game_151487 Game_151485 Game_151477 Game_151059 Game_150510 Game_147830 Game_146280 Game_143561 Game_138291 Game_136886 Game_135044 Game_131736 Game_123753 Game_100225 Game_96011 Game_95473 Game_95471 Game_95469 Game_93535 Game_92044 Game_91423 Game_91415 Game_91345 Game_91322 Game_91126 Game_90057 Game_89872 Game_89870 Game_89862 Game_89489 Game_87773 Game_84632 Game_82687 Game_69473 Game_54542 Game_54540 Game_54538 Game_54526 Game_50627 Game_50622 Game_50613 Game_49836 Game_48235 Game_48230 Game_4. Candidate moves:"
+  },
+  {
+    "id": "unk_anderssen_s_opening_1_a3_main_line",
+    "eco": "UNK",
+    "opening": "ANDERSSEN S OPENING 1. A3",
+    "variation": "Main Line",
+    "line_san": "1. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "ANDERSSEN S OPENING 1. A3 (Main Line). ﻿ ANDERSSEN S OPENING 1. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. a3 in the games. Game_151952 Game_151791 Game_151064 Game_150512 Game_148515 Game_148511 Game_148504 Game_148493 Game_147836 Game_146909 Game_146285 Game_146189 Game_143611 Game_143293 Game_143290 Game_143287 Game_143280 Game_138286 Game_138282 Game_138275 Game_138192 Game_138190 Game_138188 Game_137852 Game_137849 Game_137847 Game_137845 Game_137644 Game_137642 Game_137632 Game_137606 Game_137604 Game_136994 Game_136992 Game_136984 Game_136920 Game_136916 Game_136909 Game_136898 Game_135196 Game_127130 Game_127124",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. a3&about=Anderssen s Opening",
+    "search_text": "ANDERSSEN S OPENING 1. A3. Main Line. ECO UNK. Line 1. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. ANDERSSEN S OPENING 1. A3 (Main Line). ﻿ ANDERSSEN S OPENING 1. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. a3 in the games. Game_151952 Game_151791 Game_151064 Game_150512 Game_148515 Game_148511 Game_148504 Game_148493 Game_147836 Game_146909 Game_146285 Game_146189 Game_143611 Game_143293 Game_143290 Game_143287 Game_143280 Game_138286 Game_138282 Game_138275 Game_138192 Game_138190 Game_138188 Game_137852 Game_137849 Game_137847 Game_137845 Game_137644 Game_137642 Game_137632 Game_137606 Game_137604 Game_136994 Game_136992 Game_136984 Game_136920 Game_136916 Game_136909 Game_136898 Game_135196 Game_127130 Game_127124. Candidate moves:"
+  },
+  {
+    "id": "unk_crab_opening_1_a4_e5_2_h4_main_line",
+    "eco": "UNK",
+    "opening": "CRAB OPENING 1. A4 E5 2. H4",
+    "variation": "Main Line",
+    "line_san": "1. A4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "CRAB OPENING 1. A4 E5 2. H4 (Main Line). ﻿ CRAB OPENING 1. A4 E5 2. H4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 30 results for 1. a4 e5 2. h4 in the games. Game_150746 Game_134529 Game_134323 Game_132864 Game_132862 Game_132860 Game_132835 Game_131713 Game_8456 Game_8455 Game_8454 Game_8453 Game_8452 Game_8451 Game_8450 Game_8449 Game_8448 Game_8447 Game_8446 Game_8445 Game_8444 Game_8443 Game_8442 Game_8441 Game_8440 Game_8439 Game_8438 Game_8437 Game_8436 Game_1 There are at least 0 results for 1. a4 e5 2. h4 in the forum. There are 1 results for 1. a4 e5 2. h4 in wikichess. Sergey Kireev (2319) a4 e5 h4 Transpose to wikichess #4238# ======",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. a4 e5 2. h4&about=Crab Opening",
+    "search_text": "CRAB OPENING 1. A4 E5 2. H4. Main Line. ECO UNK. Line 1. A4 E5 2. CRAB OPENING 1. A4 E5 2. H4 (Main Line). ﻿ CRAB OPENING 1. A4 E5 2. H4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 30 results for 1. a4 e5 2. h4 in the games. Game_150746 Game_134529 Game_134323 Game_132864 Game_132862 Game_132860 Game_132835 Game_131713 Game_8456 Game_8455 Game_8454 Game_8453 Game_8452 Game_8451 Game_8450 Game_8449 Game_8448 Game_8447 Game_8446 Game_8445 Game_8444 Game_8443 Game_8442 Game_8441 Game_8440 Game_8439 Game_8438 Game_8437 Game_8436 Game_1 There are at least 0 results for 1. a4 e5 2. h4 in the forum. There are 1 results for 1. a4 e5 2. h4 in wikichess. Sergey Kireev (2319) a4 e5 h4 Transpose to wikichess #4238# ======. Candidate moves:"
+  },
+  {
+    "id": "unk_ware_meadow_hay_opening_1_a4_main_line",
+    "eco": "UNK",
+    "opening": "WARE MEADOW HAY OPENING 1. A4",
+    "variation": "Main Line",
+    "line_san": "1. A4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "WARE MEADOW HAY OPENING 1. A4 (Main Line). ﻿ WARE MEADOW HAY OPENING 1. A4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 87 results for 1. a4 in the games. Game_151329 Game_151096 Game_150746 Game_147848 Game_146918 Game_146292 Game_139383 Game_135204 Game_134529 Game_134519 Game_134323 Game_133885 Game_133770 Game_133572 Game_133131 Game_132990 Game_132988 Game_132964 Game_132864 Game_132862 Game_132860 Game_132835 Game_131745 Game_131713 Game_131708 Game_129130 Game_129123 Game_125036 Game_124704 Game_124702 Game_124700 Game_120438 Game_119497 Game_112725 Game_112720 Game_112711 Game_108896 Game_108191 Game_108182 Game_108180 Game_108178 Game_1069",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. a4&about=Ware  Meadow Hay  Opening",
+    "search_text": "WARE MEADOW HAY OPENING 1. A4. Main Line. ECO UNK. Line 1. A4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. WARE MEADOW HAY OPENING 1. A4 (Main Line). ﻿ WARE MEADOW HAY OPENING 1. A4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 87 results for 1. a4 in the games. Game_151329 Game_151096 Game_150746 Game_147848 Game_146918 Game_146292 Game_139383 Game_135204 Game_134529 Game_134519 Game_134323 Game_133885 Game_133770 Game_133572 Game_133131 Game_132990 Game_132988 Game_132964 Game_132864 Game_132862 Game_132860 Game_132835 Game_131745 Game_131713 Game_131708 Game_129130 Game_129123 Game_125036 Game_124704 Game_124702 Game_124700 Game_120438 Game_119497 Game_112725 Game_112720 Game_112711 Game_108896 Game_108191 Game_108182 Game_108180 Game_108178 Game_1069. Candidate moves:"
+  },
+  {
+    "id": "unk_polish_sokolsky_opening_1_b4_main_line",
+    "eco": "UNK",
+    "opening": "POLISH SOKOLSKY OPENING 1. B4",
+    "variation": "Main Line",
+    "line_san": "1. B4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "POLISH SOKOLSKY OPENING 1. B4 (Main Line). ﻿ POLISH SOKOLSKY OPENING 1. B4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. b4 in the games. Game_152166 Game_151912 Game_151845 Game_151842 Game_151456 Game_151333 Game_151107 Game_150932 Game_150629 Game_150627 Game_150625 Game_150044 Game_150042 Game_150041 Game_150039 Game_150037 Game_150032 Game_149705 Game_149703 Game_149695 Game_149691 Game_149574 Game_149572 Game_149562 Game_149420 Game_149409 Game_149205 Game_148832 Game_148816 Game_148811 Game_148795 Game_148781 Game_148276 Game_148264 Game_147967 Game_147859 Game_147805 Game_147803 Game_147801 Game_147644 Game_147629 Game_147",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. b4&about=Polish  Sokolsky  opening",
+    "search_text": "POLISH SOKOLSKY OPENING 1. B4. Main Line. ECO UNK. Line 1. B4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. POLISH SOKOLSKY OPENING 1. B4 (Main Line). ﻿ POLISH SOKOLSKY OPENING 1. B4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. b4 in the games. Game_152166 Game_151912 Game_151845 Game_151842 Game_151456 Game_151333 Game_151107 Game_150932 Game_150629 Game_150627 Game_150625 Game_150044 Game_150042 Game_150041 Game_150039 Game_150037 Game_150032 Game_149705 Game_149703 Game_149695 Game_149691 Game_149574 Game_149572 Game_149562 Game_149420 Game_149409 Game_149205 Game_148832 Game_148816 Game_148811 Game_148795 Game_148781 Game_148276 Game_148264 Game_147967 Game_147859 Game_147805 Game_147803 Game_147801 Game_147644 Game_147629 Game_147. Candidate moves:"
+  },
+  {
+    "id": "a00_saragossa_opening_main_line",
+    "eco": "A00",
+    "opening": "Saragossa Opening",
+    "variation": "Main Line",
+    "line_san": "1. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Saragossa Opening (Main Line). ﻿ SARAGOSSA OPENING 1. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. c3 in the games. Game_152173 Game_151943 Game_150861 Game_150854 Game_150743 Game_150741 Game_150731 Game_150065 Game_150063 Game_150053 Game_149974 Game_149972 Game_149970 Game_149968 Game_149742 Game_147985 Game_147979 Game_147978 Game_147970 Game_147495 Game_147200 Game_147197 Game_147190 Game_146929 Game_146670 Game_145844 Game_145842 Game_145840 Game_145836 Game_145834 Game_145833 Game_145828 Game_145827 Game_145826 Game_145824 Game_143572 Game_141565 Game_141454 Game_139156 Game_137540 Game_137468 Game_136173 Ga",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. c3&about=Saragossa Opening",
+    "search_text": "Saragossa Opening. Main Line. ECO A00. Line 1. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. Saragossa Opening (Main Line). ﻿ SARAGOSSA OPENING 1. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. c3 in the games. Game_152173 Game_151943 Game_150861 Game_150854 Game_150743 Game_150741 Game_150731 Game_150065 Game_150063 Game_150053 Game_149974 Game_149972 Game_149970 Game_149968 Game_149742 Game_147985 Game_147979 Game_147978 Game_147970 Game_147495 Game_147200 Game_147197 Game_147190 Game_146929 Game_146670 Game_145844 Game_145842 Game_145840 Game_145836 Game_145834 Game_145833 Game_145828 Game_145827 Game_145826 Game_145824 Game_143572 Game_141565 Game_141454 Game_139156 Game_137540 Game_137468 Game_136173 Ga. Candidate moves:"
+  },
+  {
+    "id": "a10_english_opening_main_line",
+    "eco": "A10",
+    "opening": "English Opening",
+    "variation": "Main Line",
+    "line_san": "1. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "English Opening (Main Line). ﻿ ENGLISH OPENING 1. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. c4 in the games. Game_152261 Game_152255 Game_152246 Game_152215 Game_152177 Game_152159 Game_152158 Game_152154 Game_152099 Game_152079 Game_152030 Game_152028 Game_152026 Game_152007 Game_151965 Game_151951 Game_151950 Game_151946 Game_151926 Game_151923 Game_151918 Game_151915 Game_151910 Game_151909 Game_151907 Game_151896 Game_151886 Game_151880 Game_151876 Game_151871 Game_151859 Game_151858 Game_151843 Game_151840 Game_151836 Game_151824 Game_151747 Game_151675 Game_151666 Game_151577 Game_151573 Game_151566 Game",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. c4&about=English Opening",
+    "search_text": "English Opening. Main Line. ECO A10. Line 1. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. English Opening (Main Line). ﻿ ENGLISH OPENING 1. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. c4 in the games. Game_152261 Game_152255 Game_152246 Game_152215 Game_152177 Game_152159 Game_152158 Game_152154 Game_152099 Game_152079 Game_152030 Game_152028 Game_152026 Game_152007 Game_151965 Game_151951 Game_151950 Game_151946 Game_151926 Game_151923 Game_151918 Game_151915 Game_151910 Game_151909 Game_151907 Game_151896 Game_151886 Game_151880 Game_151876 Game_151871 Game_151859 Game_151858 Game_151843 Game_151840 Game_151836 Game_151824 Game_151747 Game_151675 Game_151666 Game_151577 Game_151573 Game_151566 Game. Candidate moves:"
+  },
+  {
+    "id": "unk_venezolana_opening_1_d3_c5_2_nc3_nc6_3_g3_main_line",
+    "eco": "UNK",
+    "opening": "VENEZOLANA OPENING 1. D3 C5 2. NC3 NC6 3. G3",
+    "variation": "Main Line",
+    "line_san": "1. D3 C5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VENEZOLANA OPENING 1. D3 C5 2. NC3 NC6 3. G3 (Main Line). ﻿ VENEZOLANA OPENING 1. D3 C5 2. NC3 NC6 3. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. d3 c5 2. Nc3 Nc6 3. g3 in the games. Game_1 There are at least 0 results for 1. d3 c5 2. Nc3 Nc6 3. g3 in the forum. There are 0 results for 1. d3 c5 2. Nc3 Nc6 3. g3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. d3 c5 2. Nc3 Nc6 3. g3&about=Venezolana Opening",
+    "search_text": "VENEZOLANA OPENING 1. D3 C5 2. NC3 NC6 3. G3. Main Line. ECO UNK. Line 1. D3 C5 2. VENEZOLANA OPENING 1. D3 C5 2. NC3 NC6 3. G3 (Main Line). ﻿ VENEZOLANA OPENING 1. D3 C5 2. NC3 NC6 3. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. d3 c5 2. Nc3 Nc6 3. g3 in the games. Game_1 There are at least 0 results for 1. d3 c5 2. Nc3 Nc6 3. g3 in the forum. There are 0 results for 1. d3 c5 2. Nc3 Nc6 3. g3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news. Candidate moves:"
+  },
+  {
+    "id": "a00_valencia_opening_main_line",
+    "eco": "A00",
+    "opening": "Valencia Opening",
+    "variation": "Main Line",
+    "line_san": "1. D3 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Valencia Opening (Main Line). ﻿ VALENCIA OPENING 1. D3 E5 2. ND2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. d3 e5 2. Nd2 in the games. Game_1 There are at least 0 results for 1. d3 e5 2. Nd2 in the forum. There are 0 results for 1. d3 e5 2. Nd2 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news & buzz : discover the latest news and buzz",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. d3 e5 2. Nd2&about=Valencia Opening",
+    "search_text": "Valencia Opening. Main Line. ECO A00. Line 1. D3 E5 2. Valencia Opening (Main Line). ﻿ VALENCIA OPENING 1. D3 E5 2. ND2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. d3 e5 2. Nd2 in the games. Game_1 There are at least 0 results for 1. d3 e5 2. Nd2 in the forum. There are 0 results for 1. d3 e5 2. Nd2 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news & buzz : discover the latest news and buzz. Candidate moves:"
+  },
+  {
+    "id": "a00_mieses_opening_main_line",
+    "eco": "A00",
+    "opening": "Mieses Opening",
+    "variation": "Main Line",
+    "line_san": "1. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Mieses Opening (Main Line). ﻿ MIESES OPENING 1. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. d3 in the games. Game_152025 Game_152021 Game_152014 Game_151611 Game_150281 Game_150276 Game_150267 Game_150091 Game_149978 Game_149469 Game_149447 Game_149252 Game_149081 Game_148384 Game_148382 Game_148374 Game_148188 Game_147974 Game_147588 Game_147586 Game_147584 Game_146972 Game_146726 Game_146685 Game_146674 Game_143170 Game_143166 Game_142540 Game_142538 Game_142536 Game_142082 Game_142080 Game_142078 Game_141449 Game_140998 Game_140996 Game_140994 Game_140494 Game_140492 Game_140490 Game_140422 Game_140420 Game_",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. d3&about=Mieses Opening",
+    "search_text": "Mieses Opening. Main Line. ECO A00. Line 1. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. Mieses Opening (Main Line). ﻿ MIESES OPENING 1. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. d3 in the games. Game_152025 Game_152021 Game_152014 Game_151611 Game_150281 Game_150276 Game_150267 Game_150091 Game_149978 Game_149469 Game_149447 Game_149252 Game_149081 Game_148384 Game_148382 Game_148374 Game_148188 Game_147974 Game_147588 Game_147586 Game_147584 Game_146972 Game_146726 Game_146685 Game_146674 Game_143170 Game_143166 Game_142540 Game_142538 Game_142536 Game_142082 Game_142080 Game_142078 Game_141449 Game_140998 Game_140996 Game_140994 Game_140494 Game_140492 Game_140490 Game_140422 Game_140420 Game_. Candidate moves:"
+  },
+  {
+    "id": "a45_trompowsky_attack_main_line",
+    "eco": "A45",
+    "opening": "Trompowsky Attack",
+    "variation": "Main Line",
+    "line_san": "1. D4 NF6 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Trompowsky Attack (Main Line). ﻿ TROMPOWSKY ATTACK RUTH OPOVCENSKY OPENING 1. D4 NF6 2. BG5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. d4 Nf6 2. Bg5 in the games. Game_151189 Game_151018 Game_151013 Game_151011 Game_151009 Game_150026 Game_150019 Game_149997 Game_149983 Game_149241 Game_148368 Game_147337 Game_146996 Game_146822 Game_146152 Game_146150 Game_144529 Game_144521 Game_144407 Game_144005 Game_143145 Game_143014 Game_142999 Game_142541 Game_142418 Game_142413 Game_142404 Game_141883 Game_141112 Game_140408 Game_140003 Game_139744 Game_139399 Game_137734 Game_136265 Game_136092 Game_135996 Game_135208 Game",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. d4 Nf6 2. Bg5&about=Trompowsky attack  Ruth  Opovcensky Opening",
+    "search_text": "Trompowsky Attack. Main Line. ECO A45. Line 1. D4 NF6 2. Trompowsky Attack (Main Line). ﻿ TROMPOWSKY ATTACK RUTH OPOVCENSKY OPENING 1. D4 NF6 2. BG5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. d4 Nf6 2. Bg5 in the games. Game_151189 Game_151018 Game_151013 Game_151011 Game_151009 Game_150026 Game_150019 Game_149997 Game_149983 Game_149241 Game_148368 Game_147337 Game_146996 Game_146822 Game_146152 Game_146150 Game_144529 Game_144521 Game_144407 Game_144005 Game_143145 Game_143014 Game_142999 Game_142541 Game_142418 Game_142413 Game_142404 Game_141883 Game_141112 Game_140408 Game_140003 Game_139744 Game_139399 Game_137734 Game_136265 Game_136092 Game_135996 Game_135208 Game. Candidate moves:"
+  },
+  {
+    "id": "e00_catalan_opening_main_line",
+    "eco": "E00",
+    "opening": "Catalan Opening",
+    "variation": "Main Line",
+    "line_san": "1. D4 NF6 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Catalan Opening (Main Line). ﻿ CATALAN OPENING 1. D4 NF6 2. C4 E6 3. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. d4 Nf6 2. c4 e6 3. g3 in the games. Game_152207 Game_152175 Game_152160 Game_152016 Game_152006 Game_151853 Game_151822 Game_151758 Game_151752 Game_151750 Game_151677 Game_151669 Game_151576 Game_151571 Game_150658 Game_150432 Game_150423 Game_149600 Game_149582 Game_149487 Game_149485 Game_149268 Game_149237 Game_149162 Game_149116 Game_148984 Game_148896 Game_148583 Game_148542 Game_148208 Game_147309 Game_147262 Game_147227 Game_147220 Game_147079 Game_146646 Game_146616 Game_146346 Game_145863 Ga",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. d4 Nf6 2. c4 e6 3. g3&about=Catalan Opening",
+    "search_text": "Catalan Opening. Main Line. ECO E00. Line 1. D4 NF6 2. Catalan Opening (Main Line). ﻿ CATALAN OPENING 1. D4 NF6 2. C4 E6 3. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. d4 Nf6 2. c4 e6 3. g3 in the games. Game_152207 Game_152175 Game_152160 Game_152016 Game_152006 Game_151853 Game_151822 Game_151758 Game_151752 Game_151750 Game_151677 Game_151669 Game_151576 Game_151571 Game_150658 Game_150432 Game_150423 Game_149600 Game_149582 Game_149487 Game_149485 Game_149268 Game_149237 Game_149162 Game_149116 Game_148984 Game_148896 Game_148583 Game_148542 Game_148208 Game_147309 Game_147262 Game_147227 Game_147220 Game_147079 Game_146646 Game_146616 Game_146346 Game_145863 Ga. Candidate moves:"
+  },
+  {
+    "id": "a45_canard_opening_main_line",
+    "eco": "A45",
+    "opening": "Canard Opening",
+    "variation": "Main Line",
+    "line_san": "1. D4 NF6 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Canard Opening (Main Line). ﻿ CANARD OPENING 1. D4 NF6 2. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 81 results for 1. d4 Nf6 2. f4 in the games. Game_146874 Game_144650 Game_144646 Game_144639 Game_141801 Game_141793 Game_141385 Game_141383 Game_141375 Game_141360 Game_141358 Game_141348 Game_141337 Game_141062 Game_141053 Game_141011 Game_141001 Game_129401 Game_129397 Game_129277 Game_129270 Game_127841 Game_127836 Game_123036 Game_123034 Game_123026 Game_123018 Game_123014 Game_123007 Game_121415 Game_121409 Game_117198 Game_117196 Game_116617 Game_116322 Game_116301 Game_116291 Game_97852 Game_97845 Game_95499 Game_95457 Ga",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. d4 Nf6 2. f4&about=Canard Opening",
+    "search_text": "Canard Opening. Main Line. ECO A45. Line 1. D4 NF6 2. Canard Opening (Main Line). ﻿ CANARD OPENING 1. D4 NF6 2. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 81 results for 1. d4 Nf6 2. f4 in the games. Game_146874 Game_144650 Game_144646 Game_144639 Game_141801 Game_141793 Game_141385 Game_141383 Game_141375 Game_141360 Game_141358 Game_141348 Game_141337 Game_141062 Game_141053 Game_141011 Game_141001 Game_129401 Game_129397 Game_129277 Game_129270 Game_127841 Game_127836 Game_123036 Game_123034 Game_123026 Game_123018 Game_123014 Game_123007 Game_121415 Game_121409 Game_117198 Game_117196 Game_116617 Game_116322 Game_116301 Game_116291 Game_97852 Game_97845 Game_95499 Game_95457 Ga. Candidate moves:"
+  },
+  {
+    "id": "unk_van_t_kruijs_opening_1_e3_main_line",
+    "eco": "UNK",
+    "opening": "VAN T KRUIJS OPENING 1. E3",
+    "variation": "Main Line",
+    "line_san": "1. E3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VAN T KRUIJS OPENING 1. E3 (Main Line). ﻿ VAN T KRUIJS OPENING 1. E3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e3 in the games. Game_151890 Game_151849 Game_151847 Game_151839 Game_151828 Game_151789 Game_151166 Game_151162 Game_151155 Game_151105 Game_151099 Game_151090 Game_150935 Game_150933 Game_150925 Game_150707 Game_150702 Game_150693 Game_150684 Game_150682 Game_150674 Game_150381 Game_150239 Game_150236 Game_150231 Game_150224 Game_150076 Game_149910 Game_149738 Game_149256 Game_149079 Game_148970 Game_147984 Game_147917 Game_147915 Game_147905 Game_147467 Game_147463 Game_147456 Game_147445 Game_147284 Game_146987",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e3&about=Van t Kruijs Opening",
+    "search_text": "VAN T KRUIJS OPENING 1. E3. Main Line. ECO UNK. Line 1. E3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. VAN T KRUIJS OPENING 1. E3 (Main Line). ﻿ VAN T KRUIJS OPENING 1. E3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e3 in the games. Game_151890 Game_151849 Game_151847 Game_151839 Game_151828 Game_151789 Game_151166 Game_151162 Game_151155 Game_151105 Game_151099 Game_151090 Game_150935 Game_150933 Game_150925 Game_150707 Game_150702 Game_150693 Game_150684 Game_150682 Game_150674 Game_150381 Game_150239 Game_150236 Game_150231 Game_150224 Game_150076 Game_149910 Game_149738 Game_149256 Game_149079 Game_148970 Game_147984 Game_147917 Game_147915 Game_147905 Game_147467 Game_147463 Game_147456 Game_147445 Game_147284 Game_146987. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_lopez_gambit_1_e4_e5_2_bc4_bc5_3_qe2_nc6_4_c3_nf6_5_f4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING LOPEZ GAMBIT 1. E4 E5 2. BC4 BC5 3. QE2 NC6 4. C3 NF6 5. F4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING LOPEZ GAMBIT 1. E4 E5 2. BC4 BC5 3. QE2 NC6 4. C3 NF6 5. F4 (Main Line). ﻿ BISHOP S OPENING LOPEZ GAMBIT 1. E4 E5 2. BC4 BC5 3. QE2 NC6 4. C3 NF6 5. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4&about=Bishop s Opening   Lopez gambit",
+    "search_text": "BISHOP S OPENING LOPEZ GAMBIT 1. E4 E5 2. BC4 BC5 3. QE2 NC6 4. C3 NF6 5. F4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING LOPEZ GAMBIT 1. E4 E5 2. BC4 BC5 3. QE2 NC6 4. C3 NF6 5. F4 (Main Line). ﻿ BISHOP S OPENING LOPEZ GAMBIT 1. E4 E5 2. BC4 BC5 3. QE2 NC6 4. C3 NF6 5. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. Qe2 Nc6 4. c3 Nf6 5. f4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_four_pawns_gambit_1_e4_e5_2_bc4_bc5_3_b4_bxb4_4_f4_exf4_5_nf3_be7_6_d4_bh4_7_g3_fxg38_o_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING FOUR PAWNS GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 EXF4 5. NF3 BE7 6. D4 BH4 7. G3 FXG38. O",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING FOUR PAWNS GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 EXF4 5. NF3 BE7 6. D4 BH4 7. G3 FXG38. O (Main Line). ﻿ BISHOP S OPENING FOUR PAWNS GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 EXF4 5. NF3 BE7 6. D4 BH4 7. G3 FXG38. O-O GXH2 9. KH1 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4 7. g3 fxg38. O-O gxh2 9. Kh1 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4 7. g3 fxg38. O-O gxh2 9. Kh1 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4 7. g3 fxg38. O-O gxh2 9. Kh1 in wikichess. [ Chess forum ] [ Rating lists ] [ Countrie",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4+ 7. g3 fxg38. O-O gxh2+ 9. Kh1&about=Bishop s Opening   Four pawns  gambit",
+    "search_text": "BISHOP S OPENING FOUR PAWNS GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 EXF4 5. NF3 BE7 6. D4 BH4 7. G3 FXG38. O. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING FOUR PAWNS GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 EXF4 5. NF3 BE7 6. D4 BH4 7. G3 FXG38. O (Main Line). ﻿ BISHOP S OPENING FOUR PAWNS GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 EXF4 5. NF3 BE7 6. D4 BH4 7. G3 FXG38. O-O GXH2 9. KH1 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4 7. g3 fxg38. O-O gxh2 9. Kh1 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4 7. g3 fxg38. O-O gxh2 9. Kh1 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4 7. g3 fxg38. O-O gxh2 9. Kh1 in wikichess. [ Chess forum ] [ Rating lists ] [ Countrie. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_macdonnell_double_gambit_1_e4_e5_2_bc4_bc5_3_b4_bxb4_4_f4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING MACDONNELL DOUBLE GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING MACDONNELL DOUBLE GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 (Main Line). ﻿ BISHOP S OPENING MACDONNELL DOUBLE GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 in the games. Game_73475 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Soc",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4&about=Bishop s Opening   MacDonnell double gambit",
+    "search_text": "BISHOP S OPENING MACDONNELL DOUBLE GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING MACDONNELL DOUBLE GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 (Main Line). ﻿ BISHOP S OPENING MACDONNELL DOUBLE GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 BXB4 4. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 in the games. Game_73475 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Soc. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_wing_gambit_1_e4_e5_2_bc4_bc5_3_b4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING WING GAMBIT 1. E4 E5 2. BC4 BC5 3. B4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING WING GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 (Main Line). ﻿ BISHOP S OPENING WING GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 4 results for 1. e4 e5 2. Bc4 Bc5 3. b4 in the games. Game_73475 Game_28022 Game_16690 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 in the forum. There are 1 results for 1. e4 e5 2. Bc4 Bc5 3. b4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo alb",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. b4&about=Bishop s Opening   Wing gambit",
+    "search_text": "BISHOP S OPENING WING GAMBIT 1. E4 E5 2. BC4 BC5 3. B4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING WING GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 (Main Line). ﻿ BISHOP S OPENING WING GAMBIT 1. E4 E5 2. BC4 BC5 3. B4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 4 results for 1. e4 e5 2. Bc4 Bc5 3. b4 in the games. Game_73475 Game_28022 Game_16690 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. b4 in the forum. There are 1 results for 1. e4 e5 2. Bc4 Bc5 3. b4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo alb. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_pratt_variation_1_e4_e5_2_bc4_bc5_3_c3_nf6_4_d4_exd4_5_e5_d5_6_exf6_dxc4_7_qh5_o_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING PRATT VARIATION 1. E4 E5 2. BC4 BC5 3. C3 NF6 4. D4 EXD4 5. E5 D5 6. EXF6 DXC4 7. QH5 O",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING PRATT VARIATION 1. E4 E5 2. BC4 BC5 3. C3 NF6 4. D4 EXD4 5. E5 D5 6. EXF6 DXC4 7. QH5 O (Main Line). ﻿ BISHOP S OPENING PRATT VARIATION 1. E4 E5 2. BC4 BC5 3. C3 NF6 4. D4 EXD4 5. E5 D5 6. EXF6 DXC4 7. QH5 O-O - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O&about=Bishop s Opening   Pratt variation",
+    "search_text": "BISHOP S OPENING PRATT VARIATION 1. E4 E5 2. BC4 BC5 3. C3 NF6 4. D4 EXD4 5. E5 D5 6. EXF6 DXC4 7. QH5 O. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING PRATT VARIATION 1. E4 E5 2. BC4 BC5 3. C3 NF6 4. D4 EXD4 5. E5 D5 6. EXF6 DXC4 7. QH5 O (Main Line). ﻿ BISHOP S OPENING PRATT VARIATION 1. E4 E5 2. BC4 BC5 3. C3 NF6 4. D4 EXD4 5. E5 D5 6. EXF6 DXC4 7. QH5 O-O - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_del_rio_variation_1_e4_e5_2_bc4_bc5_3_c3_qg5_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING DEL RIO VARIATION 1. E4 E5 2. BC4 BC5 3. C3 QG5",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING DEL RIO VARIATION 1. E4 E5 2. BC4 BC5 3. C3 QG5 (Main Line). ﻿ BISHOP S OPENING DEL RIO VARIATION 1. E4 E5 2. BC4 BC5 3. C3 QG5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Qg5 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Qg5 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Qg5 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discus",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. c3 Qg5&about=Bishop s Opening   del Rio variation",
+    "search_text": "BISHOP S OPENING DEL RIO VARIATION 1. E4 E5 2. BC4 BC5 3. C3 QG5. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING DEL RIO VARIATION 1. E4 E5 2. BC4 BC5 3. C3 QG5 (Main Line). ﻿ BISHOP S OPENING DEL RIO VARIATION 1. E4 E5 2. BC4 BC5 3. C3 QG5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Qg5 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Qg5 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 Qg5 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discus. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_lewis_counter_gambit_1_e4_e5_2_bc4_bc5_3_c3_d5_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING LEWIS COUNTER GAMBIT 1. E4 E5 2. BC4 BC5 3. C3 D5",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING LEWIS COUNTER GAMBIT 1. E4 E5 2. BC4 BC5 3. C3 D5 (Main Line). ﻿ BISHOP S OPENING LEWIS COUNTER GAMBIT 1. E4 E5 2. BC4 BC5 3. C3 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. c3 d5 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 d5 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 d5 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. c3 d5&about=Bishop s Opening   Lewis counter gambit",
+    "search_text": "BISHOP S OPENING LEWIS COUNTER GAMBIT 1. E4 E5 2. BC4 BC5 3. C3 D5. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING LEWIS COUNTER GAMBIT 1. E4 E5 2. BC4 BC5 3. C3 D5 (Main Line). ﻿ BISHOP S OPENING LEWIS COUNTER GAMBIT 1. E4 E5 2. BC4 BC5 3. C3 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Bc5 3. c3 d5 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 d5 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 d5 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_philidor_variation_1_e4_e5_2_bc4_bc5_3_c3_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING PHILIDOR VARIATION 1. E4 E5 2. BC4 BC5 3. C3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING PHILIDOR VARIATION 1. E4 E5 2. BC4 BC5 3. C3 (Main Line). ﻿ BISHOP S OPENING PHILIDOR VARIATION 1. E4 E5 2. BC4 BC5 3. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 3 results for 1. e4 e5 2. Bc4 Bc5 3. c3 in the games. Game_2351 Game_2205 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, d",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. c3&about=Bishop s Opening   Philidor variation",
+    "search_text": "BISHOP S OPENING PHILIDOR VARIATION 1. E4 E5 2. BC4 BC5 3. C3. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING PHILIDOR VARIATION 1. E4 E5 2. BC4 BC5 3. C3 (Main Line). ﻿ BISHOP S OPENING PHILIDOR VARIATION 1. E4 E5 2. BC4 BC5 3. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 3 results for 1. e4 e5 2. Bc4 Bc5 3. c3 in the games. Game_2351 Game_2205 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Bc5 3. c3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, d. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_lewis_gambit_1_e4_e5_2_bc4_bc5_3_d4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING LEWIS GAMBIT 1. E4 E5 2. BC4 BC5 3. D4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING LEWIS GAMBIT 1. E4 E5 2. BC4 BC5 3. D4 (Main Line). ﻿ BISHOP S OPENING LEWIS GAMBIT 1. E4 E5 2. BC4 BC5 3. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 17 results for 1. e4 e5 2. Bc4 Bc5 3. d4 in the games. Game_152090 Game_151263 Game_150633 Game_150631 Game_149407 Game_148827 Game_147637 Game_147627 Game_145905 Game_145153 Game_144408 Game_141518 Game_138382 Game_138290 Game_132979 Game_11188 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. d4 in the forum. There are 1 results for 1. e4 e5 2. Bc4 Bc5 3. d4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ]",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5 3. d4&about=Bishop s Opening   Lewis gambit",
+    "search_text": "BISHOP S OPENING LEWIS GAMBIT 1. E4 E5 2. BC4 BC5 3. D4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING LEWIS GAMBIT 1. E4 E5 2. BC4 BC5 3. D4 (Main Line). ﻿ BISHOP S OPENING LEWIS GAMBIT 1. E4 E5 2. BC4 BC5 3. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 17 results for 1. e4 e5 2. Bc4 Bc5 3. d4 in the games. Game_152090 Game_151263 Game_150633 Game_150631 Game_149407 Game_148827 Game_147637 Game_147627 Game_145905 Game_145153 Game_144408 Game_141518 Game_138382 Game_138290 Game_132979 Game_11188 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Bc5 3. d4 in the forum. There are 1 results for 1. e4 e5 2. Bc4 Bc5 3. d4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ]. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_classical_variation_1_e4_e5_2_bc4_bc5_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING CLASSICAL VARIATION 1. E4 E5 2. BC4 BC5",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING CLASSICAL VARIATION 1. E4 E5 2. BC4 BC5 (Main Line). ﻿ BISHOP S OPENING CLASSICAL VARIATION 1. E4 E5 2. BC4 BC5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 53 results for 1. e4 e5 2. Bc4 Bc5 in the games. Game_152090 Game_151960 Game_151263 Game_150633 Game_150631 Game_149407 Game_148827 Game_147637 Game_147627 Game_146823 Game_145905 Game_145153 Game_144408 Game_143449 Game_141518 Game_140605 Game_138382 Game_138290 Game_137603 Game_136111 Game_135647 Game_134389 Game_133562 Game_132979 Game_132112 Game_129409 Game_128054 Game_128051 Game_128043 Game_127793 Game_127785 Game_94647 Game_90086 Game_73475 Game_71353 Game_38096 Game_33273 Game_31329 Game_30782",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Bc5&about=Bishop s Opening   Classical variation",
+    "search_text": "BISHOP S OPENING CLASSICAL VARIATION 1. E4 E5 2. BC4 BC5. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING CLASSICAL VARIATION 1. E4 E5 2. BC4 BC5 (Main Line). ﻿ BISHOP S OPENING CLASSICAL VARIATION 1. E4 E5 2. BC4 BC5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 53 results for 1. e4 e5 2. Bc4 Bc5 in the games. Game_152090 Game_151960 Game_151263 Game_150633 Game_150631 Game_149407 Game_148827 Game_147637 Game_147627 Game_146823 Game_145905 Game_145153 Game_144408 Game_143449 Game_141518 Game_140605 Game_138382 Game_138290 Game_137603 Game_136111 Game_135647 Game_134389 Game_133562 Game_132979 Game_132112 Game_129409 Game_128054 Game_128051 Game_128043 Game_127793 Game_127785 Game_94647 Game_90086 Game_73475 Game_71353 Game_38096 Game_33273 Game_31329 Game_30782. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_urusov_gambit_panov_variation_1_e4_e5_2_bc4_nf6_3_d4_exd4_4_nf3_d5_5_exd5_bb4_6_c3_qe7_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING URUSOV GAMBIT PANOV VARIATION 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 D5 5. EXD5 BB4 6. C3 QE7",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING URUSOV GAMBIT PANOV VARIATION 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 D5 5. EXD5 BB4 6. C3 QE7 (Main Line). ﻿ BISHOP S OPENING URUSOV GAMBIT PANOV VARIATION 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 D5 5. EXD5 BB4 6. C3 QE7 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4 6. c3 Qe7 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4 6. c3 Qe7 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4 6. c3 Qe7 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4+ 6. c3 Qe7+&about=Bishop s Opening   Urusov gambit  Panov variation",
+    "search_text": "BISHOP S OPENING URUSOV GAMBIT PANOV VARIATION 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 D5 5. EXD5 BB4 6. C3 QE7. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING URUSOV GAMBIT PANOV VARIATION 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 D5 5. EXD5 BB4 6. C3 QE7 (Main Line). ﻿ BISHOP S OPENING URUSOV GAMBIT PANOV VARIATION 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 D5 5. EXD5 BB4 6. C3 QE7 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4 6. c3 Qe7 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4 6. c3 Qe7 in the forum. There are 0 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 d5 5. exd5 Bb4 6. c3 Qe7 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_urusov_gambit_1_e4_e5_2_bc4_nf6_3_d4_exd4_4_nf3_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING URUSOV GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING URUSOV GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 (Main Line). ﻿ BISHOP S OPENING URUSOV GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 80 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 in the games. Game_152045 Game_152031 Game_151221 Game_149337 Game_149330 Game_147131 Game_143033 Game_142274 Game_139463 Game_138216 Game_134065 Game_133688 Game_132968 Game_131506 Game_131353 Game_130041 Game_130035 Game_130033 Game_129729 Game_129728 Game_129725 Game_129711 Game_129501 Game_128048 Game_128040 Game_127791 Game_127779 Game_126601 Game_115300 Game_112560 Game_101932 Game_101088 Game_94391 Game_93881 Game_92513 Game_91574 Ga",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3&about=Bishop s Opening   Urusov gambit",
+    "search_text": "BISHOP S OPENING URUSOV GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING URUSOV GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 (Main Line). ﻿ BISHOP S OPENING URUSOV GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 EXD4 4. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 80 results for 1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 in the games. Game_152045 Game_152031 Game_151221 Game_149337 Game_149330 Game_147131 Game_143033 Game_142274 Game_139463 Game_138216 Game_134065 Game_133688 Game_132968 Game_131506 Game_131353 Game_130041 Game_130035 Game_130033 Game_129729 Game_129728 Game_129725 Game_129711 Game_129501 Game_128048 Game_128040 Game_127791 Game_127779 Game_126601 Game_115300 Game_112560 Game_101932 Game_101088 Game_94391 Game_93881 Game_92513 Game_91574 Ga. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_ponziani_gambit_1_e4_e5_2_bc4_nf6_3_d4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING PONZIANI GAMBIT 1. E4 E5 2. BC4 NF6 3. D4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING PONZIANI GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 (Main Line). ﻿ BISHOP S OPENING PONZIANI GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Bc4 Nf6 3. d4 in the games. Game_152102 Game_152100 Game_152045 Game_152040 Game_152031 Game_151230 Game_151221 Game_149415 Game_149337 Game_149330 Game_148834 Game_147131 Game_146473 Game_145898 Game_145159 Game_144499 Game_144492 Game_143033 Game_142274 Game_141230 Game_139463 Game_138380 Game_138305 Game_138216 Game_135560 Game_134655 Game_134065 Game_133688 Game_132968 Game_131506 Game_131353 Game_130857 Game_130689 Game_130046 Game_130041 Game_130035 Game_130033 Game_12",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Nf6 3. d4&about=Bishop s Opening   Ponziani gambit",
+    "search_text": "BISHOP S OPENING PONZIANI GAMBIT 1. E4 E5 2. BC4 NF6 3. D4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING PONZIANI GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 (Main Line). ﻿ BISHOP S OPENING PONZIANI GAMBIT 1. E4 E5 2. BC4 NF6 3. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Bc4 Nf6 3. d4 in the games. Game_152102 Game_152100 Game_152045 Game_152040 Game_152031 Game_151230 Game_151221 Game_149415 Game_149337 Game_149330 Game_148834 Game_147131 Game_146473 Game_145898 Game_145159 Game_144499 Game_144492 Game_143033 Game_142274 Game_141230 Game_139463 Game_138380 Game_138305 Game_138216 Game_135560 Game_134655 Game_134065 Game_133688 Game_132968 Game_131506 Game_131353 Game_130857 Game_130689 Game_130046 Game_130041 Game_130035 Game_130033 Game_12. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_greco_gambit_1_e4_e5_2_bc4_nf6_3_f4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING GRECO GAMBIT 1. E4 E5 2. BC4 NF6 3. F4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING GRECO GAMBIT 1. E4 E5 2. BC4 NF6 3. F4 (Main Line). ﻿ BISHOP S OPENING GRECO GAMBIT 1. E4 E5 2. BC4 NF6 3. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 3 results for 1. e4 e5 2. Bc4 Nf6 3. f4 in the games. Game_57032 Game_53134 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Nf6 3. f4 in the forum. There are 1 results for 1. e4 e5 2. Bc4 Nf6 3. f4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discu",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Nf6 3. f4&about=Bishop s Opening   Greco gambit",
+    "search_text": "BISHOP S OPENING GRECO GAMBIT 1. E4 E5 2. BC4 NF6 3. F4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING GRECO GAMBIT 1. E4 E5 2. BC4 NF6 3. F4 (Main Line). ﻿ BISHOP S OPENING GRECO GAMBIT 1. E4 E5 2. BC4 NF6 3. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 3 results for 1. e4 e5 2. Bc4 Nf6 3. f4 in the games. Game_57032 Game_53134 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 Nf6 3. f4 in the forum. There are 1 results for 1. e4 e5 2. Bc4 Nf6 3. f4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discu. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_berlin_defense_1_e4_e5_2_bc4_nf6_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING BERLIN DEFENSE 1. E4 E5 2. BC4 NF6",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING BERLIN DEFENSE 1. E4 E5 2. BC4 NF6 (Main Line). ﻿ BISHOP S OPENING BERLIN DEFENSE 1. E4 E5 2. BC4 NF6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Bc4 Nf6 in the games. Game_152217 Game_152102 Game_152100 Game_152045 Game_152040 Game_152031 Game_151938 Game_151672 Game_151350 Game_151230 Game_151221 Game_150995 Game_150720 Game_150489 Game_150487 Game_149853 Game_149678 Game_149590 Game_149488 Game_149415 Game_149337 Game_149330 Game_149057 Game_148834 Game_148620 Game_148557 Game_147131 Game_146686 Game_146473 Game_145898 Game_145159 Game_144499 Game_144492 Game_143896 Game_143033 Game_142274 Game_142223 Game_141230 Game_140",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 Nf6&about=Bishop s Opening   Berlin defense",
+    "search_text": "BISHOP S OPENING BERLIN DEFENSE 1. E4 E5 2. BC4 NF6. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING BERLIN DEFENSE 1. E4 E5 2. BC4 NF6 (Main Line). ﻿ BISHOP S OPENING BERLIN DEFENSE 1. E4 E5 2. BC4 NF6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Bc4 Nf6 in the games. Game_152217 Game_152102 Game_152100 Game_152045 Game_152040 Game_152031 Game_151938 Game_151672 Game_151350 Game_151230 Game_151221 Game_150995 Game_150720 Game_150489 Game_150487 Game_149853 Game_149678 Game_149590 Game_149488 Game_149415 Game_149337 Game_149330 Game_149057 Game_148834 Game_148620 Game_148557 Game_147131 Game_146686 Game_146473 Game_145898 Game_145159 Game_144499 Game_144492 Game_143896 Game_143033 Game_142274 Game_142223 Game_141230 Game_140. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_lisitsyn_variation_1_e4_e5_2_bc4_c6_3_d4_d5_4_exd5_cxd5_5_bb5_bd7_6_bxd7_nxd7_7_dxe5nxe5_8_ne2_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING LISITSYN VARIATION 1. E4 E5 2. BC4 C6 3. D4 D5 4. EXD5 CXD5 5. BB5 BD7 6. BXD7 NXD7 7. DXE5NXE5 8. NE2",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING LISITSYN VARIATION 1. E4 E5 2. BC4 C6 3. D4 D5 4. EXD5 CXD5 5. BB5 BD7 6. BXD7 NXD7 7. DXE5NXE5 8. NE2 (Main Line). ﻿ BISHOP S OPENING LISITSYN VARIATION 1. E4 E5 2. BC4 C6 3. D4 D5 4. EXD5 CXD5 5. BB5 BD7 6. BXD7 NXD7 7. DXE5NXE5 8. NE2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5 Bd7 6. Bxd7 Nxd7 7. dxe5Nxe5 8. Ne2 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5 Bd7 6. Bxd7 Nxd7 7. dxe5Nxe5 8. Ne2 in the forum. There are 0 results for 1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5 Bd7 6. Bxd7 Nxd7 7. dxe5Nxe5 8. Ne2 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5+ Bd7 6. Bxd7+ Nxd7 7. dxe5Nxe5 8. Ne2&about=Bishop s Opening   Lisitsyn variation",
+    "search_text": "BISHOP S OPENING LISITSYN VARIATION 1. E4 E5 2. BC4 C6 3. D4 D5 4. EXD5 CXD5 5. BB5 BD7 6. BXD7 NXD7 7. DXE5NXE5 8. NE2. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING LISITSYN VARIATION 1. E4 E5 2. BC4 C6 3. D4 D5 4. EXD5 CXD5 5. BB5 BD7 6. BXD7 NXD7 7. DXE5NXE5 8. NE2 (Main Line). ﻿ BISHOP S OPENING LISITSYN VARIATION 1. E4 E5 2. BC4 C6 3. D4 D5 4. EXD5 CXD5 5. BB5 BD7 6. BXD7 NXD7 7. DXE5NXE5 8. NE2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5 Bd7 6. Bxd7 Nxd7 7. dxe5Nxe5 8. Ne2 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5 Bd7 6. Bxd7 Nxd7 7. dxe5Nxe5 8. Ne2 in the forum. There are 0 results for 1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5 Bd7 6. Bxd7 Nxd7 7. dxe5Nxe5 8. Ne2 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_philidor_counter_attack_1_e4_e5_2_bc4_c6_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING PHILIDOR COUNTER ATTACK 1. E4 E5 2. BC4 C6",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING PHILIDOR COUNTER ATTACK 1. E4 E5 2. BC4 C6 (Main Line). ﻿ BISHOP S OPENING PHILIDOR COUNTER ATTACK 1. E4 E5 2. BC4 C6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 13 results for 1. e4 e5 2. Bc4 c6 in the games. Game_132986 Game_130047 Game_130044 Game_130037 Game_128045 Game_127797 Game_114017 Game_93382 Game_71225 Game_37247 Game_22959 Game_14352 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 c6 in the forum. There are 1 results for 1. e4 e5 2. Bc4 c6 in wikichess. Alexey Bukharin (2057) e4 e5 Bc4 c6 Transpose to wikichess #116369# ============ Contributors : Alexey Bukharin [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal inf",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 c6&about=Bishop s Opening   Philidor counter attack",
+    "search_text": "BISHOP S OPENING PHILIDOR COUNTER ATTACK 1. E4 E5 2. BC4 C6. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING PHILIDOR COUNTER ATTACK 1. E4 E5 2. BC4 C6 (Main Line). ﻿ BISHOP S OPENING PHILIDOR COUNTER ATTACK 1. E4 E5 2. BC4 C6 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 13 results for 1. e4 e5 2. Bc4 c6 in the games. Game_132986 Game_130047 Game_130044 Game_130037 Game_128045 Game_127797 Game_114017 Game_93382 Game_71225 Game_37247 Game_22959 Game_14352 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 c6 in the forum. There are 1 results for 1. e4 e5 2. Bc4 c6 in wikichess. Alexey Bukharin (2057) e4 e5 Bc4 c6 Transpose to wikichess #116369# ============ Contributors : Alexey Bukharin [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal inf. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_calabrese_counter_gambit_jaenisch_variation_1_e4_e5_2_bc4_f5_3_d3_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING CALABRESE COUNTER GAMBIT JAENISCH VARIATION 1. E4 E5 2. BC4 F5 3. D3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING CALABRESE COUNTER GAMBIT JAENISCH VARIATION 1. E4 E5 2. BC4 F5 3. D3 (Main Line). ﻿ BISHOP S OPENING CALABRESE COUNTER GAMBIT JAENISCH VARIATION 1. E4 E5 2. BC4 F5 3. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 10 results for 1. e4 e5 2. Bc4 f5 3. d3 in the games. Game_143759 Game_129722 Game_129714 Game_129710 Game_128397 Game_126870 Game_87735 Game_78492 Game_2575 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 f5 3. d3 in the forum. There are 1 results for 1. e4 e5 2. Bc4 f5 3. d3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ]",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 f5 3. d3&about=Bishop s Opening   Calabrese counter gambit  Jaenisch variation",
+    "search_text": "BISHOP S OPENING CALABRESE COUNTER GAMBIT JAENISCH VARIATION 1. E4 E5 2. BC4 F5 3. D3. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING CALABRESE COUNTER GAMBIT JAENISCH VARIATION 1. E4 E5 2. BC4 F5 3. D3 (Main Line). ﻿ BISHOP S OPENING CALABRESE COUNTER GAMBIT JAENISCH VARIATION 1. E4 E5 2. BC4 F5 3. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 10 results for 1. e4 e5 2. Bc4 f5 3. d3 in the games. Game_143759 Game_129722 Game_129714 Game_129710 Game_128397 Game_126870 Game_87735 Game_78492 Game_2575 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 f5 3. d3 in the forum. There are 1 results for 1. e4 e5 2. Bc4 f5 3. d3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ]. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_calabrese_counter_gambit_1_e4_e5_2_bc4_f5_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING CALABRESE COUNTER GAMBIT 1. E4 E5 2. BC4 F5",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING CALABRESE COUNTER GAMBIT 1. E4 E5 2. BC4 F5 (Main Line). ﻿ BISHOP S OPENING CALABRESE COUNTER GAMBIT 1. E4 E5 2. BC4 F5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 23 results for 1. e4 e5 2. Bc4 f5 in the games. Game_143759 Game_143110 Game_130036 Game_130034 Game_130027 Game_129727 Game_129722 Game_129714 Game_129713 Game_129712 Game_129710 Game_128406 Game_128404 Game_128397 Game_126870 Game_94649 Game_87735 Game_87454 Game_78492 Game_23309 Game_17543 Game_2575 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 f5 in the forum. There are 1 results for 1. e4 e5 2. Bc4 f5 in wikichess. Kieran Child (1600) e4 e5 Bc4 f5 Calabrese countergambit A relative of",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4 f5&about=Bishop s Opening   Calabrese counter gambit",
+    "search_text": "BISHOP S OPENING CALABRESE COUNTER GAMBIT 1. E4 E5 2. BC4 F5. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING CALABRESE COUNTER GAMBIT 1. E4 E5 2. BC4 F5 (Main Line). ﻿ BISHOP S OPENING CALABRESE COUNTER GAMBIT 1. E4 E5 2. BC4 F5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 23 results for 1. e4 e5 2. Bc4 f5 in the games. Game_143759 Game_143110 Game_130036 Game_130034 Game_130027 Game_129727 Game_129722 Game_129714 Game_129713 Game_129712 Game_129710 Game_128406 Game_128404 Game_128397 Game_126870 Game_94649 Game_87735 Game_87454 Game_78492 Game_23309 Game_17543 Game_2575 Game_1 There are at least 0 results for 1. e4 e5 2. Bc4 f5 in the forum. There are 1 results for 1. e4 e5 2. Bc4 f5 in wikichess. Kieran Child (1600) e4 e5 Bc4 f5 Calabrese countergambit A relative of. Candidate moves:"
+  },
+  {
+    "id": "unk_bishop_s_opening_1_e4_e5_2_bc4_main_line",
+    "eco": "UNK",
+    "opening": "BISHOP S OPENING 1. E4 E5 2. BC4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BISHOP S OPENING 1. E4 E5 2. BC4 (Main Line). ﻿ BISHOP S OPENING 1. E4 E5 2. BC4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Bc4 in the games. Game_152217 Game_152102 Game_152100 Game_152090 Game_152045 Game_152040 Game_152031 Game_151960 Game_151938 Game_151672 Game_151464 Game_151350 Game_151263 Game_151230 Game_151221 Game_150995 Game_150720 Game_150633 Game_150631 Game_150549 Game_150489 Game_150487 Game_150066 Game_150060 Game_150058 Game_149853 Game_149678 Game_149590 Game_149488 Game_149415 Game_149407 Game_149337 Game_149330 Game_149057 Game_148834 Game_148827 Game_148620 Game_148557 Game_148475 Game_147637 Game_14",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Bc4&about=Bishop s Opening",
+    "search_text": "BISHOP S OPENING 1. E4 E5 2. BC4. Main Line. ECO UNK. Line 1. E4 E5 2. BISHOP S OPENING 1. E4 E5 2. BC4 (Main Line). ﻿ BISHOP S OPENING 1. E4 E5 2. BC4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Bc4 in the games. Game_152217 Game_152102 Game_152100 Game_152090 Game_152045 Game_152040 Game_152031 Game_151960 Game_151938 Game_151672 Game_151464 Game_151350 Game_151263 Game_151230 Game_151221 Game_150995 Game_150720 Game_150633 Game_150631 Game_150549 Game_150489 Game_150487 Game_150066 Game_150060 Game_150058 Game_149853 Game_149678 Game_149590 Game_149488 Game_149415 Game_149407 Game_149337 Game_149330 Game_149057 Game_148834 Game_148827 Game_148620 Game_148557 Game_148475 Game_147637 Game_14. Candidate moves:"
+  },
+  {
+    "id": "unk_alapin_s_opening_1_e4_e5_2_ne2_main_line",
+    "eco": "UNK",
+    "opening": "ALAPIN S OPENING 1. E4 E5 2. NE2",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "ALAPIN S OPENING 1. E4 E5 2. NE2 (Main Line). ﻿ ALAPIN S OPENING 1. E4 E5 2. NE2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 21 results for 1. e4 e5 2. Ne2 in the games. Game_150175 Game_149580 Game_145829 Game_143099 Game_143085 Game_142725 Game_142506 Game_141199 Game_139367 Game_135035 Game_134391 Game_131750 Game_122798 Game_87772 Game_87763 Game_86262 Game_86260 Game_78709 Game_20002 Game_2964 Game_1 There are at least 0 results for 1. e4 e5 2. Ne2 in the forum. There are 1 results for 1. e4 e5 2. Ne2 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ]",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Ne2&about=Alapin s Opening",
+    "search_text": "ALAPIN S OPENING 1. E4 E5 2. NE2. Main Line. ECO UNK. Line 1. E4 E5 2. ALAPIN S OPENING 1. E4 E5 2. NE2 (Main Line). ﻿ ALAPIN S OPENING 1. E4 E5 2. NE2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 21 results for 1. e4 e5 2. Ne2 in the games. Game_150175 Game_149580 Game_145829 Game_143099 Game_143085 Game_142725 Game_142506 Game_141199 Game_139367 Game_135035 Game_134391 Game_131750 Game_122798 Game_87772 Game_87763 Game_86262 Game_86260 Game_78709 Game_20002 Game_2964 Game_1 There are at least 0 results for 1. e4 e5 2. Ne2 in the forum. There are 1 results for 1. e4 e5 2. Ne2 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ]. Candidate moves:"
+  },
+  {
+    "id": "c60_ruy_lopez_main_line",
+    "eco": "C60",
+    "opening": "Ruy Lopez",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Ruy Lopez (Main Line). ﻿ RUY LOPEZ SPANISH OPENING 1. E4 E5 2. NF3 NC6 3. BB5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. Bb5 in the games. Game_152257 Game_152252 Game_152214 Game_152206 Game_152191 Game_152189 Game_152182 Game_152180 Game_152174 Game_152167 Game_152146 Game_152094 Game_152088 Game_152078 Game_152077 Game_152053 Game_152041 Game_152035 Game_152020 Game_151971 Game_151968 Game_151961 Game_151957 Game_151947 Game_151936 Game_151894 Game_151889 Game_151883 Game_151881 Game_151875 Game_151872 Game_151854 Game_151814 Game_151810 Game_151808 Game_151793 Game_151762 Game_151680",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. Bb5&about=Ruy Lopez  Spanish Opening",
+    "search_text": "Ruy Lopez. Main Line. ECO C60. Line 1. E4 E5 2. Ruy Lopez (Main Line). ﻿ RUY LOPEZ SPANISH OPENING 1. E4 E5 2. NF3 NC6 3. BB5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. Bb5 in the games. Game_152257 Game_152252 Game_152214 Game_152206 Game_152191 Game_152189 Game_152182 Game_152180 Game_152174 Game_152167 Game_152146 Game_152094 Game_152088 Game_152078 Game_152077 Game_152053 Game_152041 Game_152035 Game_152020 Game_151971 Game_151968 Game_151961 Game_151957 Game_151947 Game_151936 Game_151894 Game_151889 Game_151883 Game_151881 Game_151875 Game_151872 Game_151854 Game_151814 Game_151810 Game_151808 Game_151793 Game_151762 Game_151680. Candidate moves:"
+  },
+  {
+    "id": "unk_two_knights_defense_modern_bishop_s_opening_1_e4_e5_2_nf3_nc6_3_bc4_nf6_4_d3_main_line",
+    "eco": "UNK",
+    "opening": "TWO KNIGHTS DEFENSE MODERN BISHOP S OPENING 1. E4 E5 2. NF3 NC6 3. BC4 NF6 4. D3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "TWO KNIGHTS DEFENSE MODERN BISHOP S OPENING 1. E4 E5 2. NF3 NC6 3. BC4 NF6 4. D3 (Main Line). ﻿ TWO KNIGHTS DEFENSE MODERN BISHOP S OPENING 1. E4 E5 2. NF3 NC6 3. BC4 NF6 4. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 in the games. Game_152108 Game_151481 Game_151383 Game_151362 Game_151349 Game_151033 Game_151024 Game_150697 Game_150334 Game_150008 Game_149394 Game_149371 Game_149288 Game_149073 Game_148994 Game_148990 Game_148978 Game_148963 Game_148729 Game_148722 Game_148697 Game_148585 Game_148507 Game_148360 Game_148358 Game_148332 Game_148220 Game_148189 Game_148129 Game_147794 Game_147566 Game_147400 Game_147396 Game_147345 Game_14716",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3&about=Two knights defense  Modern Bishop s Opening",
+    "search_text": "TWO KNIGHTS DEFENSE MODERN BISHOP S OPENING 1. E4 E5 2. NF3 NC6 3. BC4 NF6 4. D3. Main Line. ECO UNK. Line 1. E4 E5 2. TWO KNIGHTS DEFENSE MODERN BISHOP S OPENING 1. E4 E5 2. NF3 NC6 3. BC4 NF6 4. D3 (Main Line). ﻿ TWO KNIGHTS DEFENSE MODERN BISHOP S OPENING 1. E4 E5 2. NF3 NC6 3. BC4 NF6 4. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 in the games. Game_152108 Game_151481 Game_151383 Game_151362 Game_151349 Game_151033 Game_151024 Game_150697 Game_150334 Game_150008 Game_149394 Game_149371 Game_149288 Game_149073 Game_148994 Game_148990 Game_148978 Game_148963 Game_148729 Game_148722 Game_148697 Game_148585 Game_148507 Game_148360 Game_148358 Game_148332 Game_148220 Game_148189 Game_148129 Game_147794 Game_147566 Game_147400 Game_147396 Game_147345 Game_14716. Candidate moves:"
+  },
+  {
+    "id": "unk_tayler_opening_1_e4_e5_2_nf3_nc6_3_be2_nf6_4_d4_main_line",
+    "eco": "UNK",
+    "opening": "TAYLER OPENING 1. E4 E5 2. NF3 NC6 3. BE2 NF6 4. D4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "TAYLER OPENING 1. E4 E5 2. NF3 NC6 3. BE2 NF6 4. D4 (Main Line). ﻿ TAYLER OPENING 1. E4 E5 2. NF3 NC6 3. BE2 NF6 4. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4 in the forum. There are 0 results for 1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4&about=Tayler Opening",
+    "search_text": "TAYLER OPENING 1. E4 E5 2. NF3 NC6 3. BE2 NF6 4. D4. Main Line. ECO UNK. Line 1. E4 E5 2. TAYLER OPENING 1. E4 E5 2. NF3 NC6 3. BE2 NF6 4. D4 (Main Line). ﻿ TAYLER OPENING 1. E4 E5 2. NF3 NC6 3. BE2 NF6 4. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4 in the games. Game_1 There are at least 0 results for 1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4 in the forum. There are 0 results for 1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums. Candidate moves:"
+  },
+  {
+    "id": "c44_ponziani_opening_main_line",
+    "eco": "C44",
+    "opening": "Ponziani Opening",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Ponziani Opening (Main Line). ﻿ PONZIANI OPENING 1. E4 E5 2. NF3 NC6 3. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. c3 in the games. Game_152098 Game_151827 Game_151139 Game_151028 Game_150426 Game_150167 Game_149258 Game_148754 Game_148349 Game_148282 Game_148211 Game_147977 Game_147698 Game_147306 Game_147293 Game_146951 Game_145750 Game_145748 Game_144488 Game_142435 Game_140700 Game_140670 Game_140661 Game_139929 Game_139926 Game_139922 Game_139920 Game_139910 Game_138633 Game_137801 Game_137797 Game_137377 Game_134405 Game_132916 Game_132912 Game_130601 Game_129857 Game_128282 Game_125603",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. c3&about=Ponziani Opening",
+    "search_text": "Ponziani Opening. Main Line. ECO C44. Line 1. E4 E5 2. Ponziani Opening (Main Line). ﻿ PONZIANI OPENING 1. E4 E5 2. NF3 NC6 3. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. c3 in the games. Game_152098 Game_151827 Game_151139 Game_151028 Game_150426 Game_150167 Game_149258 Game_148754 Game_148349 Game_148282 Game_148211 Game_147977 Game_147698 Game_147306 Game_147293 Game_146951 Game_145750 Game_145748 Game_144488 Game_142435 Game_140700 Game_140670 Game_140661 Game_139929 Game_139926 Game_139922 Game_139920 Game_139910 Game_138633 Game_137801 Game_137797 Game_137377 Game_134405 Game_132916 Game_132912 Game_130601 Game_129857 Game_128282 Game_125603. Candidate moves:"
+  },
+  {
+    "id": "c44_dresden_opening_the_goblin",
+    "eco": "C44",
+    "opening": "Dresden Opening",
+    "variation": "The Goblin",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Dresden Opening (The Goblin). ﻿ DRESDEN OPENING 1. E4 E5 2. NF3 NC6 3. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 10 results for 1. e4 e5 2. Nf3 Nc6 3. c4 in the games. Game_141474 Game_131710 Game_76162 Game_75519 Game_75460 Game_73848 Game_53220 Game_31864 Game_4436 Game_1 There are at least 0 results for 1. e4 e5 2. Nf3 Nc6 3. c4 in the forum. There are 1 results for 1. e4 e5 2. Nf3 Nc6 3. c4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all peo",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. c4&about=Dresden Opening",
+    "search_text": "Dresden Opening. The Goblin. ECO C44. Line 1. E4 E5 2. Dresden Opening (The Goblin). ﻿ DRESDEN OPENING 1. E4 E5 2. NF3 NC6 3. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 10 results for 1. e4 e5 2. Nf3 Nc6 3. c4 in the games. Game_141474 Game_131710 Game_76162 Game_75519 Game_75460 Game_73848 Game_53220 Game_31864 Game_4436 Game_1 There are at least 0 results for 1. e4 e5 2. Nf3 Nc6 3. c4 in the forum. There are 1 results for 1. e4 e5 2. Nf3 Nc6 3. c4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all peo. Candidate moves:"
+  },
+  {
+    "id": "unk_scotch_opening_1_e4_e5_2_nf3_nc6_3_d4_main_line",
+    "eco": "UNK",
+    "opening": "SCOTCH OPENING 1. E4 E5 2. NF3 NC6 3. D4",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "SCOTCH OPENING 1. E4 E5 2. NF3 NC6 3. D4 (Main Line). ﻿ SCOTCH OPENING 1. E4 E5 2. NF3 NC6 3. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. d4 in the games. Game_152267 Game_152153 Game_152106 Game_152104 Game_152085 Game_152075 Game_151956 Game_151751 Game_151749 Game_151556 Game_151492 Game_151312 Game_151188 Game_150869 Game_150582 Game_150542 Game_150540 Game_150497 Game_150495 Game_150478 Game_150468 Game_150445 Game_150331 Game_150329 Game_150327 Game_150298 Game_150290 Game_149716 Game_149640 Game_149633 Game_149295 Game_149292 Game_148777 Game_148658 Game_148656 Game_148623 Game_148619 Game_148567 Game_148405 G",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. d4&about=Scotch Opening",
+    "search_text": "SCOTCH OPENING 1. E4 E5 2. NF3 NC6 3. D4. Main Line. ECO UNK. Line 1. E4 E5 2. SCOTCH OPENING 1. E4 E5 2. NF3 NC6 3. D4 (Main Line). ﻿ SCOTCH OPENING 1. E4 E5 2. NF3 NC6 3. D4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 Nc6 3. d4 in the games. Game_152267 Game_152153 Game_152106 Game_152104 Game_152085 Game_152075 Game_151956 Game_151751 Game_151749 Game_151556 Game_151492 Game_151312 Game_151188 Game_150869 Game_150582 Game_150542 Game_150540 Game_150497 Game_150495 Game_150478 Game_150468 Game_150445 Game_150331 Game_150329 Game_150327 Game_150298 Game_150290 Game_149716 Game_149640 Game_149633 Game_149295 Game_149292 Game_148777 Game_148658 Game_148656 Game_148623 Game_148619 Game_148567 Game_148405 G. Candidate moves:"
+  },
+  {
+    "id": "unk_konstantinopolsky_opening_1_e4_e5_2_nf3_nc6_3_g3_main_line",
+    "eco": "UNK",
+    "opening": "KONSTANTINOPOLSKY OPENING 1. E4 E5 2. NF3 NC6 3. G3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "KONSTANTINOPOLSKY OPENING 1. E4 E5 2. NF3 NC6 3. G3 (Main Line). ﻿ KONSTANTINOPOLSKY OPENING 1. E4 E5 2. NF3 NC6 3. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 19 results for 1. e4 e5 2. Nf3 Nc6 3. g3 in the games. Game_142446 Game_114217 Game_103005 Game_94547 Game_83080 Game_83074 Game_83052 Game_82323 Game_82313 Game_77196 Game_74363 Game_71690 Game_39412 Game_37201 Game_36266 Game_21429 Game_19154 Game_17038 Game_1 There are at least 0 results for 1. e4 e5 2. Nf3 Nc6 3. g3 in the forum. There are 1 results for 1. e4 e5 2. Nf3 Nc6 3. g3 in wikichess. Sarah Hancock (1863) e4 e5 Nf3 Nc6 g3 Transpose to wikichess #10017# ============ Contributors : Sarah Hancock [ C",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3 Nc6 3. g3&about=Konstantinopolsky Opening",
+    "search_text": "KONSTANTINOPOLSKY OPENING 1. E4 E5 2. NF3 NC6 3. G3. Main Line. ECO UNK. Line 1. E4 E5 2. KONSTANTINOPOLSKY OPENING 1. E4 E5 2. NF3 NC6 3. G3 (Main Line). ﻿ KONSTANTINOPOLSKY OPENING 1. E4 E5 2. NF3 NC6 3. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 19 results for 1. e4 e5 2. Nf3 Nc6 3. g3 in the games. Game_142446 Game_114217 Game_103005 Game_94547 Game_83080 Game_83074 Game_83052 Game_82323 Game_82313 Game_77196 Game_74363 Game_71690 Game_39412 Game_37201 Game_36266 Game_21429 Game_19154 Game_17038 Game_1 There are at least 0 results for 1. e4 e5 2. Nf3 Nc6 3. g3 in the forum. There are 1 results for 1. e4 e5 2. Nf3 Nc6 3. g3 in wikichess. Sarah Hancock (1863) e4 e5 Nf3 Nc6 g3 Transpose to wikichess #10017# ============ Contributors : Sarah Hancock [ C. Candidate moves:"
+  },
+  {
+    "id": "unk_king_s_knight_opening_1_e4_e5_2_nf3_main_line",
+    "eco": "UNK",
+    "opening": "KING S KNIGHT OPENING 1. E4 E5 2. NF3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "KING S KNIGHT OPENING 1. E4 E5 2. NF3 (Main Line). ﻿ KING S KNIGHT OPENING 1. E4 E5 2. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 in the games. Game_152282 Game_152267 Game_152263 Game_152257 Game_152253 Game_152252 Game_152214 Game_152212 Game_152206 Game_152202 Game_152193 Game_152191 Game_152189 Game_152182 Game_152180 Game_152174 Game_152167 Game_152153 Game_152146 Game_152109 Game_152108 Game_152106 Game_152104 Game_152098 Game_152094 Game_152088 Game_152085 Game_152084 Game_152082 Game_152078 Game_152077 Game_152075 Game_152073 Game_152068 Game_152066 Game_152053 Game_152041 Game_152035 Game_152022 Game_152020 Ga",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Nf3&about=King s knight Opening",
+    "search_text": "KING S KNIGHT OPENING 1. E4 E5 2. NF3. Main Line. ECO UNK. Line 1. E4 E5 2. KING S KNIGHT OPENING 1. E4 E5 2. NF3 (Main Line). ﻿ KING S KNIGHT OPENING 1. E4 E5 2. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 e5 2. Nf3 in the games. Game_152282 Game_152267 Game_152263 Game_152257 Game_152253 Game_152252 Game_152214 Game_152212 Game_152206 Game_152202 Game_152193 Game_152191 Game_152189 Game_152182 Game_152180 Game_152174 Game_152167 Game_152153 Game_152146 Game_152109 Game_152108 Game_152106 Game_152104 Game_152098 Game_152094 Game_152088 Game_152085 Game_152084 Game_152082 Game_152078 Game_152077 Game_152075 Game_152073 Game_152068 Game_152066 Game_152053 Game_152041 Game_152035 Game_152022 Game_152020 Ga. Candidate moves:"
+  },
+  {
+    "id": "unk_variation_napoleon_s_opening_napoleon_s_opening_1_e4_e5_2_qf3_main_line",
+    "eco": "UNK",
+    "opening": "VARIATION NAPOLEON S OPENING NAPOLEON S OPENING 1. E4 E5 2. QF3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VARIATION NAPOLEON S OPENING NAPOLEON S OPENING 1. E4 E5 2. QF3 (Main Line). ﻿ VARIATION NAPOLEON S OPENING NAPOLEON S OPENING 1. E4 E5 2. QF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 30 results for 1. e4 e5 2. Qf3 in the games. Game_96020 Game_94252 Game_94237 Game_94193 Game_90835 Game_90831 Game_89477 Game_89234 Game_88501 Game_88377 Game_88270 Game_88089 Game_84773 Game_82736 Game_78086 Game_76437 Game_76388 Game_74858 Game_71884 Game_71875 Game_71665 Game_70318 Game_41170 Game_40863 Game_31367 Game_29342 Game_23344 Game_12765 Game_1058 Game_1 There are at least 0 results for 1. e4 e5 2. Qf3 in the forum. There are 1 results for 1. e4 e5 2. Qf3 in wikichess. Alexis Bromo (1",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Qf3&about=Variation Napoleon s Opening   Napoleon s Opening",
+    "search_text": "VARIATION NAPOLEON S OPENING NAPOLEON S OPENING 1. E4 E5 2. QF3. Main Line. ECO UNK. Line 1. E4 E5 2. VARIATION NAPOLEON S OPENING NAPOLEON S OPENING 1. E4 E5 2. QF3 (Main Line). ﻿ VARIATION NAPOLEON S OPENING NAPOLEON S OPENING 1. E4 E5 2. QF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 30 results for 1. e4 e5 2. Qf3 in the games. Game_96020 Game_94252 Game_94237 Game_94193 Game_90835 Game_90831 Game_89477 Game_89234 Game_88501 Game_88377 Game_88270 Game_88089 Game_84773 Game_82736 Game_78086 Game_76437 Game_76388 Game_74858 Game_71884 Game_71875 Game_71665 Game_70318 Game_41170 Game_40863 Game_31367 Game_29342 Game_23344 Game_12765 Game_1058 Game_1 There are at least 0 results for 1. e4 e5 2. Qf3 in the forum. There are 1 results for 1. e4 e5 2. Qf3 in wikichess. Alexis Bromo (1. Candidate moves:"
+  },
+  {
+    "id": "unk_variation_patzer_opening_patzer_opening_1_e4_e5_2_qh5_main_line",
+    "eco": "UNK",
+    "opening": "VARIATION PATZER OPENING PATZER OPENING 1. E4 E5 2. QH5",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VARIATION PATZER OPENING PATZER OPENING 1. E4 E5 2. QH5 (Main Line). ﻿ VARIATION PATZER OPENING PATZER OPENING 1. E4 E5 2. QH5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 36 results for 1. e4 e5 2. Qh5 in the games. Game_141208 Game_138590 Game_135245 Game_127164 Game_120882 Game_92675 Game_90942 Game_87792 Game_87789 Game_87780 Game_80622 Game_78014 Game_76400 Game_71357 Game_71249 Game_67045 Game_66340 Game_66335 Game_66107 Game_64720 Game_63104 Game_43101 Game_43099 Game_43003 Game_43001 Game_40814 Game_32140 Game_20826 Game_20822 Game_12132 Game_12128 Game_6356 Game_5170 Game_5163 Game_3144 Game_1 There are at least 0 results for 1. e4 e5 2. Qh5 in the forum. There are",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. Qh5&about=Variation Patzer Opening   Patzer Opening",
+    "search_text": "VARIATION PATZER OPENING PATZER OPENING 1. E4 E5 2. QH5. Main Line. ECO UNK. Line 1. E4 E5 2. VARIATION PATZER OPENING PATZER OPENING 1. E4 E5 2. QH5 (Main Line). ﻿ VARIATION PATZER OPENING PATZER OPENING 1. E4 E5 2. QH5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 36 results for 1. e4 e5 2. Qh5 in the games. Game_141208 Game_138590 Game_135245 Game_127164 Game_120882 Game_92675 Game_90942 Game_87792 Game_87789 Game_87780 Game_80622 Game_78014 Game_76400 Game_71357 Game_71249 Game_67045 Game_66340 Game_66335 Game_66107 Game_64720 Game_63104 Game_43101 Game_43099 Game_43003 Game_43001 Game_40814 Game_32140 Game_20826 Game_20822 Game_12132 Game_12128 Game_6356 Game_5170 Game_5163 Game_3144 Game_1 There are at least 0 results for 1. e4 e5 2. Qh5 in the forum. There are. Candidate moves:"
+  },
+  {
+    "id": "unk_variation_mengarini_s_opening_mengarini_s_opening_1_e4_e5_2_a3_main_line",
+    "eco": "UNK",
+    "opening": "VARIATION MENGARINI S OPENING MENGARINI S OPENING 1. E4 E5 2. A3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VARIATION MENGARINI S OPENING MENGARINI S OPENING 1. E4 E5 2. A3 (Main Line). ﻿ VARIATION MENGARINI S OPENING MENGARINI S OPENING 1. E4 E5 2. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 16 results for 1. e4 e5 2. a3 in the games. Game_146463 Game_136115 Game_136113 Game_136103 Game_111447 Game_111432 Game_99020 Game_94243 Game_84320 Game_80683 Game_79936 Game_71599 Game_53409 Game_19732 Game_9250 Game_1 There are at least 0 results for 1. e4 e5 2. a3 in the forum. There are 1 results for 1. e4 e5 2. a3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. a3&about=Variation Mengarini s Opening   Mengarini s Opening",
+    "search_text": "VARIATION MENGARINI S OPENING MENGARINI S OPENING 1. E4 E5 2. A3. Main Line. ECO UNK. Line 1. E4 E5 2. VARIATION MENGARINI S OPENING MENGARINI S OPENING 1. E4 E5 2. A3 (Main Line). ﻿ VARIATION MENGARINI S OPENING MENGARINI S OPENING 1. E4 E5 2. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 16 results for 1. e4 e5 2. a3 in the games. Game_146463 Game_136115 Game_136113 Game_136103 Game_111447 Game_111432 Game_99020 Game_94243 Game_84320 Game_80683 Game_79936 Game_71599 Game_53409 Game_19732 Game_9250 Game_1 There are at least 0 results for 1. e4 e5 2. a3 in the forum. There are 1 results for 1. e4 e5 2. a3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [. Candidate moves:"
+  },
+  {
+    "id": "unk_variation_lopez_opening_lopez_opening_1_e4_e5_2_c3_main_line",
+    "eco": "UNK",
+    "opening": "VARIATION LOPEZ OPENING LOPEZ OPENING 1. E4 E5 2. C3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VARIATION LOPEZ OPENING LOPEZ OPENING 1. E4 E5 2. C3 (Main Line). ﻿ VARIATION LOPEZ OPENING LOPEZ OPENING 1. E4 E5 2. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 77 results for 1. e4 e5 2. c3 in the games. Game_150069 Game_150067 Game_150059 Game_145843 Game_145838 Game_141468 Game_141466 Game_135028 Game_132232 Game_130788 Game_130784 Game_130774 Game_130246 Game_125631 Game_121648 Game_121634 Game_119699 Game_108700 Game_108690 Game_102943 Game_101366 Game_94742 Game_94736 Game_88081 Game_81933 Game_81872 Game_75644 Game_73356 Game_73104 Game_71216 Game_64559 Game_64038 Game_64037 Game_64036 Game_64035 Game_64034 Game_64033 Game_64032 Game_64031 Game_64030 Game_640",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. c3&about=Variation Lopez Opening   Lopez Opening",
+    "search_text": "VARIATION LOPEZ OPENING LOPEZ OPENING 1. E4 E5 2. C3. Main Line. ECO UNK. Line 1. E4 E5 2. VARIATION LOPEZ OPENING LOPEZ OPENING 1. E4 E5 2. C3 (Main Line). ﻿ VARIATION LOPEZ OPENING LOPEZ OPENING 1. E4 E5 2. C3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 77 results for 1. e4 e5 2. c3 in the games. Game_150069 Game_150067 Game_150059 Game_145843 Game_145838 Game_141468 Game_141466 Game_135028 Game_132232 Game_130788 Game_130784 Game_130774 Game_130246 Game_125631 Game_121648 Game_121634 Game_119699 Game_108700 Game_108690 Game_102943 Game_101366 Game_94742 Game_94736 Game_88081 Game_81933 Game_81872 Game_75644 Game_73356 Game_73104 Game_71216 Game_64559 Game_64038 Game_64037 Game_64036 Game_64035 Game_64034 Game_64033 Game_64032 Game_64031 Game_64030 Game_640. Candidate moves:"
+  },
+  {
+    "id": "unk_variation_indian_opening_indian_opening_1_e4_e5_2_d3_main_line",
+    "eco": "UNK",
+    "opening": "VARIATION INDIAN OPENING INDIAN OPENING 1. E4 E5 2. D3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VARIATION INDIAN OPENING INDIAN OPENING 1. E4 E5 2. D3 (Main Line). ﻿ VARIATION INDIAN OPENING INDIAN OPENING 1. E4 E5 2. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 70 results for 1. e4 e5 2. d3 in the games. Game_150775 Game_149392 Game_149390 Game_149166 Game_142243 Game_142239 Game_142010 Game_141638 Game_141634 Game_141602 Game_139911 Game_137204 Game_137200 Game_129965 Game_121249 Game_116218 Game_116203 Game_106977 Game_106975 Game_102624 Game_99018 Game_88863 Game_87392 Game_84716 Game_84494 Game_77913 Game_76680 Game_75637 Game_74646 Game_73638 Game_73632 Game_71610 Game_64721 Game_64719 Game_64570 Game_64568 Game_64390 Game_60329 Game_55507 Game_51978 Game_51",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. d3&about=Variation Indian Opening   Indian Opening",
+    "search_text": "VARIATION INDIAN OPENING INDIAN OPENING 1. E4 E5 2. D3. Main Line. ECO UNK. Line 1. E4 E5 2. VARIATION INDIAN OPENING INDIAN OPENING 1. E4 E5 2. D3 (Main Line). ﻿ VARIATION INDIAN OPENING INDIAN OPENING 1. E4 E5 2. D3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 70 results for 1. e4 e5 2. d3 in the games. Game_150775 Game_149392 Game_149390 Game_149166 Game_142243 Game_142239 Game_142010 Game_141638 Game_141634 Game_141602 Game_139911 Game_137204 Game_137200 Game_129965 Game_121249 Game_116218 Game_116203 Game_106977 Game_106975 Game_102624 Game_99018 Game_88863 Game_87392 Game_84716 Game_84494 Game_77913 Game_76680 Game_75637 Game_74646 Game_73638 Game_73632 Game_71610 Game_64721 Game_64719 Game_64570 Game_64568 Game_64390 Game_60329 Game_55507 Game_51978 Game_51. Candidate moves:"
+  },
+  {
+    "id": "unk_variation_king_s_head_opening_king_s_head_opening_1_e4_e5_2_f3_main_line",
+    "eco": "UNK",
+    "opening": "VARIATION KING S HEAD OPENING KING S HEAD OPENING 1. E4 E5 2. F3",
+    "variation": "Main Line",
+    "line_san": "1. E4 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "VARIATION KING S HEAD OPENING KING S HEAD OPENING 1. E4 E5 2. F3 (Main Line). ﻿ VARIATION KING S HEAD OPENING KING S HEAD OPENING 1. E4 E5 2. F3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 41 results for 1. e4 e5 2. f3 in the games. Game_150072 Game_133886 Game_130785 Game_130782 Game_130780 Game_126373 Game_126107 Game_126105 Game_126103 Game_105060 Game_104917 Game_104911 Game_104902 Game_99027 Game_94489 Game_90088 Game_87515 Game_87508 Game_77909 Game_75643 Game_75633 Game_74637 Game_74518 Game_74516 Game_71219 Game_67072 Game_67071 Game_67065 Game_67063 Game_46079 Game_41703 Game_41692 Game_35760 Game_35749 Game_26520 Game_19174 Game_19171 Game_19170 Game_1932 Game_1930 Game_1",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4 e5 2. f3&about=Variation King s head Opening   King s head Opening",
+    "search_text": "VARIATION KING S HEAD OPENING KING S HEAD OPENING 1. E4 E5 2. F3. Main Line. ECO UNK. Line 1. E4 E5 2. VARIATION KING S HEAD OPENING KING S HEAD OPENING 1. E4 E5 2. F3 (Main Line). ﻿ VARIATION KING S HEAD OPENING KING S HEAD OPENING 1. E4 E5 2. F3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 41 results for 1. e4 e5 2. f3 in the games. Game_150072 Game_133886 Game_130785 Game_130782 Game_130780 Game_126373 Game_126107 Game_126105 Game_126103 Game_105060 Game_104917 Game_104911 Game_104902 Game_99027 Game_94489 Game_90088 Game_87515 Game_87508 Game_77909 Game_75643 Game_75633 Game_74637 Game_74518 Game_74516 Game_71219 Game_67072 Game_67071 Game_67065 Game_67063 Game_46079 Game_41703 Game_41692 Game_35760 Game_35749 Game_26520 Game_19174 Game_19171 Game_19170 Game_1932 Game_1930 Game_1. Candidate moves:"
+  },
+  {
+    "id": "unk_king_s_pawn_opening_1_e4_main_line",
+    "eco": "UNK",
+    "opening": "KING S PAWN OPENING 1. E4",
+    "variation": "Main Line",
+    "line_san": "1. E4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "KING S PAWN OPENING 1. E4 (Main Line). ﻿ KING S PAWN OPENING 1. E4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 in the games. Game_152284 Game_152282 Game_152281 Game_152280 Game_152279 Game_152276 Game_152273 Game_152271 Game_152268 Game_152267 Game_152266 Game_152264 Game_152263 Game_152262 Game_152259 Game_152257 Game_152253 Game_152252 Game_152251 Game_152248 Game_152247 Game_152245 Game_152243 Game_152221 Game_152217 Game_152216 Game_152214 Game_152212 Game_152210 Game_152206 Game_152202 Game_152198 Game_152194 Game_152193 Game_152191 Game_152189 Game_152187 Game_152182 Game_152180 Game_152179 Game_152178 Game_152176",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. e4&about=King s pawn Opening",
+    "search_text": "KING S PAWN OPENING 1. E4. Main Line. ECO UNK. Line 1. E4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. KING S PAWN OPENING 1. E4 (Main Line). ﻿ KING S PAWN OPENING 1. E4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. e4 in the games. Game_152284 Game_152282 Game_152281 Game_152280 Game_152279 Game_152276 Game_152273 Game_152271 Game_152268 Game_152267 Game_152266 Game_152264 Game_152263 Game_152262 Game_152259 Game_152257 Game_152253 Game_152252 Game_152251 Game_152248 Game_152247 Game_152245 Game_152243 Game_152221 Game_152217 Game_152216 Game_152214 Game_152212 Game_152210 Game_152206 Game_152202 Game_152198 Game_152194 Game_152193 Game_152191 Game_152189 Game_152187 Game_152182 Game_152180 Game_152179 Game_152178 Game_152176. Candidate moves:"
+  },
+  {
+    "id": "unk_hammerschlag_fried_fox_pork_chop_opening_1_f3_e5_2_kf2_main_line",
+    "eco": "UNK",
+    "opening": "HAMMERSCHLAG FRIED FOX PORK CHOP OPENING 1. F3 E5 2. KF2",
+    "variation": "Main Line",
+    "line_san": "1. F3 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "HAMMERSCHLAG FRIED FOX PORK CHOP OPENING 1. F3 E5 2. KF2 (Main Line). ﻿ HAMMERSCHLAG FRIED FOX PORK CHOP OPENING 1. F3 E5 2. KF2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. f3 e5 2. Kf2 in the games. Game_1 There are at least 0 results for 1. f3 e5 2. Kf2 in the forum. There are 1 results for 1. f3 e5 2. Kf2 in wikichess. Alexis Marcel (1126) f3 e5 Kf2 Ouverture jou� quelques fois par B. Fischer lors de simultan� ============ Contributors : Alexis Marcel [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f3 e5 2. Kf2&about=Hammerschlag  Fried fox Pork chop Opening",
+    "search_text": "HAMMERSCHLAG FRIED FOX PORK CHOP OPENING 1. F3 E5 2. KF2. Main Line. ECO UNK. Line 1. F3 E5 2. HAMMERSCHLAG FRIED FOX PORK CHOP OPENING 1. F3 E5 2. KF2 (Main Line). ﻿ HAMMERSCHLAG FRIED FOX PORK CHOP OPENING 1. F3 E5 2. KF2 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 1 results for 1. f3 e5 2. Kf2 in the games. Game_1 There are at least 0 results for 1. f3 e5 2. Kf2 in the forum. There are 1 results for 1. f3 e5 2. Kf2 in wikichess. Alexis Marcel (1126) f3 e5 Kf2 Ouverture jou� quelques fois par B. Fischer lors de simultan� ============ Contributors : Alexis Marcel [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat. Candidate moves:"
+  },
+  {
+    "id": "unk_gedult_s_opening_1_f3_main_line",
+    "eco": "UNK",
+    "opening": "GEDULT S OPENING 1. F3",
+    "variation": "Main Line",
+    "line_san": "1. F3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "GEDULT S OPENING 1. F3 (Main Line). ﻿ GEDULT S OPENING 1. F3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. f3 in the games. Game_151906 Game_151161 Game_150420 Game_150012 Game_149924 Game_148982 Game_148861 Game_147202 Game_147195 Game_146550 Game_146377 Game_145832 Game_145830 Game_143972 Game_143966 Game_143957 Game_143950 Game_143948 Game_143940 Game_135595 Game_134554 Game_132121 Game_129437 Game_129390 Game_126122 Game_126117 Game_126116 Game_126108 Game_126106 Game_116406 Game_116404 Game_116396 Game_113586 Game_105287 Game_101251 Game_101242 Game_96300 Game_87503 Game_86015 Game_86013 Game_86011 Game_84733 Game_8473",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f3&about=Gedult s Opening",
+    "search_text": "GEDULT S OPENING 1. F3. Main Line. ECO UNK. Line 1. F3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. GEDULT S OPENING 1. F3 (Main Line). ﻿ GEDULT S OPENING 1. F3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. f3 in the games. Game_151906 Game_151161 Game_150420 Game_150012 Game_149924 Game_148982 Game_148861 Game_147202 Game_147195 Game_146550 Game_146377 Game_145832 Game_145830 Game_143972 Game_143966 Game_143957 Game_143950 Game_143948 Game_143940 Game_135595 Game_134554 Game_132121 Game_129437 Game_129390 Game_126122 Game_126117 Game_126116 Game_126108 Game_126106 Game_116406 Game_116404 Game_116396 Game_113586 Game_105287 Game_101251 Game_101242 Game_96300 Game_87503 Game_86015 Game_86013 Game_86011 Game_84733 Game_8473. Candidate moves:"
+  },
+  {
+    "id": "unk_bird_s_opening_lasker_variation_1_f4_d5_2_nf3_nf6_3_e3_c5_main_line",
+    "eco": "UNK",
+    "opening": "BIRD S OPENING LASKER VARIATION 1. F4 D5 2. NF3 NF6 3. E3 C5",
+    "variation": "Main Line",
+    "line_san": "1. F4 D5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BIRD S OPENING LASKER VARIATION 1. F4 D5 2. NF3 NF6 3. E3 C5 (Main Line). ﻿ BIRD S OPENING LASKER VARIATION 1. F4 D5 2. NF3 NF6 3. E3 C5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 24 results for 1. f4 d5 2. Nf3 Nf6 3. e3 c5 in the games. Game_148424 Game_147403 Game_138673 Game_129249 Game_129197 Game_126692 Game_122333 Game_120868 Game_120059 Game_119006 Game_113978 Game_107954 Game_107939 Game_107007 Game_86747 Game_53312 Game_50512 Game_43819 Game_32196 Game_25468 Game_15677 Game_10522 Game_8960 Game_1 There are at least 0 results for 1. f4 d5 2. Nf3 Nf6 3. e3 c5 in the forum. There are 1 results for 1. f4 d5 2. Nf3 Nf6 3. e3 c5 in wikichess. Gregory Kohut (1592) f4 d5 Nf3",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f4 d5 2. Nf3 Nf6 3. e3 c5&about=Bird s Opening   Lasker variation",
+    "search_text": "BIRD S OPENING LASKER VARIATION 1. F4 D5 2. NF3 NF6 3. E3 C5. Main Line. ECO UNK. Line 1. F4 D5 2. BIRD S OPENING LASKER VARIATION 1. F4 D5 2. NF3 NF6 3. E3 C5 (Main Line). ﻿ BIRD S OPENING LASKER VARIATION 1. F4 D5 2. NF3 NF6 3. E3 C5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 24 results for 1. f4 d5 2. Nf3 Nf6 3. e3 c5 in the games. Game_148424 Game_147403 Game_138673 Game_129249 Game_129197 Game_126692 Game_122333 Game_120868 Game_120059 Game_119006 Game_113978 Game_107954 Game_107939 Game_107007 Game_86747 Game_53312 Game_50512 Game_43819 Game_32196 Game_25468 Game_15677 Game_10522 Game_8960 Game_1 There are at least 0 results for 1. f4 d5 2. Nf3 Nf6 3. e3 c5 in the forum. There are 1 results for 1. f4 d5 2. Nf3 Nf6 3. e3 c5 in wikichess. Gregory Kohut (1592) f4 d5 Nf3. Candidate moves:"
+  },
+  {
+    "id": "unk_mujannah_opening_1_f4_d5_2_c4_main_line",
+    "eco": "UNK",
+    "opening": "MUJANNAH OPENING 1. F4 D5 2. C4",
+    "variation": "Main Line",
+    "line_san": "1. F4 D5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "MUJANNAH OPENING 1. F4 D5 2. C4 (Main Line). ﻿ MUJANNAH OPENING 1. F4 D5 2. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 41 results for 1. f4 d5 2. c4 in the games. Game_90830 Game_90829 Game_90828 Game_90827 Game_90826 Game_90825 Game_90824 Game_90823 Game_90822 Game_90821 Game_90820 Game_90819 Game_90818 Game_90817 Game_90816 Game_90815 Game_90814 Game_90813 Game_90812 Game_90811 Game_90810 Game_50019 Game_49580 Game_47800 Game_47798 Game_47796 Game_46603 Game_46601 Game_46111 Game_44672 Game_44247 Game_43622 Game_43620 Game_43618 Game_42540 Game_41994 Game_41610 Game_41344 Game_40626 Game_40622 Game_1 There are at least 0 results for 1. f4 d5 2",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f4 d5 2. c4&about=Mujannah Opening",
+    "search_text": "MUJANNAH OPENING 1. F4 D5 2. C4. Main Line. ECO UNK. Line 1. F4 D5 2. MUJANNAH OPENING 1. F4 D5 2. C4 (Main Line). ﻿ MUJANNAH OPENING 1. F4 D5 2. C4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 41 results for 1. f4 d5 2. c4 in the games. Game_90830 Game_90829 Game_90828 Game_90827 Game_90826 Game_90825 Game_90824 Game_90823 Game_90822 Game_90821 Game_90820 Game_90819 Game_90818 Game_90817 Game_90816 Game_90815 Game_90814 Game_90813 Game_90812 Game_90811 Game_90810 Game_50019 Game_49580 Game_47800 Game_47798 Game_47796 Game_46603 Game_46601 Game_46111 Game_44672 Game_44247 Game_43622 Game_43620 Game_43618 Game_42540 Game_41994 Game_41610 Game_41344 Game_40626 Game_40622 Game_1 There are at least 0 results for 1. f4 d5 2. Candidate moves:"
+  },
+  {
+    "id": "unk_bird_s_opening_williams_gambit_1_f4_d5_2_e4_main_line",
+    "eco": "UNK",
+    "opening": "BIRD S OPENING WILLIAMS GAMBIT 1. F4 D5 2. E4",
+    "variation": "Main Line",
+    "line_san": "1. F4 D5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BIRD S OPENING WILLIAMS GAMBIT 1. F4 D5 2. E4 (Main Line). ﻿ BIRD S OPENING WILLIAMS GAMBIT 1. F4 D5 2. E4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. f4 d5 2. e4 in the games. Game_1362 Game_1 There are at least 0 results for 1. f4 d5 2. e4 in the forum. There are 0 results for 1. f4 d5 2. e4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news & buzz : discover the",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f4 d5 2. e4&about=Bird s Opening   Williams gambit",
+    "search_text": "BIRD S OPENING WILLIAMS GAMBIT 1. F4 D5 2. E4. Main Line. ECO UNK. Line 1. F4 D5 2. BIRD S OPENING WILLIAMS GAMBIT 1. F4 D5 2. E4 (Main Line). ﻿ BIRD S OPENING WILLIAMS GAMBIT 1. F4 D5 2. E4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. f4 d5 2. e4 in the games. Game_1362 Game_1 There are at least 0 results for 1. f4 d5 2. e4 in the forum. There are 0 results for 1. f4 d5 2. e4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news & buzz : discover the. Candidate moves:"
+  },
+  {
+    "id": "unk_bird_s_opening_1_f4_d5_main_line",
+    "eco": "UNK",
+    "opening": "BIRD S OPENING 1. F4 D5",
+    "variation": "Main Line",
+    "line_san": "1. F4 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BIRD S OPENING 1. F4 D5 (Main Line). ﻿ BIRD S OPENING 1. F4 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. f4 d5 in the games. Game_151908 Game_151163 Game_150785 Game_150644 Game_150630 Game_150178 Game_150140 Game_150014 Game_149740 Game_149520 Game_149206 Game_149077 Game_148871 Game_148830 Game_148779 Game_148467 Game_148434 Game_148432 Game_148424 Game_148278 Game_147838 Game_147834 Game_147827 Game_147800 Game_147709 Game_147695 Game_147646 Game_147635 Game_147425 Game_147416 Game_147403 Game_146386 Game_145310 Game_144354 Game_144339 Game_142729 Game_141530 Game_141525 Game_141516 Game_141128 Game_140132 Game_140123",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f4 d5&about=Bird s Opening",
+    "search_text": "BIRD S OPENING 1. F4 D5. Main Line. ECO UNK. Line 1. F4 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems. BIRD S OPENING 1. F4 D5 (Main Line). ﻿ BIRD S OPENING 1. F4 D5 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. f4 d5 in the games. Game_151908 Game_151163 Game_150785 Game_150644 Game_150630 Game_150178 Game_150140 Game_150014 Game_149740 Game_149520 Game_149206 Game_149077 Game_148871 Game_148830 Game_148779 Game_148467 Game_148434 Game_148432 Game_148424 Game_148278 Game_147838 Game_147834 Game_147827 Game_147800 Game_147709 Game_147695 Game_147646 Game_147635 Game_147425 Game_147416 Game_147403 Game_146386 Game_145310 Game_144354 Game_144339 Game_142729 Game_141530 Game_141525 Game_141516 Game_141128 Game_140132 Game_140123. Candidate moves:"
+  },
+  {
+    "id": "unk_bird_s_opening_swiss_gambit_1_f4_f5_2_e4_fxe4_3_nc3_nf6_4_g4_main_line",
+    "eco": "UNK",
+    "opening": "BIRD S OPENING SWISS GAMBIT 1. F4 F5 2. E4 FXE4 3. NC3 NF6 4. G4",
+    "variation": "Main Line",
+    "line_san": "1. F4 F5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BIRD S OPENING SWISS GAMBIT 1. F4 F5 2. E4 FXE4 3. NC3 NF6 4. G4 (Main Line). ﻿ BIRD S OPENING SWISS GAMBIT 1. F4 F5 2. E4 FXE4 3. NC3 NF6 4. G4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4 in the games. Game_48020 Game_1 There are at least 0 results for 1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4 in the forum. There are 0 results for 1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network :",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4&about=Bird s Opening  Swiss gambit",
+    "search_text": "BIRD S OPENING SWISS GAMBIT 1. F4 F5 2. E4 FXE4 3. NC3 NF6 4. G4. Main Line. ECO UNK. Line 1. F4 F5 2. BIRD S OPENING SWISS GAMBIT 1. F4 F5 2. E4 FXE4 3. NC3 NF6 4. G4 (Main Line). ﻿ BIRD S OPENING SWISS GAMBIT 1. F4 F5 2. E4 FXE4 3. NC3 NF6 4. G4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 2 results for 1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4 in the games. Game_48020 Game_1 There are at least 0 results for 1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4 in the forum. There are 0 results for 1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network :. Candidate moves:"
+  },
+  {
+    "id": "unk_bird_s_opening_1_f4_main_line",
+    "eco": "UNK",
+    "opening": "BIRD S OPENING 1. F4",
+    "variation": "Main Line",
+    "line_san": "1. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BIRD S OPENING 1. F4 (Main Line). ﻿ BIRD S OPENING 1. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. f4 in the games. Game_152033 Game_151914 Game_151908 Game_151476 Game_151440 Game_151163 Game_150983 Game_150981 Game_150785 Game_150783 Game_150773 Game_150644 Game_150639 Game_150630 Game_150427 Game_150408 Game_150402 Game_150393 Game_150178 Game_150172 Game_150163 Game_150157 Game_150152 Game_150151 Game_150150 Game_150142 Game_150140 Game_150057 Game_150014 Game_149740 Game_149520 Game_149208 Game_149206 Game_149198 Game_149077 Game_148871 Game_148840 Game_148836 Game_148830 Game_148821 Game_148794 Game_148788 Game_",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. f4&about=Bird s Opening",
+    "search_text": "BIRD S OPENING 1. F4. Main Line. ECO UNK. Line 1. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. BIRD S OPENING 1. F4 (Main Line). ﻿ BIRD S OPENING 1. F4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. f4 in the games. Game_152033 Game_151914 Game_151908 Game_151476 Game_151440 Game_151163 Game_150983 Game_150981 Game_150785 Game_150783 Game_150773 Game_150644 Game_150639 Game_150630 Game_150427 Game_150408 Game_150402 Game_150393 Game_150178 Game_150172 Game_150163 Game_150157 Game_150152 Game_150151 Game_150150 Game_150142 Game_150140 Game_150057 Game_150014 Game_149740 Game_149520 Game_149208 Game_149206 Game_149198 Game_149077 Game_148871 Game_148840 Game_148836 Game_148830 Game_148821 Game_148794 Game_148788 Game_. Candidate moves:"
+  },
+  {
+    "id": "unk_benko_s_opening_reversed_alekhine_1_g3_e5_2_nf3_main_line",
+    "eco": "UNK",
+    "opening": "BENKO S OPENING REVERSED ALEKHINE 1. G3 E5 2. NF3",
+    "variation": "Main Line",
+    "line_san": "1. G3 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BENKO S OPENING REVERSED ALEKHINE 1. G3 E5 2. NF3 (Main Line). ﻿ BENKO S OPENING REVERSED ALEKHINE 1. G3 E5 2. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 3 results for 1. g3 e5 2. Nf3 in the games. Game_151930 Game_77754 Game_1 There are at least 0 results for 1. g3 e5 2. Nf3 in the forum. There are 1 results for 1. g3 e5 2. Nf3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news &",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. g3 e5 2. Nf3&about=Benko s Opening   reversed Alekhine",
+    "search_text": "BENKO S OPENING REVERSED ALEKHINE 1. G3 E5 2. NF3. Main Line. ECO UNK. Line 1. G3 E5 2. BENKO S OPENING REVERSED ALEKHINE 1. G3 E5 2. NF3 (Main Line). ﻿ BENKO S OPENING REVERSED ALEKHINE 1. G3 E5 2. NF3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 3 results for 1. g3 e5 2. Nf3 in the games. Game_151930 Game_77754 Game_1 There are at least 0 results for 1. g3 e5 2. Nf3 in the forum. There are 1 results for 1. g3 e5 2. Nf3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, discuss with your friends... Hot news &. Candidate moves:"
+  },
+  {
+    "id": "unk_benko_s_opening_1_g3_main_line",
+    "eco": "UNK",
+    "opening": "BENKO S OPENING 1. G3",
+    "variation": "Main Line",
+    "line_san": "1. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "BENKO S OPENING 1. G3 (Main Line). ﻿ BENKO S OPENING 1. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. g3 in the games. Game_152051 Game_152049 Game_152047 Game_151930 Game_151785 Game_151609 Game_151607 Game_151605 Game_150431 Game_149876 Game_149874 Game_149864 Game_149666 Game_149253 Game_149167 Game_148873 Game_148675 Game_148673 Game_148671 Game_148571 Game_148530 Game_148486 Game_148484 Game_148482 Game_148480 Game_148262 Game_148086 Game_146883 Game_146836 Game_146830 Game_146821 Game_146603 Game_146392 Game_146185 Game_146178 Game_144844 Game_144528 Game_144479 Game_144477 Game_142360 Game_142087 Game_141843 Game",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. g3&about=Benko s Opening",
+    "search_text": "BENKO S OPENING 1. G3. Main Line. ECO UNK. Line 1. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. BENKO S OPENING 1. G3 (Main Line). ﻿ BENKO S OPENING 1. G3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 100 results for 1. g3 in the games. Game_152051 Game_152049 Game_152047 Game_151930 Game_151785 Game_151609 Game_151607 Game_151605 Game_150431 Game_149876 Game_149874 Game_149864 Game_149666 Game_149253 Game_149167 Game_148873 Game_148675 Game_148673 Game_148671 Game_148571 Game_148530 Game_148486 Game_148484 Game_148482 Game_148480 Game_148262 Game_148086 Game_146883 Game_146836 Game_146830 Game_146821 Game_146603 Game_146392 Game_146185 Game_146178 Game_144844 Game_144528 Game_144479 Game_144477 Game_142360 Game_142087 Game_141843 Game. Candidate moves:"
+  },
+  {
+    "id": "a00_global_opening_main_line",
+    "eco": "A00",
+    "opening": "Global Opening",
+    "variation": "Main Line",
+    "line_san": "1. H3 E5 2",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "Global Opening (Main Line). ﻿ GLOBAL OPENING 1. H3 E5 2. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 8 results for 1. h3 e5 2. a3 in the games. Game_127101 Game_121357 Game_121355 Game_107903 Game_100925 Game_100406 Game_50333 Game_1 There are at least 0 results for 1. h3 e5 2. a3 in the forum. There are 1 results for 1. h3 e5 2. a3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, dis",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. h3 e5 2. a3&about=Global Opening",
+    "search_text": "Global Opening. Main Line. ECO A00. Line 1. H3 E5 2. Global Opening (Main Line). ﻿ GLOBAL OPENING 1. H3 E5 2. A3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 8 results for 1. h3 e5 2. a3 in the games. Game_127101 Game_121357 Game_121355 Game_107903 Game_100925 Game_100406 Game_50333 Game_1 There are at least 0 results for 1. h3 e5 2. a3 in the forum. There are 1 results for 1. h3 e5 2. a3 in wikichess. [ Chess forum ] [ Rating lists ] [ Countries ] [ Chess openings ] [ Legal informations ] [ Contact ] [ Social network ] [ Hot news ] [ Discussions ] [ Seo forums ] [ Meet people ] [ Directory ] Message Chat Support to all people under attack Social network : create your photo albums, dis. Candidate moves:"
+  },
+  {
+    "id": "unk_clemenz_mead_s_basman_s_or_de_klerk_s_opening_1_h3_main_line",
+    "eco": "UNK",
+    "opening": "CLEMENZ MEAD S BASMAN S OR DE KLERK S OPENING 1. H3",
+    "variation": "Main Line",
+    "line_san": "1. H3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "CLEMENZ MEAD S BASMAN S OR DE KLERK S OPENING 1. H3 (Main Line). ﻿ CLEMENZ MEAD S BASMAN S OR DE KLERK S OPENING 1. H3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 78 results for 1. h3 in the games. Game_152213 Game_151619 Game_151615 Game_151608 Game_150447 Game_150056 Game_150054 Game_150052 Game_149948 Game_149061 Game_148096 Game_146730 Game_146410 Game_141563 Game_135639 Game_134849 Game_134598 Game_127101 Game_126818 Game_126354 Game_126349 Game_126340 Game_122958 Game_121357 Game_121355 Game_117824 Game_107903 Game_105191 Game_104649 Game_104647 Game_104645 Game_103001 Game_102179 Game_100925 Game_100406 Game_99090 Game_97301 Game_93772 Game_93768 Game_93761 Game",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. h3&about=Clemenz  Mead s  Basman s or de Klerk s  Opening",
+    "search_text": "CLEMENZ MEAD S BASMAN S OR DE KLERK S OPENING 1. H3. Main Line. ECO UNK. Line 1. H3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. CLEMENZ MEAD S BASMAN S OR DE KLERK S OPENING 1. H3 (Main Line). ﻿ CLEMENZ MEAD S BASMAN S OR DE KLERK S OPENING 1. H3 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 78 results for 1. h3 in the games. Game_152213 Game_151619 Game_151615 Game_151608 Game_150447 Game_150056 Game_150054 Game_150052 Game_149948 Game_149061 Game_148096 Game_146730 Game_146410 Game_141563 Game_135639 Game_134849 Game_134598 Game_127101 Game_126818 Game_126354 Game_126349 Game_126340 Game_122958 Game_121357 Game_121355 Game_117824 Game_107903 Game_105191 Game_104649 Game_104647 Game_104645 Game_103001 Game_102179 Game_100925 Game_100406 Game_99090 Game_97301 Game_93772 Game_93768 Game_93761 Game. Candidate moves:"
+  },
+  {
+    "id": "unk_anti_borg_desprez_opening_1_h4_main_line",
+    "eco": "UNK",
+    "opening": "ANTI BORG DESPREZ OPENING 1. H4",
+    "variation": "Main Line",
+    "line_san": "1. H4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum",
+    "position_fen": "",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "ANTI BORG DESPREZ OPENING 1. H4 (Main Line). ﻿ ANTI BORG DESPREZ OPENING 1. H4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 69 results for 1. h4 in the games. Game_152219 Game_150449 Game_150071 Game_149958 Game_149063 Game_148593 Game_147167 Game_146732 Game_146412 Game_134888 Game_134882 Game_134873 Game_134851 Game_134600 Game_134527 Game_132837 Game_125028 Game_120429 Game_107325 Game_104452 Game_96777 Game_96775 Game_96773 Game_96547 Game_96545 Game_96535 Game_92864 Game_92497 Game_84641 Game_68890 Game_68535 Game_67056 Game_53419 Game_47001 Game_39942 Game_38320 Game_38315 Game_38306 Game_31380 Game_31378 Game_31370 Game_28139 Game_28137 Game_2",
+    "source_url": "https://ficgs.com/index.php?page=search&keyword=1. h4&about=Anti Borg  Desprez  Opening",
+    "search_text": "ANTI BORG DESPREZ OPENING 1. H4. Main Line. ECO UNK. Line 1. H4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum. ANTI BORG DESPREZ OPENING 1. H4 (Main Line). ﻿ ANTI BORG DESPREZ OPENING 1. H4 - Search Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Search Here are 69 results for 1. h4 in the games. Game_152219 Game_150449 Game_150071 Game_149958 Game_149063 Game_148593 Game_147167 Game_146732 Game_146412 Game_134888 Game_134882 Game_134873 Game_134851 Game_134600 Game_134527 Game_132837 Game_125028 Game_120429 Game_107325 Game_104452 Game_96777 Game_96775 Game_96773 Game_96547 Game_96545 Game_96535 Game_92864 Game_92497 Game_84641 Game_68890 Game_68535 Game_67056 Game_53419 Game_47001 Game_39942 Game_38320 Game_38315 Game_38306 Game_31380 Game_31378 Game_31370 Game_28139 Game_28137 Game_2. Candidate moves:"
+  },
+  {
+    "id": "unk_ficgs_main_line",
+    "eco": "UNK",
+    "opening": "FICGS",
+    "variation": "Main Line",
+    "line_san": "1.e4 a6",
+    "position_fen": "rnbqkbnr/1ppppppp/p7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+    "candidate_moves": [],
+    "stats": {
+      "games": 0,
+      "white_win": 0.0,
+      "draw": 0.0,
+      "black_win": 0.0
+    },
+    "explanation": "FICGS (Main Line). ﻿ FICGS - Wikichess - Article 897 Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Wikichess Wikichess (open chess repertoire project) now contains 267298 articles. 8 7 6 5 4 3 2 1 a b c d e f g h Moves : c4 f4 Bc4 Nf3 d4 ( back ) Position after : a6 , last edited by Normajean Yates (1946) [2008 November 19] Kasparov - Tony Miles 0-1 starting 1.e4 a6. ============ Contributors : Dirk Jan Van Dijl, Normajean Yates [ECO \"B00\"] [Opening \"St. George (Baker) defense\"] d4 : 70 games, White ELO av : 1822, Black ELO av : 1781 1-0 : 60% , 1/2-1/2 : 20% , 0-1 : 20% Nf3 : 9 games, White ELO av : 1642, Black ELO av : 1689 1-0 : 33.3% , 1/2-1/2 :",
+    "source_url": "https://ficgs.com/wikichess_897.html",
+    "search_text": "FICGS. Main Line. ECO UNK. Line 1.e4 a6. FICGS (Main Line). ﻿ FICGS - Wikichess - Article 897 Home Information Login Register Waiting lists Membership Hall of fame Tournaments Best game Wikichess Rating list Problems Forum Links Help About Install FICGS apps play chess online Game result (big chess) Y. Aahlad, 2035 H. Kruse, 2281 0-1 See game 152200 Hot news Discussions Files search Social network Wikichess Wikichess (open chess repertoire project) now contains 267298 articles. 8 7 6 5 4 3 2 1 a b c d e f g h Moves : c4 f4 Bc4 Nf3 d4 ( back ) Position after : a6 , last edited by Normajean Yates (1946) [2008 November 19] Kasparov - Tony Miles 0-1 starting 1.e4 a6. ============ Contributors : Dirk Jan Van Dijl, Normajean Yates [ECO \"B00\"] [Opening \"St. George (Baker) defense\"] d4 : 70 games, White ELO av : 1822, Black ELO av : 1781 1-0 : 60% , 1/2-1/2 : 20% , 0-1 : 20% Nf3 : 9 games, White ELO av : 1642, Black ELO av : 1689 1-0 : 33.3% , 1/2-1/2 :. Candidate moves:"
   }
 ]

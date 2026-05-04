@@ -29,7 +29,7 @@ def get_bool_env(var_name: str, default: bool = False) -> bool:
 
 
 class Settings:
-
+    
     # ================================
     # ♟️ LICHESS
     # ================================
@@ -97,6 +97,10 @@ class Settings:
         "BACKEND_INTERNAL_URL",
         "http://backend:8000",
     )
+    
+    BACKEND_CORS_ORIGINS: list[str] = [
+        "http://localhost:4200",
+    ]
 
     # ================================
     # ⚙️ APPLICATION

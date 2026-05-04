@@ -3,23 +3,23 @@
 """
 Endpoint pour récupérer les coups théoriques.
 
-Utilise l'agent LangGraph mais filtre uniquement
-les résultats issus de Lichess.
+Utilise l'agent LangGraph mais retourne uniquement
+les résultats issus de la théorie d'ouverture (Lichess).
 """
 
 from fastapi import APIRouter, HTTPException
 
-# from backend.app.agents.langgraph_agent import run_agent
 from app.agents.langgraph_agent import run_agent
+
 
 router = APIRouter(
     prefix="/moves",
-    tags=["Moves"]
+    tags=["Moves"],
 )
 
 
-@router.get("/{fen}")
-def get_moves(fen: str):
+@router.get("/{fen:path}")
+async def get_moves(fen: str):
     """
     Récupère les coups théoriques d'une position.
 
@@ -27,14 +27,13 @@ def get_moves(fen: str):
         fen (str): position FEN
 
     Returns:
-        dict: liste des coups
+        dict: liste des coups théoriques
     """
-
     try:
-        result = run_agent(fen)
+        result = await run_agent(fen)
 
-        # Erreur FEN
-        if "error" in result and result["error"]:
+        # Erreur FEN / erreur métier
+        if result.get("error"):
             raise HTTPException(status_code=400, detail=result["error"])
 
         # Si pas de théorie disponible
@@ -42,13 +41,16 @@ def get_moves(fen: str):
             return {
                 "fen": fen,
                 "moves": [],
-                "message": "Position hors théorie (fallback Stockfish disponible via /agent)"  # noqa: E501
+                "message": "Position hors théorie (fallback Stockfish disponible via /agent)",
             }
 
         return {
             "fen": fen,
-            "moves": result.get("moves", [])
+            "moves": result.get("moves", []),
         }
+
+    except HTTPException:
+        raise
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

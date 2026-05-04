@@ -23,7 +23,7 @@ router = APIRouter(
 )
 
 
-@router.get("/analyze/{fen}")
+@router.get("/analyze/{fen:path}")
 async def analyze_position(fen: str):
     """
     Analyse complète d'une position via LangGraph.

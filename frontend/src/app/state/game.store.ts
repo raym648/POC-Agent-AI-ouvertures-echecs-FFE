@@ -5,8 +5,8 @@ import { AgentResponse } from '../core/models/agent.model';
 
 @Injectable({ providedIn: 'root' })
 export class GameStore {
-
-  fen = signal<string>('start');
+  // FEN initial standard (équivalent à new Chess().fen())
+  fen = signal<string>('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1');
 
   data = signal<AgentResponse | null>(null);
 

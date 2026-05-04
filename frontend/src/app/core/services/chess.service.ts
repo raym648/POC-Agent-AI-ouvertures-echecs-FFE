@@ -5,8 +5,7 @@ import { Chess } from 'chess.js';
 
 @Injectable({ providedIn: 'root' })
 export class ChessService {
-
-  private chess = new Chess();
+  private readonly chess = new Chess();
 
   getFen(): string {
     return this.chess.fen();
