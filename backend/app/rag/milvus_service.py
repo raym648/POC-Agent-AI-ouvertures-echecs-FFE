@@ -1,13 +1,16 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/rag/milvus_service.py
 
 """
-Service de gestion de Milvus.
-Responsable de :
-- Connexion à la base
-- Création de collection
-- Insertion de données
-- Recherche vectorielle
+Service de gestion Milvus pour le RAG.
+
+Responsabilités :
+- Connexion à Milvus
+- Création / chargement de collection
+- Insertion validée
+- Recherche vectorielle robuste
 """
+
+from __future__ import annotations
 
 from typing import List, Dict
 
@@ -24,12 +27,15 @@ from app.core.config import settings
 
 
 class MilvusService:
+    def __init__(self) -> None:
+        self.collection_name = settings.VECTOR_COLLECTION_NAME
+        self.vector_dim = settings.VECTOR_DIMENSION
 
-    def __init__(self):
-        self.connect()
+        self._connect()
         self.collection = self._get_or_create_collection()
+        self.collection.load()
 
-    def connect(self):
+    def _connect(self) -> None:
         connections.connect(
             alias="default",
             host=settings.MILVUS_HOST,
@@ -37,10 +43,9 @@ class MilvusService:
         )
 
     def _get_or_create_collection(self) -> Collection:
-        collection_name = settings.VECTOR_COLLECTION_NAME
-
-        if utility.has_collection(collection_name):
-            return Collection(collection_name)
+        if utility.has_collection(self.collection_name):
+            collection = Collection(self.collection_name)
+            return collection
 
         fields = [
             FieldSchema(
@@ -52,19 +57,22 @@ class MilvusService:
             FieldSchema(
                 name="text",
                 dtype=DataType.VARCHAR,
-                max_length=2000,
+                max_length=4096,
             ),
             FieldSchema(
                 name="embedding",
                 dtype=DataType.FLOAT_VECTOR,
-                dim=settings.VECTOR_DIMENSION,
+                dim=self.vector_dim,
             ),
         ]
 
-        schema = CollectionSchema(fields)
+        schema = CollectionSchema(
+            fields=fields,
+            description="Chess openings vector store",
+        )
 
         collection = Collection(
-            name=collection_name,
+            name=self.collection_name,
             schema=schema,
         )
 
@@ -79,27 +87,107 @@ class MilvusService:
 
         return collection
 
-    def insert_data(self, texts: List[str], embeddings: List[List[float]]):
-        self.collection.insert([texts, embeddings])
-        self.collection.flush()
+    def insert_data(self, texts: List[str], embeddings: List[List[float]]) -> int:
+        """
+        Insère des documents vectorisés dans Milvus.
 
-    def search(self, query_embedding: List[float], top_k: int) -> List[Dict]:
+        Args:
+            texts: documents textuels canoniques
+            embeddings: embeddings associés
+
+        Returns:
+            int: nombre de documents insérés
+        """
+        if not texts:
+            raise ValueError("No texts provided for insertion.")
+
+        if not embeddings:
+            raise ValueError("No embeddings provided for insertion.")
+
+        if len(texts) != len(embeddings):
+            raise ValueError("texts and embeddings must have the same length.")
+
+        sanitized_texts: List[str] = []
+        sanitized_embeddings: List[List[float]] = []
+
+        for text, embedding in zip(texts, embeddings):
+            if not text or not text.strip():
+                continue
+
+            if not embedding:
+                continue
+
+            if len(embedding) != self.vector_dim:
+                raise ValueError(
+                    f"Invalid embedding dimension: expected {self.vector_dim}, got {len(embedding)}"
+                )
+
+            sanitized_texts.append(text.strip()[:4096])
+            sanitized_embeddings.append(embedding)
+
+        if not sanitized_texts:
+            raise ValueError("No valid documents to insert after sanitization.")
+
+        before_count = self.collection.num_entities
+
+        self.collection.insert(
+            [
+                sanitized_texts,       # text
+                sanitized_embeddings,  # embedding
+            ]
+        )
+        self.collection.flush()
+        self.collection.load()
+
+        after_count = self.collection.num_entities
+        inserted_count = after_count - before_count
+
+        return inserted_count
+
+    def search(self, query_embedding: List[float], top_k: int = 3) -> List[Dict]:
+        """
+        Recherche vectorielle.
+
+        Args:
+            query_embedding: embedding de la requête
+            top_k: nombre max de résultats
+
+        Returns:
+            List[Dict]
+        """
+        if not query_embedding:
+            return []
+
+        if len(query_embedding) != self.vector_dim:
+            raise ValueError(
+                f"Invalid query embedding dimension: expected {self.vector_dim}, got {len(query_embedding)}"
+            )
+
         self.collection.load()
 
         results = self.collection.search(
             data=[query_embedding],
             anns_field="embedding",
-            param={"metric_type": "COSINE", "params": {"nprobe": 10}},
+            param={
+                "metric_type": "COSINE",
+                "params": {"nprobe": 10},
+            },
             limit=top_k,
             output_fields=["text"],
         )
 
-        output = []
+        output: List[Dict] = []
+
         for hits in results:
             for hit in hits:
+                text = hit.entity.get("text")
+
+                if not text:
+                    continue
+
                 output.append(
                     {
-                        "text": hit.entity.get("text"),
+                        "text": text,
                         "score": float(hit.score),
                     }
                 )

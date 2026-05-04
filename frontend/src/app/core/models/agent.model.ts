@@ -1,9 +1,10 @@
 // POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/core/models/agent.model.ts
 
-// Interface représentant la réponse exacte du backend
+// Contrat frontend aligné sur les réponses backend.
+// Les champs optionnels reflètent les réponses partielles / dégradées.
 
 export interface Move {
-  san: string; // coup en notation algébrique
+  san: string;
 }
 
 export interface Evaluation {
@@ -22,8 +23,9 @@ export interface Video {
 
 export interface AgentResponse {
   fen: string;
-  source: 'lichess' | 'stockfish';
-  type: 'theory' | 'evaluation';
+
+  source?: 'lichess' | 'stockfish' | null;
+  type?: 'theory' | 'evaluation';
 
   moves?: Move[];
   evaluation?: Evaluation;
