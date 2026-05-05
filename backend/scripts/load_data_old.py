@@ -19,11 +19,10 @@ import json
 from pathlib import Path
 from typing import List
 
-from backend.app.rag.embedding_service import embedding_service
-from backend.app.rag.milvus_service import milvus_service
+from app.rag.embedding_service import embedding_service
+from app.rag.milvus_service import milvus_service
 
-
-DATASET_PATH = Path("data/chess/wikichess_sample.json")
+DATASET_PATH = Path("./data/chess/wikichess_sample.json")
 
 
 def load_dataset(path: Path) -> List[dict]:

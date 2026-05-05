@@ -12,14 +12,14 @@ Responsabilités :
 
 from __future__ import annotations
 
-from typing import List, Dict
+from typing import Any, Dict, List
 
 from pymilvus import (
-    connections,
     Collection,
-    FieldSchema,
     CollectionSchema,
     DataType,
+    FieldSchema,
+    connections,
     utility,
 )
 
@@ -44,15 +44,49 @@ class MilvusService:
 
     def _get_or_create_collection(self) -> Collection:
         if utility.has_collection(self.collection_name):
-            collection = Collection(self.collection_name)
-            return collection
+            return Collection(self.collection_name)
 
         fields = [
             FieldSchema(
-                name="id",
+                name="pk",
                 dtype=DataType.INT64,
                 is_primary=True,
                 auto_id=True,
+            ),
+            FieldSchema(
+                name="doc_id",
+                dtype=DataType.VARCHAR,
+                max_length=256,
+            ),
+            FieldSchema(
+                name="eco",
+                dtype=DataType.VARCHAR,
+                max_length=16,
+            ),
+            FieldSchema(
+                name="opening",
+                dtype=DataType.VARCHAR,
+                max_length=256,
+            ),
+            FieldSchema(
+                name="variation",
+                dtype=DataType.VARCHAR,
+                max_length=256,
+            ),
+            FieldSchema(
+                name="line_san",
+                dtype=DataType.VARCHAR,
+                max_length=1024,
+            ),
+            FieldSchema(
+                name="position_fen",
+                dtype=DataType.VARCHAR,
+                max_length=256,
+            ),
+            FieldSchema(
+                name="source_url",
+                dtype=DataType.VARCHAR,
+                max_length=1024,
             ),
             FieldSchema(
                 name="text",
@@ -87,73 +121,70 @@ class MilvusService:
 
         return collection
 
-    def insert_data(self, texts: List[str], embeddings: List[List[float]]) -> int:
+    def insert_data(self, documents: List[Dict[str, Any]], embeddings: List[List[float]]) -> int:
         """
-        Insère des documents vectorisés dans Milvus.
-
-        Args:
-            texts: documents textuels canoniques
-            embeddings: embeddings associés
-
-        Returns:
-            int: nombre de documents insérés
+        Insère des documents métier vectorisés dans Milvus.
         """
-        if not texts:
-            raise ValueError("No texts provided for insertion.")
+        if not documents:
+            raise ValueError("No documents provided for insertion.")
 
         if not embeddings:
             raise ValueError("No embeddings provided for insertion.")
 
-        if len(texts) != len(embeddings):
-            raise ValueError("texts and embeddings must have the same length.")
+        if len(documents) != len(embeddings):
+            raise ValueError("documents and embeddings must have the same length.")
 
-        sanitized_texts: List[str] = []
-        sanitized_embeddings: List[List[float]] = []
+        doc_ids: List[str] = []
+        ecos: List[str] = []
+        openings: List[str] = []
+        variations: List[str] = []
+        lines_san: List[str] = []
+        positions_fen: List[str] = []
+        source_urls: List[str] = []
+        texts: List[str] = []
+        vectors: List[List[float]] = []
 
-        for text, embedding in zip(texts, embeddings):
-            if not text or not text.strip():
-                continue
-
-            if not embedding:
-                continue
-
+        for doc, embedding in zip(documents, embeddings):
             if len(embedding) != self.vector_dim:
                 raise ValueError(
                     f"Invalid embedding dimension: expected {self.vector_dim}, got {len(embedding)}"
                 )
 
-            sanitized_texts.append(text.strip()[:4096])
-            sanitized_embeddings.append(embedding)
-
-        if not sanitized_texts:
-            raise ValueError("No valid documents to insert after sanitization.")
+            doc_ids.append(doc["doc_id"])
+            ecos.append(doc["eco"])
+            openings.append(doc["opening"])
+            variations.append(doc["variation"])
+            lines_san.append(doc["line_san"])
+            positions_fen.append(doc["position_fen"])
+            source_urls.append(doc["source_url"])
+            texts.append(doc["text"])
+            vectors.append(embedding)
 
         before_count = self.collection.num_entities
 
         self.collection.insert(
             [
-                sanitized_texts,       # text
-                sanitized_embeddings,  # embedding
+                doc_ids,
+                ecos,
+                openings,
+                variations,
+                lines_san,
+                positions_fen,
+                source_urls,
+                texts,
+                vectors,
             ]
         )
+
         self.collection.flush()
         self.collection.load()
 
         after_count = self.collection.num_entities
-        inserted_count = after_count - before_count
+        return after_count - before_count
 
-        return inserted_count
-
-    def search(self, query_embedding: List[float], top_k: int = 3) -> List[Dict]:
+    def search(self, query_embedding: List[float], top_k: int = 3) -> List[Dict[str, Any]]:
         """
         Recherche vectorielle.
-
-        Args:
-            query_embedding: embedding de la requête
-            top_k: nombre max de résultats
-
-        Returns:
-            List[Dict]
         """
         if not query_embedding:
             return []
@@ -163,8 +194,6 @@ class MilvusService:
                 f"Invalid query embedding dimension: expected {self.vector_dim}, got {len(query_embedding)}"
             )
 
-        self.collection.load()
-
         results = self.collection.search(
             data=[query_embedding],
             anns_field="embedding",
@@ -173,21 +202,32 @@ class MilvusService:
                 "params": {"nprobe": 10},
             },
             limit=top_k,
-            output_fields=["text"],
+            output_fields=[
+                "doc_id",
+                "eco",
+                "opening",
+                "variation",
+                "line_san",
+                "position_fen",
+                "source_url",
+                "text",
+            ],
         )
 
-        output: List[Dict] = []
+        output: List[Dict[str, Any]] = []
 
         for hits in results:
             for hit in hits:
-                text = hit.entity.get("text")
-
-                if not text:
-                    continue
-
                 output.append(
                     {
-                        "text": text,
+                        "doc_id": hit.entity.get("doc_id"),
+                        "eco": hit.entity.get("eco"),
+                        "opening": hit.entity.get("opening"),
+                        "variation": hit.entity.get("variation"),
+                        "line_san": hit.entity.get("line_san"),
+                        "position_fen": hit.entity.get("position_fen"),
+                        "source_url": hit.entity.get("source_url"),
+                        "text": hit.entity.get("text"),
                         "score": float(hit.score),
                     }
                 )

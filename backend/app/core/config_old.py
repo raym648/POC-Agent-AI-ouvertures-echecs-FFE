@@ -14,8 +14,6 @@ Bonne pratique MLOps :
 - garantir un contrat de configuration explicite et stable
 """
 
-from __future__ import annotations
-
 import os
 
 
@@ -30,16 +28,12 @@ def get_bool_env(var_name: str, default: bool = False) -> bool:
     return os.getenv(var_name, str(default)).lower() in ("true", "1", "yes")
 
 
-def get_str_env(var_name: str, default: str) -> str:
-    value = os.getenv(var_name, default)
-    return str(value).strip() if value is not None else default
-
-
 class Settings:
+    
     # ================================
     # ♟️ LICHESS
     # ================================
-    LICHESS_CLOUD_EVAL_URL: str = get_str_env(
+    LICHESS_CLOUD_EVAL_URL: str = os.getenv(
         "LICHESS_CLOUD_EVAL_URL",
         "https://lichess.org/api/cloud-eval",
     )
@@ -49,91 +43,73 @@ class Settings:
     # ================================
     # ♟️ STOCKFISH
     # ================================
-    STOCKFISH_PATH: str = get_str_env(
+    STOCKFISH_PATH: str = os.getenv(
         "STOCKFISH_PATH",
         "/usr/games/stockfish",
     )
 
     STOCKFISH_DEPTH: int = get_int_env("STOCKFISH_DEPTH", 15)
-    STOCKFISH_HOST: str = get_str_env("STOCKFISH_HOST", "")
-    STOCKFISH_PORT: str = get_str_env("STOCKFISH_PORT", "stdin")
+    STOCKFISH_HOST: str = os.getenv("STOCKFISH_HOST", "")
+    STOCKFISH_PORT: str = os.getenv("STOCKFISH_PORT", "stdin")
 
     # ================================
     # 🗄️ MONGODB
     # ================================
-    MONGO_URI: str = get_str_env("MONGO_URI", "mongodb://mongodb:27017")
-    MONGO_DB: str = get_str_env("MONGO_DB", "chess_db")
+    MONGO_URI: str = os.getenv("MONGO_URI", "mongodb://mongodb:27017")
+    MONGO_DB: str = os.getenv("MONGO_DB", "chess_db")
 
     # ================================
     # 🔎 MILVUS
     # ================================
-    MILVUS_HOST: str = get_str_env("MILVUS_HOST", "milvus")
+    MILVUS_HOST: str = os.getenv("MILVUS_HOST", "milvus")
     MILVUS_PORT: int = get_int_env("MILVUS_PORT", 19530)
-
-    # Nom logique de la collection.
-    # Versionné pour éviter les collisions de schéma entre migrations.
-    VECTOR_COLLECTION_NAME: str = get_str_env(
-        "VECTOR_COLLECTION_NAME",
-        "chess_openings_v2",
-    )
-
-    # Politique d'indexation / migration
-    MILVUS_DROP_EXISTING_COLLECTION: bool = get_bool_env(
-        "MILVUS_DROP_EXISTING_COLLECTION",
-        False,
-    )
-
-    # Paramètres d'index Milvus
-    MILVUS_INDEX_TYPE: str = get_str_env("MILVUS_INDEX_TYPE", "IVF_FLAT")
-    MILVUS_METRIC_TYPE: str = get_str_env("MILVUS_METRIC_TYPE", "COSINE")
-    MILVUS_INDEX_NLIST: int = get_int_env("MILVUS_INDEX_NLIST", 128)
-    MILVUS_SEARCH_NPROBE: int = get_int_env("MILVUS_SEARCH_NPROBE", 10)
 
     # ================================
     # 🧠 EMBEDDINGS / RAG
     # ================================
-    EMBEDDING_MODEL: str = get_str_env(
+    EMBEDDING_MODEL: str = os.getenv(
         "EMBEDDING_MODEL",
         "sentence-transformers/all-MiniLM-L6-v2",
     )
 
-    # Valeur contractuelle attendue par Milvus.
-    # Vérifiée dynamiquement au boot dans EmbeddingService.
-    VECTOR_DIMENSION: int = get_int_env("VECTOR_DIMENSION", 384)
+    VECTOR_COLLECTION_NAME: str = os.getenv(
+        "VECTOR_COLLECTION_NAME",
+        "chess_openings",
+    )
 
+    VECTOR_DIMENSION: int = get_int_env("VECTOR_DIMENSION", 384)
     RAG_TOP_K: int = get_int_env("RAG_TOP_K", 3)
 
     # ================================
     # 🤖 HUGGING FACE LLM
     # ================================
-    HF_MODEL_NAME: str = get_str_env(
+    HF_MODEL_NAME: str = os.getenv(
         "HF_MODEL_NAME",
         "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     )
-    HF_DEVICE: str = get_str_env("HF_DEVICE", "cpu")
+
+    HF_DEVICE: str = os.getenv("HF_DEVICE", "cpu")
 
     # ================================
     # 🌐 BACKEND INTERNAL URL
     # ================================
-    BACKEND_INTERNAL_URL: str = get_str_env(
+    BACKEND_INTERNAL_URL: str = os.getenv(
         "BACKEND_INTERNAL_URL",
         "http://backend:8000",
     )
-
+    
     BACKEND_CORS_ORIGINS: list[str] = [
-        origin.strip()
-        for origin in os.getenv("BACKEND_CORS_ORIGINS", "http://localhost:4200").split(",")
-        if origin.strip()
+        "http://localhost:4200",
     ]
 
     # ================================
     # ⚙️ APPLICATION
     # ================================
     DEBUG: bool = get_bool_env("DEBUG", False)
-    APP_NAME: str = get_str_env("APP_NAME", "Chess AI Agent")
-    API_VERSION: str = get_str_env("API_VERSION", "v1")
+    APP_NAME: str = os.getenv("APP_NAME", "Chess AI Agent")
+    API_VERSION: str = os.getenv("API_VERSION", "v1")
     BACKEND_PORT: int = get_int_env("BACKEND_PORT", 8000)
-    ENV: str = get_str_env("ENV", "development")
+    ENV: str = os.getenv("ENV", "development")
 
     # ================================
     # 🤖 AGENT
