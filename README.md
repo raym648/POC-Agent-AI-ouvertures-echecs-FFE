@@ -7,10 +7,10 @@ Projet de développement d’un agent IA pour l’apprentissage des échecs dans
 
 ## 🧱 Stack technique
 - FastAPI (backend)
-- Angular (frontend - à venir)
+- Angular (frontend)
 - Docker / Docker Compose
-- Milvus (vector DB - futur)
-- MongoDB (stockage - futur)
+- Milvus (vector DB)
+- MongoDB (stockage)
 
 ---
 
@@ -29,7 +29,7 @@ chmod +x setup_env.sh
 ```
 ---
 
-### 3. Installation de make et de docker-compose (si nécessaire)
+### 3. Installation de make et de docker-compose
 ```bash
 sudo apt update
 sudo apt install -y make
@@ -37,8 +37,9 @@ sudo apt  install docker-compose
 ```
 ---
 
-### 4. Lancer les services
+### 4. Créer l'environnement virtuel et lancer les services "Docker"
 ```bash
+make setup
 make docker-up
 ```
 

@@ -6,9 +6,7 @@ Endpoint de recherche vectorielle.
 
 from fastapi import APIRouter
 from pydantic import BaseModel
-# from backend.app.rag.embedding_service import embedding_service
-# from backend.app.rag.milvus_service import milvus_service
-# from backend.app.core.config import settings
+
 from app.rag.embedding_service import embedding_service
 from app.rag.milvus_service import milvus_service
 from app.core.config import settings
