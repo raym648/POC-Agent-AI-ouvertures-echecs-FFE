@@ -21,16 +21,24 @@ class LichessService:
         Returns:
             dict: réponse JSON
         """
+        if not fen or not fen.strip():
+            return {}
+
         params = {"fen": fen}
 
         async with httpx.AsyncClient(timeout=5.0) as client:
             response = await client.get(self.BASE_URL, params=params)
+            print(response.request.url)
 
             # Gestion des erreurs HTTP
             if response.status_code != 200:
-                return {}
+                return {
+                    "error": f"Lichess error {response.status_code}",
+                    "details": response.text
+                }
 
             return response.json()
+
 
     async def extract_moves(self, fen: str) -> List[Dict]:
         """

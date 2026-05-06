@@ -1,5 +1,14 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/docker-compose.yml
 
+
+# =========================
+# VERSION
+# =========================
+# version: "3.9"
+
+# =========================
+# SERVICES
+# =========================
 services:
 
   # =========================
@@ -8,8 +17,6 @@ services:
   backend:
     build: ./backend
     container_name: fastapi_app
-
-    command: sh -c "python scripts/load_data.py && uvicorn app.main:app --host 0.0.0.0 --port ${BACKEND_PORT:-8000}"
 
     ports:
       - "${BACKEND_PORT:-8000}:${BACKEND_PORT:-8000}"
