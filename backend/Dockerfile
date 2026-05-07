@@ -14,7 +14,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
     PYTHONPATH=/app \
     TRANSFORMERS_CACHE=/app/cache \
-    HF_HOME=/app/cache
+    HF_HOME=/app/cache \
+    PATH="/usr/games:${PATH}"
 
 # ================================
 # 📁 Working directory
