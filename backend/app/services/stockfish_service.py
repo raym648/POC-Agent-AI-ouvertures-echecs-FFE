@@ -2,7 +2,9 @@
 
 from stockfish import Stockfish
 from app.core.config import settings
+import logging
 
+logger = logging.getLogger(__name__)
 
 class StockfishService:
     """
@@ -13,12 +15,15 @@ class StockfishService:
     - préparation future mode service (Docker)
     """
 
+
     def __init__(self, path: str = None, depth: int = None):
 
         # ================================
         # 🔧 Configuration dynamique
         # ================================
         self.path = path or settings.STOCKFISH_PATH
+        logger.info(f"Using Stockfish path: {self.path}")
+        
         self.depth = depth or settings.STOCKFISH_DEPTH
 
         # ================================
