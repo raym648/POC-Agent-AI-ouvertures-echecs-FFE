@@ -1,11 +1,32 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+// POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/app.config.ts
+
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+} from '@angular/core';
+
 import { provideRouter } from '@angular/router';
+
+import {
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
 
 import { routes } from './app.routes';
 
+
 export const appConfig: ApplicationConfig = {
+
   providers: [
+
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
-  ]
+
+    provideRouter(routes),
+
+    provideHttpClient(
+      withFetch()
+    ),
+
+  ],
+
 };

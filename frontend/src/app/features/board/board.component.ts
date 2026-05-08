@@ -6,201 +6,363 @@ import {
   ElementRef,
   OnInit,
   ViewChild,
-  effect
+  effect,
 } from '@angular/core';
 
 import { Chessground } from 'chessground';
+
 import type { Api } from 'chessground/api';
 import type { DrawShape } from 'chessground/draw';
 import type { Key } from 'chessground/types';
+
 import type { Square } from 'chess.js';
 
-import { Subject, debounceTime } from 'rxjs';
 import { Chess } from 'chess.js';
+
+import {
+  Subject,
+  debounceTime,
+  forkJoin,
+} from 'rxjs';
 
 import { ChessService } from '../../core/services/chess.service';
 import { AgentService } from '../../core/services/agent.service';
 import { GameStore } from '../../state/game.store';
 
+import {
+  AgentResponse,
+  MoveEvaluation,
+} from '../../core/models/agent.model';
+
+
 @Component({
   selector: 'app-board',
   standalone: true,
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  styleUrls: ['./board.component.css'],
 })
-export class BoardComponent implements OnInit, AfterViewInit {
+export class BoardComponent
+  implements OnInit, AfterViewInit {
+
   @ViewChild('board', { static: true })
   private boardRef!: ElementRef<HTMLElement>;
 
   private move$ = new Subject<void>();
+
   private cg?: Api;
+
 
   constructor(
     private chess: ChessService,
     private agent: AgentService,
-    private store: GameStore
+    private store: GameStore,
   ) {
-    // Sync FEN -> Chessground
+
+    // =====================================================
+    // SYNC FEN -> CHESSGROUND
+    // =====================================================
+
     effect(() => {
+
       if (!this.cg) return;
 
       const fen = this.store.fen();
-      if (!fen) return;
 
       this.cg.set({
-        fen: fen === 'start' ? undefined : fen,
+        fen,
         movable: {
           color: 'both',
-          dests: this.buildDests()
-        }
+          dests: this.buildDests(),
+        },
       });
     });
 
-    // Sync best moves -> arrows
+
+    // =====================================================
+    // BEST MOVES -> ARROWS
+    // =====================================================
+
     effect(() => {
+
       if (!this.cg) return;
 
       const data = this.store.data();
 
-      if (!data?.moves) {
+      if (!data?.moves?.length) {
+
         this.cg.set({
           drawable: {
-            autoShapes: []
-          }
+            autoShapes: [],
+          },
         });
+
         return;
       }
 
-      const chess = new Chess(this.store.fen() === 'start' ? undefined : this.store.fen());
       const shapes: DrawShape[] = [];
 
-      data.moves.slice(0, 3).forEach((m: any) => {
-        try {
-          const move = chess.move(m.san, { strict: false });
+      data.moves
+        .slice(0, 3)
+        .forEach((m: MoveEvaluation) => {
 
-          if (move) {
-            shapes.push({
-              orig: move.from as Key,
-              dest: move.to as Key,
-              brush: 'green'
-            });
-
-            chess.undo();
+          if (!m.move || m.move.length < 4) {
+            return;
           }
-        } catch {
-          // Ignore invalid SAN
-        }
-      });
+
+          const from = m.move.slice(0, 2);
+          const to = m.move.slice(2, 4);
+
+          shapes.push({
+            orig: from as Key,
+            dest: to as Key,
+            brush: 'green',
+          });
+        });
 
       this.cg.set({
         drawable: {
-          autoShapes: shapes
-        }
+          autoShapes: shapes,
+        },
       });
     });
   }
 
-  ngAfterViewInit(): void {
-    this.cg = Chessground(this.boardRef.nativeElement, {
-      fen: 'start',
-      orientation: 'white',
-      movable: {
-        free: false,
-        color: 'both',
-        dests: this.buildDests(),
-        events: {
-          after: (from: string, to: string) => this.onMove({ from, to })
-        }
-      },
-      highlight: {
-        lastMove: true,
-        check: true
-      },
-      drawable: {
-        enabled: true,
-        visible: true,
-        autoShapes: []
-      }
-    });
-  }
+
+  // =====================================================
+  // INIT
+  // =====================================================
 
   ngOnInit(): void {
-    this.move$.pipe(debounceTime(400)).subscribe(() => {
-      this.analyze();
-    });
+
+    this.move$
+      .pipe(
+        debounceTime(400),
+      )
+      .subscribe(() => {
+        this.analyze();
+      });
   }
 
-  onMove(event: { from: string; to: string }): void {
+
+  // =====================================================
+  // CHESSGROUND INIT
+  // =====================================================
+
+  ngAfterViewInit(): void {
+
+    this.cg = Chessground(
+      this.boardRef.nativeElement,
+      {
+        fen: this.store.fen(),
+
+        orientation: 'white',
+
+        movable: {
+          free: false,
+
+          color: 'both',
+
+          dests: this.buildDests(),
+
+          events: {
+            after: (
+              from: string,
+              to: string,
+            ) => this.onMove({ from, to }),
+          },
+        },
+
+        highlight: {
+          lastMove: true,
+          check: true,
+        },
+
+        drawable: {
+          enabled: true,
+          visible: true,
+          autoShapes: [],
+        },
+      },
+    );
+  }
+
+
+  // =====================================================
+  // MOVE HANDLER
+  // =====================================================
+
+  onMove(event: {
+    from: string;
+    to: string;
+  }): void {
+
     const { from, to } = event;
 
-    if (!this.chess.move(from, to)) return;
+    const success = this.chess.move(from, to);
+
+    if (!success) {
+      return;
+    }
 
     const fen = this.chess.getFen();
+
     this.store.fen.set(fen);
+
     this.move$.next();
   }
 
+
+  // =====================================================
+  // ANALYSIS
+  // =====================================================
+
   analyze(): void {
+
     const fen = this.store.fen();
 
     this.store.loading.set(true);
+
     this.store.error.set(null);
 
-    this.agent.analyze(fen).subscribe({
-      next: (res) => {
-        this.store.data.set(res);
+    forkJoin({
+
+      moves: this.agent.getMoves(fen),
+
+      evaluation: this.agent.getEvaluation(fen),
+
+    }).subscribe({
+
+      next: ({
+        moves,
+        evaluation,
+      }) => {
+
+        const response: AgentResponse = {
+
+          fen,
+
+          source:
+            moves.source ??
+            evaluation.source,
+
+          moves:
+            moves.moves ?? [],
+
+          evaluation:
+            evaluation.evaluation ?? null,
+
+          opening:
+            moves.opening ?? null,
+
+          videos:
+            moves.videos ?? [],
+
+          rag_context:
+            moves.rag_context ?? [],
+
+          explanation:
+            moves.explanation ?? null,
+
+          error: null,
+        };
+
+        this.store.data.set(response);
+
         this.store.loading.set(false);
       },
+
       error: () => {
-        this.store.error.set('Erreur API');
+
+        this.store.error.set(
+          'Erreur API'
+        );
+
         this.store.loading.set(false);
-      }
+      },
     });
   }
 
+
+  // =====================================================
+  // RESET
+  // =====================================================
+
   reset(): void {
+
     this.chess.reset();
-    this.store.fen.set('start');
+
+    const fen = this.chess.getFen();
+
+    this.store.fen.set(fen);
+
     this.store.data.set(null);
 
     this.cg?.set({
-      fen: undefined,
+
+      fen,
+
       movable: {
         color: 'both',
-        dests: this.buildDests()
+        dests: this.buildDests(),
       },
+
       drawable: {
-        autoShapes: []
-      }
+        autoShapes: [],
+      },
     });
   }
 
-  private buildDests(): Map<Key, Key[]> {
-    const fen = this.store.fen();
-    const chess = new Chess(fen === 'start' ? undefined : fen);
-    const dests = new Map<Key, Key[]>();
 
-    const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] as const;
-    const ranks = ['1', '2', '3', '4', '5', '6', '7', '8'] as const;
+  // =====================================================
+  // LEGAL MOVES
+  // =====================================================
+
+  private buildDests(): Map<Key, Key[]> {
+
+    const chess = new Chess(
+      this.store.fen(),
+    );
+
+    const dests =
+      new Map<Key, Key[]>();
+
+    const files = [
+      'a', 'b', 'c', 'd',
+      'e', 'f', 'g', 'h',
+    ] as const;
+
+    const ranks = [
+      '1', '2', '3', '4',
+      '5', '6', '7', '8',
+    ] as const;
 
     for (const file of files) {
+
       for (const rank of ranks) {
-        const square = `${file}${rank}` as Square;
+
+        const square =
+          `${file}${rank}` as Square;
 
         const moves = chess.moves({
           square,
-          verbose: true
+          verbose: true,
         });
 
-        if (moves.length) {
-          dests.set(
-            square as Key,
-            moves.map((move) => move.to as Key)
-          );
+        if (!moves.length) {
+          continue;
         }
+
+        dests.set(
+          square as Key,
+
+          moves.map(
+            move => move.to as Key
+          ),
+        );
       }
     }
 
     return dests;
   }
+
 }

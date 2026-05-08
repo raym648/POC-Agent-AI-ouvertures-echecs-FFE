@@ -1,4 +1,4 @@
-# POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/langgraph_agent.py
+# POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/langgraph_agent_source_04.py
 
 from typing import Dict, Any, Literal
 
@@ -22,8 +22,6 @@ from app.agents.format_response_node import format_response_node
 WorkflowMode = Literal[
     "moves",
     "evaluate",
-    "rag",
-    "videos",
     "full",
 ]
 
@@ -128,88 +126,6 @@ def build_evaluate_graph():
 
     graph.add_edge("validate_fen", "stockfish")
     graph.add_edge("stockfish", "format")
-    graph.add_edge("format", END)
-
-    return graph.compile()
-
-
-def build_rag_graph():
-    """
-    Workflow RAG uniquement :
-
-    validate
-        -> opening_detector
-            -> rag
-                -> format
-
-    Endpoint dédié au contexte stratégique.
-    """
-
-    graph = StateGraph(AgentState)
-
-    # =====================================================
-    # NODES
-    # =====================================================
-
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("opening_detector", opening_detector_node)
-    graph.add_node("rag", rag_node)
-    graph.add_node("format", format_response_node)
-
-    # =====================================================
-    # ENTRYPOINT
-    # =====================================================
-
-    graph.set_entry_point("validate_fen")
-
-    # =====================================================
-    # WORKFLOW
-    # =====================================================
-
-    graph.add_edge("validate_fen", "opening_detector")
-    graph.add_edge("opening_detector", "rag")
-    graph.add_edge("rag", "format")
-    graph.add_edge("format", END)
-
-    return graph.compile()
-
-
-def build_video_graph():
-    """
-    Workflow vidéos uniquement :
-
-    validate
-        -> opening_detector
-            -> video_retriever
-                -> format
-
-    Endpoint dédié aux ressources YouTube.
-    """
-
-    graph = StateGraph(AgentState)
-
-    # =====================================================
-    # NODES
-    # =====================================================
-
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("opening_detector", opening_detector_node)
-    graph.add_node("video_retriever", video_retriever_node)
-    graph.add_node("format", format_response_node)
-
-    # =====================================================
-    # ENTRYPOINT
-    # =====================================================
-
-    graph.set_entry_point("validate_fen")
-
-    # =====================================================
-    # WORKFLOW
-    # =====================================================
-
-    graph.add_edge("validate_fen", "opening_detector")
-    graph.add_edge("opening_detector", "video_retriever")
-    graph.add_edge("video_retriever", "format")
     graph.add_edge("format", END)
 
     return graph.compile()
@@ -322,10 +238,6 @@ moves_agent = build_moves_graph()
 
 evaluate_agent = build_evaluate_graph()
 
-rag_agent = build_rag_graph()
-
-video_agent = build_video_graph()
-
 full_agent = build_full_graph()
 
 
@@ -343,8 +255,6 @@ async def run_agent(
     Modes disponibles :
     - moves
     - evaluate
-    - rag
-    - videos
     - full
     """
 
@@ -370,11 +280,5 @@ async def run_agent(
 
     if mode == "evaluate":
         return await evaluate_agent.ainvoke(state)
-
-    if mode == "rag":
-        return await rag_agent.ainvoke(state)
-
-    if mode == "videos":
-        return await video_agent.ainvoke(state)
 
     return await full_agent.ainvoke(state)
