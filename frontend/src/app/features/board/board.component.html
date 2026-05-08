@@ -1,7 +1,47 @@
 <!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.html -->
 
-<div class="board">
-  <div #board class="chessboard"></div>
+<div class="board-container">
 
-  <button type="button" (click)="reset()">Reset</button>
+  <!-- HEADER -->
+  <div class="board-toolbar">
+
+    <h2>
+      Analyse d'ouverture
+    </h2>
+
+    <button
+      type="button"
+      class="reset-button"
+      (click)="reset()"
+    >
+      Réinitialiser
+    </button>
+
+  </div>
+
+
+  <!-- BOARD -->
+  <div class="board-wrapper">
+
+    <div
+      #board
+      class="chessboard"
+    ></div>
+
+  </div>
+
+
+  <!-- STATUS -->
+  <div class="board-status">
+
+    <div *ngIf="store.loading()">
+      Analyse en cours...
+    </div>
+
+    <div *ngIf="store.error()">
+      {{ store.error() }}
+    </div>
+
+  </div>
+
 </div>

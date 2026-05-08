@@ -3,36 +3,78 @@
 // Contrat frontend aligné sur les réponses backend.
 // Les champs optionnels reflètent les réponses partielles / dégradées.
 
-export interface Move {
-  san: string;
+// =========================================================
+// MOVES
+// =========================================================
+
+export interface MoveEvaluation {
+  move: string;
+  evaluation?: number | null;
 }
 
-export interface Evaluation {
-  score: number;
-  best_move: string;
+
+// =========================================================
+// STOCKFISH EVALUATION
+// =========================================================
+
+export interface StockfishEvaluation {
+  type: string;
+  value: number;
+  best_move?: string | null;
+  depth?: number | null;
 }
+
+
+// =========================================================
+// RAG
+// =========================================================
 
 export interface RagItem {
+  opening?: string;
+  variation?: string;
   text: string;
+  score?: number;
 }
+
+
+// =========================================================
+// VIDEOS
+// =========================================================
 
 export interface Video {
   title: string;
+  video_id?: string;
   url: string;
+  thumbnail?: string;
+  description?: string;
+  channel?: string;
 }
 
+
+// =========================================================
+// MAIN RESPONSE
+// =========================================================
+
 export interface AgentResponse {
+
   fen: string;
 
-  source?: 'lichess' | 'stockfish' | null;
-  type?: 'theory' | 'evaluation';
+  source?: string | null;
 
-  moves?: Move[];
-  evaluation?: Evaluation;
+  moves?: MoveEvaluation[];
 
-  rag?: RagItem[];
+  evaluation?: StockfishEvaluation | null;
+
+  rag_context?: RagItem[];
+
   videos?: Video[];
-  explanation?: string;
 
-  error?: string;
+  explanation?: string | null;
+
+  opening?: string | null;
+
+  message?: string;
+
+  error?: string | null;
+
 }

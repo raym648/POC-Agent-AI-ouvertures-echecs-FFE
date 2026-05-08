@@ -1,50 +1,154 @@
 <!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/recommendations/recommendations.component.html -->
 
-<div *ngIf="loading()">Chargement...</div>
+<div *ngIf="loading()">
+  Chargement...
+</div>
 
-<div *ngIf="error()">{{ error() }}</div>
+<div *ngIf="error()">
+  {{ error() }}
+</div>
 
 <div *ngIf="data() as d">
 
-  <h2>Source : {{ d.source }}</h2>
+  <!-- SOURCE -->
+  <h2 *ngIf="d.source">
+    Source : {{ d.source }}
+  </h2>
 
-  <!-- Coups -->
-  <div *ngIf="d.type === 'theory'">
+  <!-- OUVERTURE -->
+  <div *ngIf="d.opening">
+
+    <h3>Ouverture détectée</h3>
+
+    <p>
+      {{ d.opening }}
+    </p>
+
+  </div>
+
+  <!-- COUPS THEORIQUES -->
+  <div *ngIf="d.moves && d.moves.length > 0">
+
     <h3>Coups recommandés</h3>
+
     <ul>
-      <li *ngFor="let m of d.moves">
-        {{ m.san }}
+
+      <li *ngFor="let move of d.moves">
+
+        <strong>{{ move.move }}</strong>
+
+        <span *ngIf="move.evaluation !== null && move.evaluation !== undefined">
+          — Évaluation : {{ move.evaluation }}
+        </span>
+
       </li>
+
     </ul>
+
   </div>
 
-  <!-- Evaluation -->
-  <div *ngIf="d.type === 'evaluation'">
-    <h3>Évaluation</h3>
-    <p>Score : {{ d.evaluation?.score }}</p>
-    <p>Meilleur coup : {{ d.evaluation?.best_move }}</p>
+  <!-- EVALUATION STOCKFISH -->
+  <div *ngIf="d.evaluation">
+
+    <h3>Évaluation Stockfish</h3>
+
+    <p *ngIf="d.evaluation.type">
+      Type : {{ d.evaluation.type }}
+    </p>
+
+    <p *ngIf="d.evaluation.value !== null && d.evaluation.value !== undefined">
+      Valeur : {{ d.evaluation.value }}
+    </p>
+
+    <p *ngIf="d.evaluation.best_move">
+      Meilleur coup : {{ d.evaluation.best_move }}
+    </p>
+
+    <p *ngIf="d.evaluation.depth !== null && d.evaluation.depth !== undefined">
+      Profondeur : {{ d.evaluation.depth }}
+    </p>
+
   </div>
 
-  <!-- Explication -->
+  <!-- EXPLICATION IA -->
   <div *ngIf="d.explanation">
+
     <h3>Explication IA</h3>
-    <p>{{ d.explanation }}</p>
+
+    <p>
+      {{ d.explanation }}
+    </p>
+
   </div>
 
-  <!-- RAG -->
-  <div *ngIf="d.rag">
-    <h3>Contexte</h3>
-    <p *ngFor="let r of d.rag">{{ r.text }}</p>
-  </div>
+  <!-- CONTEXTE RAG -->
+  <div *ngIf="d.rag_context && d.rag_context.length > 0">
 
-  <!-- Vidéos -->
-  <div *ngIf="d.videos">
-    <h3>Vidéos</h3>
-    <div *ngFor="let v of d.videos">
-      <a [href]="v.url" target="_blank">
-        {{ v.title }}
-      </a>
+    <h3>Contexte stratégique</h3>
+
+    <div *ngFor="let r of d.rag_context">
+
+      <p *ngIf="r.opening">
+        <strong>Ouverture :</strong> {{ r.opening }}
+      </p>
+
+      <p *ngIf="r.variation">
+        <strong>Variation :</strong> {{ r.variation }}
+      </p>
+
+      <p *ngIf="r.score !== null && r.score !== undefined">
+        <strong>Score :</strong> {{ r.score }}
+      </p>
+
+      <p *ngIf="r.text">
+        {{ r.text }}
+      </p>
+
+      <hr />
+
     </div>
+
+  </div>
+
+  <!-- VIDEOS -->
+  <div *ngIf="d.videos && d.videos.length > 0">
+
+    <h3>Vidéos YouTube</h3>
+
+    <div *ngFor="let v of d.videos">
+
+      <div *ngIf="v.thumbnail">
+
+        <img
+          [src]="v.thumbnail"
+          [alt]="v.title"
+          width="320"
+        />
+
+      </div>
+
+      <p>
+        <a
+          [href]="v.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ v.title }}
+        </a>
+      </p>
+
+      <p *ngIf="v.channel">
+        Chaîne : {{ v.channel }}
+      </p>
+
+      <p *ngIf="v.description">
+        {{ v.description }}
+      </p>
+
+      <hr />
+
+    </div>
+
   </div>
 
 </div>

@@ -3,9 +3,6 @@
 """
 Route FastAPI pour l'agent LangGraph complet.
 
-Expose :
-/api/v1/agent/analyze/{fen}
-
 Workflow complet :
 Lichess
 → fallback Stockfish
