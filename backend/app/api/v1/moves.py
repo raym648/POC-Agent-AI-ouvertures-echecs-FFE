@@ -3,8 +3,8 @@
 """
 Endpoint pour récupérer les coups théoriques.
 
-Utilise l'agent LangGraph mais retourne uniquement
-les résultats issus de la théorie d'ouverture (Lichess).
+Utilise le workflow LangGraph "moves"
+pour interroger uniquement Lichess.
 """
 
 from fastapi import APIRouter, HTTPException
@@ -29,28 +29,55 @@ async def get_moves(fen: str):
     Returns:
         dict: liste des coups théoriques
     """
+
     try:
-        result = await run_agent(fen)
 
-        # Erreur FEN / erreur métier
+        result = await run_agent(
+            fen,
+            mode="moves",
+        )
+
+        # =================================================
+        # ERREURS
+        # =================================================
+
         if result.get("error"):
-            raise HTTPException(status_code=400, detail=result["error"])
+            raise HTTPException(
+                status_code=400,
+                detail=result["error"],
+            )
 
-        # Si pas de théorie disponible
-        if result.get("type") != "theory":
+        # =================================================
+        # AUCUNE THEORIE TROUVEE
+        # =================================================
+
+        if not result.get("moves"):
+
             return {
                 "fen": fen,
                 "moves": [],
-                "message": "Position hors théorie (fallback Stockfish disponible via /agent)",
+                "message": (
+                    "Aucun coup théorique trouvé "
+                    "via Lichess."
+                ),
             }
+
+        # =================================================
+        # SUCCESS
+        # =================================================
 
         return {
             "fen": fen,
             "moves": result.get("moves", []),
+            "source": result.get("source"),
         }
 
     except HTTPException:
         raise
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
