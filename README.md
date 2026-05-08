@@ -1,16 +1,31 @@
-# ♟️ POC-Agent-AI-ouvertures-echecs-FFE – Projet 13
+# ♟️ Projet 13 - Mettez en place un Agent IA
+
+**Mission - Développez un agent IA avec LandGraph pour l'apprentissage des échecs**
+
+✍️ **Auteur :** *[Raymond Francius]*    
+📚 **Rôle :** *[Apprenant - Promotion Sept-2025]* — **Engineer AI** — **Openclassrooms**   
+🗓️ **Date de mise à jour :** *[20-04-2026]*  
+
+---
 
 ## 📌 Contexte
-Projet de développement d’un agent IA pour l’apprentissage des échecs dans le cadre de la Fédération Française des Échecs (FFE).
+La FFE souhaite, en vue des championnats d’Europe, disposer d’un **agent intelligent** permettant aux jeunes espoirs de s’entraîner sur les ouvertures.  
+
+L’agent IA devra guider les jeunes espoirs en :  
+- leur proposant les meilleurs coups issus de la théorie,  
+- le contexte des ouvertures via des données enrichies par les parties historiques,  
+- des vidéos explicatives pertinentes,  
+- et une évaluation de la position par un moteur spécialisé (exemple Stockfish) si la partie s’écarte des sentiers battus.  
 
 ---
 
 ## 🧱 Stack technique
-- FastAPI (backend)
-- Angular (frontend)
-- Docker / Docker Compose
-- Milvus (vector DB)
-- MongoDB (stockage)
+- FastAPI (backend)  
+- Angular (frontend)  
+- Docker / Docker Compose  
+- Milvus (vector DB)  
+- MongoDB (stockage)  
+- LandGraph (orchestration)  
 
 ---
 
@@ -19,7 +34,7 @@ Projet de développement d’un agent IA pour l’apprentissage des échecs dans
 ### 1. Cloner le repo
 ```bash
 git clone <repo_url>
-cd project-root
+cd POC-Agent-AI-ouvertures-echecs-FFE  
 ```
 
 ### 2. Setup environnement : Linux / Mac

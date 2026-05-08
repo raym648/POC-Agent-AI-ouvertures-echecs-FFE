@@ -1,10 +1,9 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/api/v1/evaluate.py
 
 """
-Endpoint pour évaluer une position.
+Endpoint pour évaluer une position avec Stockfish.
 
-Utilise l'agent LangGraph mais force le fallback Stockfish
-si aucune théorie d'ouverture n'est disponible.
+Utilise le workflow LangGraph "evaluate".
 """
 
 from fastapi import APIRouter, HTTPException
@@ -29,28 +28,41 @@ async def evaluate(fen: str):
     Returns:
         dict: score d'évaluation
     """
+
     try:
-        result = await run_agent(fen)
 
-        # Erreur FEN / erreur métier
+        result = await run_agent(
+            fen,
+            mode="evaluate",
+        )
+
+        # =============================================
+        # ERREURS
+        # =============================================
+
         if result.get("error"):
-            raise HTTPException(status_code=400, detail=result["error"])
 
-        # Si la position est encore dans la théorie
-        if result.get("type") == "theory":
-            return {
-                "fen": fen,
-                "evaluation": None,
-                "message": "Position théorique — utiliser /agent pour plus de détails",
-            }
+            raise HTTPException(
+                status_code=400,
+                detail=result["error"],
+            )
+
+        # =============================================
+        # SUCCESS
+        # =============================================
 
         return {
             "fen": fen,
             "evaluation": result.get("evaluation"),
+            "source": result.get("source"),
         }
 
     except HTTPException:
         raise
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )

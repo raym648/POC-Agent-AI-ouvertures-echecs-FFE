@@ -1,4 +1,4 @@
-# POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/langgraph_agent.py
+# POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/langgraph_agent_source_03.py
 
 from typing import Dict, Any, Literal
 
@@ -32,15 +32,13 @@ WorkflowMode = Literal[
 
 def should_use_stockfish(state: AgentState) -> str:
     """
-    Détermine si l'on doit fallback vers Stockfish.
+    Décide si l'on doit fallback vers Stockfish.
 
     Si aucun coup théorique n'est trouvé via Lichess,
-    alors on bascule vers Stockfish.
+    alors on passe par Stockfish.
     """
 
-    moves = state.get("moves", [])
-
-    if len(moves) > 0:
+    if state.get("moves"):
         return "has_moves"
 
     return "no_moves"
@@ -50,11 +48,15 @@ def should_fetch_videos(state: AgentState) -> bool:
     """
     Détermine si des vidéos doivent être récupérées.
 
-    Les vidéos YouTube sont récupérées uniquement
-    lorsqu'une ouverture a été détectée.
+    On récupère des vidéos uniquement si :
+    - une ouverture a été détectée,
+    - ou des coups théoriques existent.
     """
 
-    return bool(state.get("opening"))
+    return bool(
+        state.get("opening")
+        or state.get("moves")
+    )
 
 
 # =========================================================
@@ -65,29 +67,15 @@ def build_moves_graph():
     """
     Workflow léger :
     validate -> lichess -> format
-
-    Endpoint dédié aux coups théoriques.
     """
 
     graph = StateGraph(AgentState)
-
-    # =====================================================
-    # NODES
-    # =====================================================
 
     graph.add_node("validate_fen", validate_fen_node)
     graph.add_node("lichess", lichess_node)
     graph.add_node("format", format_response_node)
 
-    # =====================================================
-    # ENTRYPOINT
-    # =====================================================
-
     graph.set_entry_point("validate_fen")
-
-    # =====================================================
-    # WORKFLOW
-    # =====================================================
 
     graph.add_edge("validate_fen", "lichess")
     graph.add_edge("lichess", "format")
@@ -100,29 +88,15 @@ def build_evaluate_graph():
     """
     Workflow Stockfish uniquement :
     validate -> stockfish -> format
-
-    Endpoint dédié à l'évaluation moteur.
     """
 
     graph = StateGraph(AgentState)
-
-    # =====================================================
-    # NODES
-    # =====================================================
 
     graph.add_node("validate_fen", validate_fen_node)
     graph.add_node("stockfish", stockfish_node)
     graph.add_node("format", format_response_node)
 
-    # =====================================================
-    # ENTRYPOINT
-    # =====================================================
-
     graph.set_entry_point("validate_fen")
-
-    # =====================================================
-    # WORKFLOW
-    # =====================================================
 
     graph.add_edge("validate_fen", "stockfish")
     graph.add_edge("stockfish", "format")
@@ -134,19 +108,11 @@ def build_evaluate_graph():
 def build_full_graph():
     """
     Workflow IA complet :
-
     validate
         -> lichess
-            -> opening_detector
-                -> rag
-                    -> videos
-                        -> llm
-                            -> format
-
-    fallback :
-        lichess
-            -> stockfish
-                -> rag
+            -> opening_detector + rag + videos
+        -> stockfish fallback
+            -> rag
     """
 
     graph = StateGraph(AgentState)
@@ -247,10 +213,10 @@ full_agent = build_full_graph()
 
 async def run_agent(
     fen: str,
-    mode: WorkflowMode = "moves",
+    mode: WorkflowMode = "full",
 ) -> Dict[str, Any]:
     """
-    Point d'entrée principal LangGraph.
+    Point d'entrée unique LangGraph.
 
     Modes disponibles :
     - moves
@@ -261,13 +227,13 @@ async def run_agent(
     state: AgentState = {
         "fen": fen,
         "is_valid": False,
-        "moves": [],
+        "moves": None,
         "evaluation": None,
         "source": None,
         "error": None,
         "rag_context": None,
         "explanation": None,
-        "videos": [],
+        "videos": None,
         "opening": None,
     }
 
