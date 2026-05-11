@@ -14,7 +14,6 @@ export class GameStore {
   // DEFAULT FEN
   // =====================================================
 
-  // Position initiale standard
   readonly fen = signal<string>(
     'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
   );
@@ -24,11 +23,14 @@ export class GameStore {
   // AGENT DATA
   // =====================================================
 
-  readonly data = signal<AgentResponse | null>(null);
+  readonly data =
+    signal<AgentResponse | null>(null);
 
-  readonly loading = signal<boolean>(false);
+  readonly loading =
+    signal<boolean>(false);
 
-  readonly error = signal<string | null>(null);
+  readonly error =
+    signal<string | null>(null);
 
 
   // =====================================================
@@ -60,14 +62,22 @@ export class GameStore {
   // MERGE PARTIAL RESPONSES
   // =====================================================
 
-  updateData(partial: Partial<AgentResponse>): void {
+  updateData(
+    partial: Partial<AgentResponse>,
+  ): void {
 
     const current = this.data();
 
     this.data.set({
-      ...(current ?? {}),
+      fen:
+        partial.fen ??
+        current?.fen ??
+        this.fen(),
+
+      ...current,
+
       ...partial,
-    } as AgentResponse);
+    });
   }
 
 
