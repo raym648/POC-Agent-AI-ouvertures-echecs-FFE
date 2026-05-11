@@ -25,8 +25,6 @@ import {
   Subject,
   debounceTime,
   forkJoin,
-  of,
-  switchMap,
 } from 'rxjs';
 
 import { ChessService } from '../../core/services/chess.service';
@@ -36,8 +34,6 @@ import { GameStore } from '../../state/game.store';
 import {
   AgentResponse,
   MoveEvaluation,
-  RagItem,
-  Video,
 } from '../../core/models/agent.model';
 
 
@@ -67,6 +63,9 @@ export class BoardComponent
     private chess: ChessService,
     private agent: AgentService,
 
+    // IMPORTANT :
+    // le template Angular accède à "store"
+    // donc il ne peut pas être private
     public store: GameStore,
   ) {
 
@@ -223,7 +222,7 @@ export class BoardComponent
 
     const fen = this.chess.getFen();
 
-    this.store.setFen(fen);
+    this.store.fen.set(fen);
 
     this.move$.next();
   }
@@ -237,9 +236,9 @@ export class BoardComponent
 
     const fen = this.store.fen();
 
-    this.store.setLoading(true);
+    this.store.loading.set(true);
 
-    this.store.clearError();
+    this.store.error.set(null);
 
     forkJoin({
 
@@ -247,127 +246,56 @@ export class BoardComponent
 
       evaluation: this.agent.getEvaluation(fen),
 
-    })
-      .pipe(
+    }).subscribe({
 
-        switchMap(({
-          moves,
-          evaluation,
-        }) => {
+      next: ({
+        moves,
+        evaluation,
+      }) => {
 
-          const opening =
-            moves.opening ??
-            '';
+        const response: AgentResponse = {
 
-          // =================================================
-          // Aucune ouverture détectée
-          // =================================================
+          fen,
 
-          if (!opening) {
+          source:
+            moves.source ??
+            evaluation.source,
 
-            return of({
+          moves:
+            moves.moves ?? [],
 
-              moves,
-              evaluation,
+          evaluation:
+            evaluation.evaluation ?? null,
 
-              videos: {
-                opening: '',
-                count: 0,
-                videos: [] as Video[],
-              },
+          opening:
+            moves.opening ?? null,
 
-              vector: {
-                query: '',
-                results: [] as RagItem[],
-              },
-            });
-          }
+          videos:
+            moves.videos ?? [],
 
-          // =================================================
-          // Videos + RAG
-          // =================================================
+          rag_context:
+            moves.rag_context ?? [],
 
-          return forkJoin({
+          explanation:
+            moves.explanation ?? null,
 
-            videos:
-              this.agent.getVideos(opening),
+          error: null,
+        };
 
-            vector:
-              this.agent.getRagContext(opening),
+        this.store.data.set(response);
 
-          }).pipe(
+        this.store.loading.set(false);
+      },
 
-            switchMap(({
-              videos,
-              vector,
-            }) => {
+      error: () => {
 
-              return of({
+        this.store.error.set(
+          'Erreur API',
+        );
 
-                moves,
-                evaluation,
-                videos,
-                vector,
-              });
-            }),
-          );
-        }),
-      )
-      .subscribe({
-
-        next: ({
-          moves,
-          evaluation,
-          videos,
-          vector,
-        }) => {
-
-          const response: AgentResponse = {
-
-            fen,
-
-            source:
-              moves.source ??
-              evaluation.source ??
-              null,
-
-            moves:
-              moves.moves ?? [],
-
-            evaluation:
-              evaluation.evaluation ?? null,
-
-            opening:
-              moves.opening ?? null,
-
-            videos:
-              videos.videos ?? [],
-
-            rag_context:
-              vector.results ?? [],
-
-            explanation:
-              moves.explanation ?? null,
-
-            error: null,
-          };
-
-          this.store.updateData(response);
-
-          this.store.setLoading(false);
-        },
-
-        error: (error) => {
-
-          console.error(error);
-
-          this.store.setError(
-            'Erreur API',
-          );
-
-          this.store.setLoading(false);
-        },
-      });
+        this.store.loading.set(false);
+      },
+    });
   }
 
 
@@ -381,9 +309,9 @@ export class BoardComponent
 
     const fen = this.chess.getFen();
 
-    this.store.setFen(fen);
+    this.store.fen.set(fen);
 
-    this.store.clearData();
+    this.store.data.set(null);
 
     this.cg?.set({
 

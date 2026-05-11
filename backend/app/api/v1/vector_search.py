@@ -1,35 +1,48 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/api/v1/vector_search.py
 
-"""
-Endpoint de recherche vectorielle.
-"""
-
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from app.rag.embedding_service import embedding_service
-from app.rag.milvus_service import milvus_service
-from app.core.config import settings
+from app.agents.langgraph_agent import run_agent
 
 
 router = APIRouter()
 
 
 class SearchRequest(BaseModel):
-    query: str
-    top_k: int | None = None
+    fen: str
 
 
 @router.post("/vector-search")
-def vector_search(request: SearchRequest):
+async def vector_search(request: SearchRequest):
 
-    top_k = request.top_k or settings.RAG_TOP_K
+    try:
 
-    query_embedding = embedding_service.embed_text(request.query)
+        result = await run_agent(
+            request.fen,
+            mode="rag",
+        )
 
-    results = milvus_service.search(query_embedding, top_k)
+        if result.get("error"):
 
-    return {
-        "query": request.query,
-        "results": results,
-    }
+            raise HTTPException(
+                status_code=400,
+                detail=result["error"],
+            )
+
+        return {
+            "fen": request.fen,
+            "opening": result.get("opening"),
+            "rag_context": result.get("rag_context"),
+            "source": result.get("source"),
+        }
+
+    except HTTPException:
+        raise
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
