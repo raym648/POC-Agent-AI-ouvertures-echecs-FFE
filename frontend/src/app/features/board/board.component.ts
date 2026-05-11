@@ -27,6 +27,7 @@ import {
   forkJoin,
   of,
   switchMap,
+  catchError,
 } from 'rxjs';
 
 import { ChessService } from '../../core/services/chess.service';
@@ -50,29 +51,45 @@ import {
   ],
 
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css'],
+
+  styleUrls: [
+    './board.component.css',
+  ],
 })
 export class BoardComponent
   implements OnInit, AfterViewInit {
 
+  // =====================================================
+  // VIEW
+  // =====================================================
+
   @ViewChild('board', { static: true })
   private boardRef!: ElementRef<HTMLElement>;
 
+  // =====================================================
+  // RXJS
+  // =====================================================
+
   private move$ = new Subject<void>();
+
+  // =====================================================
+  // CHESSGROUND
+  // =====================================================
 
   private cg?: Api;
 
 
   constructor(
     private chess: ChessService,
+
     private agent: AgentService,
 
     public store: GameStore,
   ) {
 
-    // =====================================================
+    // ===================================================
     // SYNC FEN -> CHESSGROUND
-    // =====================================================
+    // ===================================================
 
     effect(() => {
 
@@ -83,6 +100,7 @@ export class BoardComponent
       const fen = this.store.fen();
 
       this.cg.set({
+
         fen,
 
         movable: {
@@ -92,10 +110,9 @@ export class BoardComponent
       });
     });
 
-
-    // =====================================================
+    // ===================================================
     // BEST MOVES -> ARROWS
-    // =====================================================
+    // ===================================================
 
     effect(() => {
 
@@ -120,14 +137,20 @@ export class BoardComponent
 
       data.moves
         .slice(0, 3)
-        .forEach((m: MoveEvaluation) => {
+        .forEach((move: MoveEvaluation) => {
 
-          if (!m.move || m.move.length < 4) {
+          if (
+            !move.move ||
+            move.move.length < 4
+          ) {
             return;
           }
 
-          const from = m.move.slice(0, 2);
-          const to = m.move.slice(2, 4);
+          const from =
+            move.move.slice(0, 2);
+
+          const to =
+            move.move.slice(2, 4);
 
           shapes.push({
             orig: from as Key,
@@ -156,6 +179,7 @@ export class BoardComponent
         debounceTime(400),
       )
       .subscribe(() => {
+
         this.analyze();
       });
   }
@@ -175,6 +199,7 @@ export class BoardComponent
         orientation: 'white',
 
         movable: {
+
           free: false,
 
           color: 'both',
@@ -182,10 +207,14 @@ export class BoardComponent
           dests: this.buildDests(),
 
           events: {
+
             after: (
               from: string,
               to: string,
-            ) => this.onMove({ from, to }),
+            ) => this.onMove({
+              from,
+              to,
+            }),
           },
         },
 
@@ -213,15 +242,20 @@ export class BoardComponent
     to: string;
   }): void {
 
-    const { from, to } = event;
+    const {
+      from,
+      to,
+    } = event;
 
-    const success = this.chess.move(from, to);
+    const success =
+      this.chess.move(from, to);
 
     if (!success) {
       return;
     }
 
-    const fen = this.chess.getFen();
+    const fen =
+      this.chess.getFen();
 
     this.store.setFen(fen);
 
@@ -235,20 +269,31 @@ export class BoardComponent
 
   analyze(): void {
 
-    const fen = this.store.fen();
+    const fen =
+      this.store.fen();
 
     this.store.setLoading(true);
 
     this.store.clearError();
 
+    // ===================================================
+    // INITIAL WORKFLOWS
+    // ===================================================
+
     forkJoin({
 
-      moves: this.agent.getMoves(fen),
+      moves:
+        this.agent.getMoves(fen),
 
-      evaluation: this.agent.getEvaluation(fen),
+      evaluation:
+        this.agent.getEvaluation(fen),
 
     })
       .pipe(
+
+        // ===============================================
+        // SECONDARY WORKFLOWS
+        // ===============================================
 
         switchMap(({
           moves,
@@ -256,12 +301,11 @@ export class BoardComponent
         }) => {
 
           const opening =
-            moves.opening ??
-            '';
+            moves.opening ?? '';
 
-          // =================================================
-          // Aucune ouverture détectée
-          // =================================================
+          // =============================================
+          // NO OPENING DETECTED
+          // =============================================
 
           if (!opening) {
 
@@ -277,25 +321,53 @@ export class BoardComponent
               },
 
               vector: {
-                query: '',
-                results: [] as RagItem[],
+                opening: '',
+                rag_context: [] as RagItem[],
+                source: null,
               },
             });
           }
 
-          // =================================================
-          // Videos + RAG
-          // =================================================
+          // =============================================
+          // RAG + VIDEOS
+          // =============================================
 
           return forkJoin({
 
             videos:
-              this.agent.getVideos(opening),
+              this.agent.getVideos(
+                opening
+              ),
 
             vector:
-              this.agent.getRagContext(opening),
+              this.agent.getRagContext(
+                opening
+              ),
 
           }).pipe(
+
+            catchError((error) => {
+
+              console.error(
+                'RAG/Videos error:',
+                error,
+              );
+
+              return of({
+
+                videos: {
+                  opening,
+                  count: 0,
+                  videos: [] as Video[],
+                },
+
+                vector: {
+                  opening,
+                  rag_context: [] as RagItem[],
+                  source: null,
+                },
+              });
+            }),
 
             switchMap(({
               videos,
@@ -315,6 +387,10 @@ export class BoardComponent
       )
       .subscribe({
 
+        // =================================================
+        // SUCCESS
+        // =================================================
+
         next: ({
           moves,
           evaluation,
@@ -329,6 +405,7 @@ export class BoardComponent
             source:
               moves.source ??
               evaluation.source ??
+              vector.source ??
               null,
 
             moves:
@@ -344,7 +421,7 @@ export class BoardComponent
               videos.videos ?? [],
 
             rag_context:
-              vector.results ?? [],
+              vector.rag_context ?? [],
 
             explanation:
               moves.explanation ?? null,
@@ -352,20 +429,33 @@ export class BoardComponent
             error: null,
           };
 
-          this.store.updateData(response);
+          this.store.updateData(
+            response
+          );
 
-          this.store.setLoading(false);
+          this.store.setLoading(
+            false
+          );
         },
+
+        // =================================================
+        // ERROR
+        // =================================================
 
         error: (error) => {
 
-          console.error(error);
-
-          this.store.setError(
-            'Erreur API',
+          console.error(
+            'Analysis error:',
+            error,
           );
 
-          this.store.setLoading(false);
+          this.store.setError(
+            'Erreur API'
+          );
+
+          this.store.setLoading(
+            false
+          );
         },
       });
   }
@@ -379,7 +469,8 @@ export class BoardComponent
 
     this.chess.reset();
 
-    const fen = this.chess.getFen();
+    const fen =
+      this.chess.getFen();
 
     this.store.setFen(fen);
 
@@ -441,6 +532,7 @@ export class BoardComponent
         }
 
         dests.set(
+
           square as Key,
 
           moves.map(

@@ -4,21 +4,61 @@ from app.agents.state import AgentState
 from app.services.stockfish_service import StockfishService
 
 
+# =========================================================
+# SERVICE
+# =========================================================
+
 stockfish_service = StockfishService(
     path="/usr/games/stockfish",
     depth=15,
 )
 
 
-def stockfish_node(state: AgentState) -> AgentState:
-    if not state["is_valid"]:
-        return state
+# =========================================================
+# NODE
+# =========================================================
 
-    if state.get("moves"):
-        return state
+def stockfish_node(state: AgentState) -> AgentState:
+    """
+    Node LangGraph Stockfish.
+
+    Workflow :
+        validate_fen
+            -> stockfish
+
+    Endpoint dédié à l'analyse moteur.
+
+    IMPORTANT :
+    - plus de fallback Lichess
+    - plus de logique full workflow
+    """
+
+    # =====================================================
+    # VALIDATION
+    # =====================================================
+
+    if not state.get("is_valid"):
+
+        return {
+            **state,
+            "evaluation": None,
+            "error": "Invalid FEN",
+        }
 
     try:
-        result = stockfish_service.evaluate(state["fen"])
+
+        # =================================================
+        # EVALUATION
+        # =================================================
+
+        result = stockfish_service.evaluate(
+            state["fen"]
+        )
+
+        # =================================================
+        # SUCCESS
+        # =================================================
+
         return {
             **state,
             "evaluation": result,
@@ -26,7 +66,9 @@ def stockfish_node(state: AgentState) -> AgentState:
         }
 
     except Exception as e:
+
         return {
             **state,
+            "evaluation": None,
             "error": str(e),
         }

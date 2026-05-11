@@ -1,153 +1,306 @@
 <!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/recommendations/recommendations.component.html -->
 
-<div *ngIf="loading()">
-  Chargement...
-</div>
+<div class="space-y-6">
 
-<div *ngIf="error()">
-  {{ error() }}
-</div>
+  <!-- ================================================== -->
+  <!-- LOADING -->
+  <!-- ================================================== -->
 
-<div *ngIf="data() as d">
+  <div
+    *ngIf="loading()"
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
+    <p class="text-sm text-gray-500">
+      Analyse en cours...
+    </p>
+  </div>
 
-  <!-- SOURCE -->
-  <h2 *ngIf="d.source">
-    Source : {{ d.source }}
-  </h2>
 
-  <!-- OUVERTURE -->
-  <div *ngIf="d.opening">
+  <!-- ================================================== -->
+  <!-- ERROR -->
+  <!-- ================================================== -->
 
-    <h3>Ouverture détectée</h3>
+  <div
+    *ngIf="error()"
+    class="rounded-xl border border-red-200 bg-red-50 p-4 shadow-sm"
+  >
+    <p class="text-sm text-red-600">
+      {{ error() }}
+    </p>
+  </div>
 
-    <p>
-      {{ d.opening }}
+
+  <!-- ================================================== -->
+  <!-- OPENING -->
+  <!-- ================================================== -->
+
+  <div
+    *ngIf="opening()"
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
+
+    <h2 class="mb-2 text-lg font-semibold">
+      Ouverture détectée
+    </h2>
+
+    <p class="text-sm text-gray-700">
+      {{ opening() }}
     </p>
 
   </div>
 
-  <!-- COUPS THEORIQUES -->
-  <div *ngIf="d.moves && d.moves.length > 0">
 
-    <h3>Coups recommandés</h3>
+  <!-- ================================================== -->
+  <!-- MOVES -->
+  <!-- ================================================== -->
 
-    <ul>
+  <div
+    *ngIf="hasMoves()"
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
 
-      <li *ngFor="let move of d.moves">
+    <h2 class="mb-4 text-lg font-semibold">
+      Coups recommandés
+    </h2>
 
-        <strong>{{ move.move }}</strong>
+    <div class="space-y-3">
 
-        <span *ngIf="move.evaluation !== null && move.evaluation !== undefined">
-          — Évaluation : {{ move.evaluation }}
-        </span>
+      <div
+        *ngFor="let move of moves()"
+        class="rounded-lg border border-gray-100 p-3"
+      >
 
-      </li>
+        <div class="flex items-center justify-between">
 
-    </ul>
+          <div class="font-mono text-sm font-medium">
+            {{ move.move }}
+          </div>
 
-  </div>
+          <div class="text-sm text-gray-500">
 
-  <!-- EVALUATION STOCKFISH -->
-  <div *ngIf="d.evaluation">
+            <span *ngIf="move.score !== undefined">
+              Évaluation :
+              {{ move.score }}
+            </span>
 
-    <h3>Évaluation Stockfish</h3>
+          </div>
 
-    <p *ngIf="d.evaluation.type">
-      Type : {{ d.evaluation.type }}
-    </p>
-
-    <p *ngIf="d.evaluation.value !== null && d.evaluation.value !== undefined">
-      Valeur : {{ d.evaluation.value }}
-    </p>
-
-    <p *ngIf="d.evaluation.best_move">
-      Meilleur coup : {{ d.evaluation.best_move }}
-    </p>
-
-    <p *ngIf="d.evaluation.depth !== null && d.evaluation.depth !== undefined">
-      Profondeur : {{ d.evaluation.depth }}
-    </p>
-
-  </div>
-
-  <!-- EXPLICATION IA -->
-  <div *ngIf="d.explanation">
-
-    <h3>Explication IA</h3>
-
-    <p>
-      {{ d.explanation }}
-    </p>
-
-  </div>
-
-  <!-- CONTEXTE RAG -->
-  <div *ngIf="d.rag_context && d.rag_context.length > 0">
-
-    <h3>Contexte stratégique</h3>
-
-    <div *ngFor="let r of d.rag_context">
-
-      <p *ngIf="r.opening">
-        <strong>Ouverture :</strong> {{ r.opening }}
-      </p>
-
-      <p *ngIf="r.variation">
-        <strong>Variation :</strong> {{ r.variation }}
-      </p>
-
-      <p *ngIf="r.score !== null && r.score !== undefined">
-        <strong>Score :</strong> {{ r.score }}
-      </p>
-
-      <p *ngIf="r.text">
-        {{ r.text }}
-      </p>
-
-      <hr />
-
-    </div>
-
-  </div>
-
-  <!-- VIDEOS -->
-  <div *ngIf="d.videos && d.videos.length > 0">
-
-    <h3>Vidéos YouTube</h3>
-
-    <div *ngFor="let v of d.videos">
-
-      <div *ngIf="v.thumbnail">
-
-        <img
-          [src]="v.thumbnail"
-          [alt]="v.title"
-          width="320"
-        />
+        </div>
 
       </div>
 
+    </div>
+
+  </div>
+
+
+  <!-- ================================================== -->
+  <!-- STOCKFISH -->
+  <!-- ================================================== -->
+
+  <div
+    *ngIf="evaluation()"
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
+
+    <h2 class="mb-4 text-lg font-semibold">
+      Évaluation Stockfish
+    </h2>
+
+    <div class="space-y-2 text-sm text-gray-700">
+
       <p>
-        <a
-          [href]="v.url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ v.title }}
-        </a>
+        <span class="font-medium">
+          Type :
+        </span>
+
+        {{ evaluation()?.type }}
       </p>
 
-      <p *ngIf="v.channel">
-        Chaîne : {{ v.channel }}
+      <p>
+        <span class="font-medium">
+          Valeur :
+        </span>
+
+        {{ evaluation()?.value }}
       </p>
 
-      <p *ngIf="v.description">
-        {{ v.description }}
+      <p *ngIf="evaluation()?.best_move">
+
+        <span class="font-medium">
+          Meilleur coup :
+        </span>
+
+        {{ evaluation()?.best_move }}
+
       </p>
 
-      <hr />
+      <p *ngIf="evaluation()?.depth">
+
+        <span class="font-medium">
+          Profondeur :
+        </span>
+
+        {{ evaluation()?.depth }}
+
+      </p>
 
     </div>
+
+  </div>
+
+
+  <!-- ================================================== -->
+  <!-- RAG CONTEXT -->
+  <!-- ================================================== -->
+
+  <div
+    *ngIf="hasRag()"
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
+
+    <h2 class="mb-4 text-lg font-semibold">
+      Contexte stratégique
+    </h2>
+
+    <div class="space-y-4">
+
+      <div
+        *ngFor="let item of ragContext()"
+        class="rounded-lg border border-gray-100 p-4"
+      >
+
+        <div class="space-y-2">
+
+          <p
+            *ngIf="item.opening"
+            class="font-medium text-gray-900"
+          >
+            {{ item.opening }}
+          </p>
+
+          <p
+            *ngIf="item.variation"
+            class="text-sm text-gray-500"
+          >
+            Variante :
+            {{ item.variation }}
+          </p>
+
+          <p
+            *ngIf="item.text"
+            class="text-sm leading-relaxed text-gray-700"
+          >
+            {{ item.text }}
+          </p>
+
+          <p
+            *ngIf="item.score !== undefined"
+            class="text-xs text-gray-400"
+          >
+            Score :
+            {{ item.score }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================================================== -->
+  <!-- VIDEOS -->
+  <!-- ================================================== -->
+
+  <div
+    *ngIf="hasVideos()"
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
+
+    <h2 class="mb-4 text-lg font-semibold">
+      Ressources vidéos
+    </h2>
+
+    <div class="space-y-4">
+
+      <a
+        *ngFor="let video of videos()"
+        [href]="video.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block rounded-lg border border-gray-100 p-3 transition hover:bg-gray-50"
+      >
+
+        <div class="flex gap-4">
+
+          <!-- ========================================== -->
+          <!-- THUMBNAIL -->
+          <!-- ========================================== -->
+
+          <img
+            *ngIf="video.thumbnail"
+            [src]="video.thumbnail"
+            [alt]="video.title"
+            class="h-24 w-40 rounded object-cover"
+          />
+
+          <!-- ========================================== -->
+          <!-- CONTENT -->
+          <!-- ========================================== -->
+
+          <div class="min-w-0 flex-1">
+
+            <h3 class="line-clamp-2 font-medium text-gray-900">
+              {{ video.title }}
+            </h3>
+
+            <p
+              *ngIf="video.channel"
+              class="mt-1 text-sm text-gray-500"
+            >
+              {{ video.channel }}
+            </p>
+
+            <p
+              *ngIf="video.description"
+              class="mt-2 line-clamp-3 text-sm text-gray-600"
+            >
+              {{ video.description }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================================================== -->
+  <!-- EMPTY STATE -->
+  <!-- ================================================== -->
+
+  <div
+    *ngIf="
+      !loading() &&
+      !error() &&
+      !hasMoves() &&
+      !evaluation() &&
+      !hasRag() &&
+      !hasVideos()
+    "
+    class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+  >
+
+    <p class="text-sm text-gray-500">
+      Déplacez une pièce pour lancer l’analyse.
+    </p>
 
   </div>
 

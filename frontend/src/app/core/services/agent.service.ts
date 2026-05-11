@@ -1,6 +1,7 @@
 // POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/core/services/agent.service.ts
 
 import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -19,6 +20,10 @@ import { environment } from '../../../environments/environment';
 })
 export class AgentService {
 
+  // =====================================================
+  // API
+  // =====================================================
+
   private readonly API_URL = environment.apiUrl;
 
 
@@ -31,7 +36,9 @@ export class AgentService {
   // MOVES WORKFLOW
   // =====================================================
 
-  getMoves(fen: string): Observable<AgentResponse> {
+  getMoves(
+    fen: string
+  ): Observable<AgentResponse> {
 
     return this.http.get<AgentResponse>(
       `${this.API_URL}/moves/${encodeURIComponent(fen)}`
@@ -43,7 +50,9 @@ export class AgentService {
   // EVALUATION WORKFLOW
   // =====================================================
 
-  getEvaluation(fen: string): Observable<AgentResponse> {
+  getEvaluation(
+    fen: string
+  ): Observable<AgentResponse> {
 
     return this.http.get<AgentResponse>(
       `${this.API_URL}/evaluate/${encodeURIComponent(fen)}`
@@ -55,18 +64,22 @@ export class AgentService {
   // VECTOR SEARCH / RAG
   // =====================================================
 
-  getRagContext(opening: string): Observable<{
-    query: string;
-    results: RagItem[];
+  getRagContext(
+    opening: string
+  ): Observable<{
+    opening: string;
+    rag_context: RagItem[];
+    source?: string;
   }> {
 
     return this.http.post<{
-      query: string;
-      results: RagItem[];
+      opening: string;
+      rag_context: RagItem[];
+      source?: string;
     }>(
       `${this.API_URL}/vector-search`,
       {
-        query: opening,
+        opening,
       }
     );
   }
@@ -76,7 +89,9 @@ export class AgentService {
   // VIDEOS WORKFLOW
   // =====================================================
 
-  getVideos(opening: string): Observable<{
+  getVideos(
+    opening: string
+  ): Observable<{
     opening: string;
     count: number;
     videos: Video[];
@@ -92,4 +107,3 @@ export class AgentService {
   }
 
 }
-
