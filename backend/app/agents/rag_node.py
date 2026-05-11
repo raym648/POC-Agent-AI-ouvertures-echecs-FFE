@@ -7,30 +7,65 @@ from app.core.config import settings
 
 
 def rag_node(state: AgentState) -> AgentState:
-    if not state["is_valid"]:
-        return state
+    """
+    Node LangGraph RAG.
+
+    Workflow spécialisé opening-based :
+        opening
+            -> embedding
+                -> Milvus search
+
+    IMPORTANT :
+    - ne dépend plus de validate_fen
+    - ne dépend plus de is_valid
+    - ne dépend plus du workflow FEN
+    """
 
     try:
-        if state.get("moves"):
-            query = " ".join([m.get("san", "") for m in state["moves"][:3]])
-        elif state.get("evaluation"):
-            query = f"chess analysis {state['fen']}"
-        else:
-            query = state["fen"]
 
-        embedding = embedding_service.embed_text(query)
+        # =================================================
+        # OPENING EXTRACTION
+        # =================================================
+
+        opening = state.get("opening")
+
+        if not opening:
+
+            return {
+                **state,
+                "rag_context": [],
+                "error": "Missing opening",
+            }
+
+        # =================================================
+        # EMBEDDING
+        # =================================================
+
+        embedding = embedding_service.embed_text(
+            opening
+        )
+
+        # =================================================
+        # VECTOR SEARCH
+        # =================================================
 
         results = milvus_service.search(
             embedding,
             top_k=settings.RAG_TOP_K,
         )
 
+        # =================================================
+        # SUCCESS
+        # =================================================
+
         return {
             **state,
             "rag_context": results,
+            "source": "milvus",
         }
 
     except Exception as e:
+
         return {
             **state,
             "rag_context": [],

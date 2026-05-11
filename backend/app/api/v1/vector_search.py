@@ -9,19 +9,39 @@ from app.agents.langgraph_agent import run_agent
 router = APIRouter()
 
 
-class SearchRequest(BaseModel):
-    fen: str
+# =========================================================
+# REQUEST MODEL
+# =========================================================
 
+class SearchRequest(BaseModel):
+    """
+    Requête RAG basée sur un nom d'ouverture.
+    """
+
+    opening: str
+
+
+# =========================================================
+# ENDPOINT
+# =========================================================
 
 @router.post("/vector-search")
 async def vector_search(request: SearchRequest):
+    """
+    Recherche vectorielle Milvus
+    basée sur une ouverture d'échecs.
+    """
 
     try:
 
         result = await run_agent(
-            request.fen,
+            request.opening,
             mode="rag",
         )
+
+        # =================================================
+        # ERROR HANDLING
+        # =================================================
 
         if result.get("error"):
 
@@ -30,9 +50,12 @@ async def vector_search(request: SearchRequest):
                 detail=result["error"],
             )
 
+        # =================================================
+        # SUCCESS
+        # =================================================
+
         return {
-            "fen": request.fen,
-            "opening": result.get("opening"),
+            "opening": request.opening,
             "rag_context": result.get("rag_context"),
             "source": result.get("source"),
         }

@@ -10,9 +10,10 @@ from app.agents.lichess_node import lichess_node
 from app.agents.stockfish_node import stockfish_node
 from app.agents.rag_node import rag_node
 from app.agents.video_node import video_retriever_node
-from app.agents.llm_node import llm_node
-from app.agents.opening_detector_node import opening_detector_node
 from app.agents.format_response_node import format_response_node
+
+# from app.agents.llm_node import llm_node
+# from app.agents.opening_detector_node import opening_detector_node
 
 
 # =========================================================
@@ -24,39 +25,7 @@ WorkflowMode = Literal[
     "evaluate",
     "rag",
     "videos",
-    "full",
 ]
-
-
-# =========================================================
-# ROUTING HELPERS
-# =========================================================
-
-def should_use_stockfish(state: AgentState) -> str:
-    """
-    Détermine si l'on doit fallback vers Stockfish.
-
-    Si aucun coup théorique n'est trouvé via Lichess,
-    alors on bascule vers Stockfish.
-    """
-
-    moves = state.get("moves", [])
-
-    if len(moves) > 0:
-        return "has_moves"
-
-    return "no_moves"
-
-
-def should_fetch_videos(state: AgentState) -> bool:
-    """
-    Détermine si des vidéos doivent être récupérées.
-
-    Les vidéos YouTube sont récupérées uniquement
-    lorsqu'une ouverture a été détectée.
-    """
-
-    return bool(state.get("opening"))
 
 
 # =========================================================
@@ -65,10 +34,18 @@ def should_fetch_videos(state: AgentState) -> bool:
 
 def build_moves_graph():
     """
-    Workflow léger :
-    validate -> lichess -> format
+    Workflow coups théoriques :
 
-    Endpoint dédié aux coups théoriques.
+    validate_fen
+        -> lichess
+            -> format
+
+    Input :
+        FEN
+
+    Usage :
+        récupération des coups théoriques
+        depuis Lichess.
     """
 
     graph = StateGraph(AgentState)
@@ -77,9 +54,20 @@ def build_moves_graph():
     # NODES
     # =====================================================
 
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("lichess", lichess_node)
-    graph.add_node("format", format_response_node)
+    graph.add_node(
+        "validate_fen",
+        validate_fen_node,
+    )
+
+    graph.add_node(
+        "lichess",
+        lichess_node,
+    )
+
+    graph.add_node(
+        "format",
+        format_response_node,
+    )
 
     # =====================================================
     # ENTRYPOINT
@@ -88,22 +76,40 @@ def build_moves_graph():
     graph.set_entry_point("validate_fen")
 
     # =====================================================
-    # WORKFLOW
+    # EDGES
     # =====================================================
 
-    graph.add_edge("validate_fen", "lichess")
-    graph.add_edge("lichess", "format")
-    graph.add_edge("format", END)
+    graph.add_edge(
+        "validate_fen",
+        "lichess",
+    )
+
+    graph.add_edge(
+        "lichess",
+        "format",
+    )
+
+    graph.add_edge(
+        "format",
+        END,
+    )
 
     return graph.compile()
 
 
 def build_evaluate_graph():
     """
-    Workflow Stockfish uniquement :
-    validate -> stockfish -> format
+    Workflow évaluation moteur :
 
-    Endpoint dédié à l'évaluation moteur.
+    validate_fen
+        -> stockfish
+            -> format
+
+    Input :
+        FEN
+
+    Usage :
+        analyse moteur Stockfish.
     """
 
     graph = StateGraph(AgentState)
@@ -112,9 +118,20 @@ def build_evaluate_graph():
     # NODES
     # =====================================================
 
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("stockfish", stockfish_node)
-    graph.add_node("format", format_response_node)
+    graph.add_node(
+        "validate_fen",
+        validate_fen_node,
+    )
+
+    graph.add_node(
+        "stockfish",
+        stockfish_node,
+    )
+
+    graph.add_node(
+        "format",
+        format_response_node,
+    )
 
     # =====================================================
     # ENTRYPOINT
@@ -123,26 +140,47 @@ def build_evaluate_graph():
     graph.set_entry_point("validate_fen")
 
     # =====================================================
-    # WORKFLOW
+    # EDGES
     # =====================================================
 
-    graph.add_edge("validate_fen", "stockfish")
-    graph.add_edge("stockfish", "format")
-    graph.add_edge("format", END)
+    graph.add_edge(
+        "validate_fen",
+        "stockfish",
+    )
+
+    graph.add_edge(
+        "stockfish",
+        "format",
+    )
+
+    graph.add_edge(
+        "format",
+        END,
+    )
 
     return graph.compile()
 
 
 def build_rag_graph():
     """
-    Workflow RAG uniquement :
+    Workflow RAG :
 
-    validate
-        -> opening_detector
-            -> rag
-                -> format
+    rag
+        -> format
 
-    Endpoint dédié au contexte stratégique.
+    Input :
+        nom d'ouverture
+
+    Usage :
+        récupération du contexte
+        stratégique depuis Milvus.
+
+    IMPORTANT :
+        Aucun validate_fen ici.
+        Aucun opening_detector ici.
+
+        Le endpoint transmet déjà
+        directement une opening name.
     """
 
     graph = StateGraph(AgentState)
@@ -151,39 +189,58 @@ def build_rag_graph():
     # NODES
     # =====================================================
 
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("opening_detector", opening_detector_node)
-    graph.add_node("rag", rag_node)
-    graph.add_node("format", format_response_node)
+    graph.add_node(
+        "rag",
+        rag_node,
+    )
+
+    graph.add_node(
+        "format",
+        format_response_node,
+    )
 
     # =====================================================
     # ENTRYPOINT
     # =====================================================
 
-    graph.set_entry_point("validate_fen")
+    graph.set_entry_point("rag")
 
     # =====================================================
-    # WORKFLOW
+    # EDGES
     # =====================================================
 
-    graph.add_edge("validate_fen", "opening_detector")
-    graph.add_edge("opening_detector", "rag")
-    graph.add_edge("rag", "format")
-    graph.add_edge("format", END)
+    graph.add_edge(
+        "rag",
+        "format",
+    )
+
+    graph.add_edge(
+        "format",
+        END,
+    )
 
     return graph.compile()
 
 
 def build_video_graph():
     """
-    Workflow vidéos uniquement :
+    Workflow vidéos :
 
-    validate
-        -> opening_detector
-            -> video_retriever
-                -> format
+    video_retriever
+        -> format
 
-    Endpoint dédié aux ressources YouTube.
+    Input :
+        nom d'ouverture
+
+    Usage :
+        récupération des vidéos YouTube.
+
+    IMPORTANT :
+        Aucun validate_fen ici.
+        Aucun opening_detector ici.
+
+        Le endpoint transmet déjà
+        directement une opening name.
     """
 
     graph = StateGraph(AgentState)
@@ -192,124 +249,37 @@ def build_video_graph():
     # NODES
     # =====================================================
 
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("opening_detector", opening_detector_node)
-    graph.add_node("video_retriever", video_retriever_node)
-    graph.add_node("format", format_response_node)
+    graph.add_node(
+        "video_retriever",
+        video_retriever_node,
+    )
+
+    graph.add_node(
+        "format",
+        format_response_node,
+    )
 
     # =====================================================
     # ENTRYPOINT
     # =====================================================
 
-    graph.set_entry_point("validate_fen")
-
-    # =====================================================
-    # WORKFLOW
-    # =====================================================
-
-    graph.add_edge("validate_fen", "opening_detector")
-    graph.add_edge("opening_detector", "video_retriever")
-    graph.add_edge("video_retriever", "format")
-    graph.add_edge("format", END)
-
-    return graph.compile()
-
-
-def build_full_graph():
-    """
-    Workflow IA complet :
-
-    validate
-        -> lichess
-            -> opening_detector
-                -> rag
-                    -> videos
-                        -> llm
-                            -> format
-
-    fallback :
-        lichess
-            -> stockfish
-                -> rag
-    """
-
-    graph = StateGraph(AgentState)
-
-    # =====================================================
-    # NODES
-    # =====================================================
-
-    graph.add_node("validate_fen", validate_fen_node)
-    graph.add_node("lichess", lichess_node)
-    graph.add_node("stockfish", stockfish_node)
-    graph.add_node("opening_detector", opening_detector_node)
-    graph.add_node("rag", rag_node)
-    graph.add_node("video_retriever", video_retriever_node)
-    graph.add_node("llm", llm_node)
-    graph.add_node("format", format_response_node)
-
-    # =====================================================
-    # ENTRYPOINT
-    # =====================================================
-
-    graph.set_entry_point("validate_fen")
-
-    # =====================================================
-    # VALIDATION
-    # =====================================================
-
-    graph.add_edge("validate_fen", "lichess")
-
-    # =====================================================
-    # ROUTING LICHESS -> STOCKFISH
-    # =====================================================
-
-    graph.add_conditional_edges(
-        "lichess",
-        should_use_stockfish,
-        {
-            "has_moves": "opening_detector",
-            "no_moves": "stockfish",
-        },
+    graph.set_entry_point(
+        "video_retriever",
     )
 
     # =====================================================
-    # OPENING DETECTION
+    # EDGES
     # =====================================================
 
-    graph.add_edge("opening_detector", "rag")
-
-    # =====================================================
-    # STOCKFISH FALLBACK
-    # =====================================================
-
-    graph.add_edge("stockfish", "rag")
-
-    # =====================================================
-    # RAG -> VIDEOS / LLM
-    # =====================================================
-
-    graph.add_conditional_edges(
-        "rag",
-        should_fetch_videos,
-        {
-            True: "video_retriever",
-            False: "llm",
-        },
+    graph.add_edge(
+        "video_retriever",
+        "format",
     )
 
-    # =====================================================
-    # VIDEOS -> LLM
-    # =====================================================
-
-    graph.add_edge("video_retriever", "llm")
-
-    # =====================================================
-    # FINAL FORMAT
-    # =====================================================
-
-    graph.add_edge("llm", "format")
-    graph.add_edge("format", END)
+    graph.add_edge(
+        "format",
+        END,
+    )
 
     return graph.compile()
 
@@ -326,30 +296,39 @@ rag_agent = build_rag_graph()
 
 video_agent = build_video_graph()
 
-full_agent = build_full_graph()
-
 
 # =========================================================
 # MAIN RUNNER
 # =========================================================
 
 async def run_agent(
-    fen: str,
+    input_data: str,
     mode: WorkflowMode = "moves",
 ) -> Dict[str, Any]:
     """
     Point d'entrée principal LangGraph.
 
     Modes disponibles :
-    - moves
-    - evaluate
-    - rag
-    - videos
-    - full
+        - moves
+        - evaluate
+        - rag
+        - videos
+
+    Inputs :
+        - moves/evaluate :
+            FEN
+
+        - rag/videos :
+            nom d'ouverture
     """
 
+    # =====================================================
+    # BASE STATE
+    # =====================================================
+
     state: AgentState = {
-        "fen": fen,
+        "fen": None,
+        "opening": None,
         "is_valid": False,
         "moves": [],
         "evaluation": None,
@@ -358,23 +337,44 @@ async def run_agent(
         "rag_context": None,
         "explanation": None,
         "videos": [],
-        "opening": None,
     }
+
+    # =====================================================
+    # MODE INITIALIZATION
+    # =====================================================
+
+    if mode in ["moves", "evaluate"]:
+
+        state["fen"] = input_data
+
+    if mode in ["rag", "videos"]:
+
+        state["opening"] = input_data
 
     # =====================================================
     # WORKFLOW SELECTION
     # =====================================================
 
     if mode == "moves":
+
         return await moves_agent.ainvoke(state)
 
     if mode == "evaluate":
+
         return await evaluate_agent.ainvoke(state)
 
     if mode == "rag":
+
         return await rag_agent.ainvoke(state)
 
     if mode == "videos":
+
         return await video_agent.ainvoke(state)
 
-    return await full_agent.ainvoke(state)
+    # =====================================================
+    # INVALID MODE
+    # =====================================================
+
+    return {
+        "error": f"Unsupported workflow mode: {mode}",
+    }
