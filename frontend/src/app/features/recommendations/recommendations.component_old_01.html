@@ -1,5 +1,7 @@
 <!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/recommendations/recommendations.component.html -->
 
+
+
 <div class="space-y-6">
 
   <!-- ================================================== -->
@@ -78,9 +80,9 @@
 
           <div class="text-sm text-gray-500">
 
-            <span *ngIf="move.evaluation !== undefined && move.evaluation !== null">
+            <span *ngIf="move.score !== undefined">
               Évaluation :
-              {{ move.evaluation }}
+              {{ move.score }}
             </span>
 
           </div>
@@ -236,12 +238,20 @@
 
         <div class="flex gap-4">
 
+          <!-- ========================================== -->
+          <!-- THUMBNAIL -->
+          <!-- ========================================== -->
+
           <img
             *ngIf="video.thumbnail"
             [src]="video.thumbnail"
             [alt]="video.title"
             class="h-24 w-40 rounded object-cover"
           />
+
+          <!-- ========================================== -->
+          <!-- CONTENT -->
+          <!-- ========================================== -->
 
           <div class="min-w-0 flex-1">
 
