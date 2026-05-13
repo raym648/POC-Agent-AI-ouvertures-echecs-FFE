@@ -1,60 +1,83 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/services/youtube_service.py
 
-
+import logging
 import os
-from googleapiclient.discovery import build
+
 from typing import List
+
+from googleapiclient.discovery import build
+
 from app.models.video_schema import Video
+
+
+logger = logging.getLogger(__name__)
 
 
 class YouTubeService:
     """
     Service métier pour interagir avec l'API YouTube Data v3.
 
-    RESPONSABILITÉ :
-    - Exécuter une requête YouTube
-    - Transformer la réponse en objets Video
-    - Appliquer un filtrage léger
-
-    ⚠️ IMPORTANT :
-    - La construction de la query est externalisée (video_node)
+    RESPONSABILITÉS :
+    - exécuter les requêtes YouTube
+    - transformer les réponses en objets Video
+    - appliquer un filtrage sémantique léger
+    - réduire le bruit (live/blitz/etc.)
     """
 
     def __init__(self):
         """
-        Initialise le client YouTube avec la clé API.
+        Initialise le client YouTube Data API v3.
         """
-        self.api_key = os.getenv("YOUTUBE_API_KEY")
+
+        self.api_key = os.getenv(
+            "YOUTUBE_API_KEY"
+        )
 
         if not self.api_key:
-            raise ValueError("YOUTUBE_API_KEY manquante dans .env")
 
-        self.youtube = build("youtube", "v3", developerKey=self.api_key)
+            raise ValueError(
+                "YOUTUBE_API_KEY manquante dans .env"
+            )
+
+        self.youtube = build(
+            "youtube",
+            "v3",
+            developerKey=self.api_key,
+        )
 
     def search_videos(
         self,
         query: str,
         opening: str = None,
-        max_results: int = 5
+        max_results: int = 5,
     ) -> List[Video]:
         """
-        Recherche des vidéos pertinentes sur YouTube.
+        Recherche des vidéos pédagogiques YouTube.
 
         Args:
-            query (str): requête déjà construite (ex: enrichie via Lichess)
-            opening (str, optional): ouverture pour filtrage sémantique
-            max_results (int): nombre max de résultats
+            query:
+                requête enrichie générée par video_node
+
+            opening:
+                ouverture utilisée pour filtrage sémantique
+
+            max_results:
+                nombre maximum de vidéos retournées
 
         Returns:
             List[Video]
         """
+
+        logger.info(
+            f"[YOUTUBE SERVICE] Searching videos | query={query}"
+        )
 
         request = self.youtube.search().list(
             q=query,
             part="snippet",
             maxResults=max_results,
             type="video",
-            order="relevance"
+            order="relevance",
         )
 
         response = request.execute()
@@ -62,53 +85,148 @@ class YouTubeService:
         videos: List[Video] = []
 
         for item in response.get("items", []):
-            snippet = item.get("snippet", {})
-            video_id = item.get("id", {}).get("videoId")
 
-            # Sécurité minimale
+            snippet = item.get("snippet", {})
+            video_id = (
+                item.get("id", {})
+                .get("videoId")
+            )
+
+            # =============================================
+            # Minimal validation
+            # =============================================
+
             if not video_id:
                 continue
 
-            video = Video(
-                title=snippet.get("title", ""),
-                video_id=video_id,
-                url=f"https://www.youtube.com/watch?v={video_id}",
-                thumbnail=snippet.get("thumbnails", {}).get("high", {}).get("url", ""),  # noqa: E501
-                description=snippet.get("description", ""),
-                channel=snippet.get("channelTitle", "")
+            title = snippet.get(
+                "title",
+                "",
             )
 
-            # Filtrage optionnel
-            if self._is_relevant(video, opening):
+            description = snippet.get(
+                "description",
+                "",
+            )
+
+            channel = snippet.get(
+                "channelTitle",
+                "",
+            )
+
+            video = Video(
+                title=title,
+                video_id=video_id,
+                url=(
+                    "https://www.youtube.com/watch"
+                    f"?v={video_id}"
+                ),
+                thumbnail=(
+                    snippet.get(
+                        "thumbnails",
+                        {},
+                    )
+                    .get("high", {})
+                    .get("url", "")
+                ),
+                description=description,
+                channel=channel,
+            )
+
+            # =============================================
+            # Semantic filtering
+            # =============================================
+
+            if self._is_relevant(
+                video,
+                opening,
+            ):
+
                 videos.append(video)
+
+        logger.info(
+            "[YOUTUBE SERVICE] Retrieved "
+            f"{len(videos)} filtered videos"
+        )
 
         return videos
 
-    def _is_relevant(self, video: Video, opening: str = None) -> bool:
+    def _is_relevant(
+        self,
+        video: Video,
+        opening: str = None,
+    ) -> bool:
         """
-        Filtrage basique pour éviter le bruit (live, blitz, etc.)
-        + amélioration du recall
+        Filtrage pédagogique léger.
+
+        Objectifs :
+        - éliminer le bruit
+        - améliorer la pertinence
+        - conserver un recall élevé
         """
 
-        title = video.title.lower()
-        description = video.description.lower()
+        title = (
+            video.title or ""
+        ).lower()
 
-        # =========================
-        # 1. Blacklist (bruit)
-        # =========================
-        blacklist = ["blitz", "bullet", "live", "stream"]
+        description = (
+            video.description or ""
+        ).lower()
 
-        if any(word in title for word in blacklist):
+        # =============================================
+        # 1. Noise filtering
+        # =============================================
+
+        blacklist = [
+            "blitz",
+            "bullet",
+            "live",
+            "stream",
+        ]
+
+        if any(
+            word in title
+            for word in blacklist
+        ):
+
             return False
 
-        # =========================
-        # 2. Filtrage sémantique (souple)
-        # =========================
-        if opening:
-            opening_lower = opening.lower()
+        # =============================================
+        # 2. Semantic opening filtering
+        # =============================================
 
-            # Accepte si présent dans titre OU description
-            if opening_lower not in title and opening_lower not in description:
-                return False
+        if opening:
+
+            opening_lower = (
+                opening.lower()
+            )
+
+            # IMPORTANT:
+            # Ancienne version :
+            # strict exact match
+            #
+            # Nouveau :
+            # keyword semantic matching
+            #
+            # améliore fortement le recall
+
+            keywords = [
+                keyword.strip()
+                for keyword in opening_lower.split()
+                if keyword.strip()
+            ]
+
+            if keywords:
+
+                matched = any(
+                    (
+                        keyword in title
+                        or keyword in description
+                    )
+                    for keyword in keywords
+                )
+
+                if not matched:
+                    return False
 
         return True

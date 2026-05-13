@@ -6,6 +6,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class StockfishService:
     """
     Service d'évaluation avec Stockfish.
@@ -14,7 +15,6 @@ class StockfishService:
     - mode local (binaire)
     - préparation future mode service (Docker)
     """
-
 
     def __init__(self, path: str = None, depth: int = None):
 

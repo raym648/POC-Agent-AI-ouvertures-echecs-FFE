@@ -1,81 +1,227 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/video_node.py
 
-from typing import Dict, Any
-from app.services.youtube_service import YouTubeService
-from app.services.youtube_cache_service import YouTubeCacheService
-from app.services.lichess_enrichment_service import LichessEnrichmentService
+import asyncio
+import logging
+
+from typing import Any, Dict, List
+
+from app.services.lichess_enrichment_service import (
+    LichessEnrichmentService,
+)
 from app.services.video_reranker import rerank_videos
+from app.services.youtube_cache_service import (
+    YouTubeCacheService,
+)
+from app.services.youtube_service import YouTubeService
 
 
-def video_retriever_node(state: Dict[str, Any]) -> Dict[str, Any]:
+logger = logging.getLogger(__name__)
+
+
+async def video_retriever_node(
+    state: Dict[str, Any]
+) -> Dict[str, Any]:
     """
-    Node LangGraph pour récupérer des vidéos pédagogiques.
+    Node LangGraph de récupération de vidéos pédagogiques.
 
-    Version enrichie :
-    - Cache MongoDB
-    - Enrichissement Lichess
-    - Re-ranking
-    - Fallback intelligent conservé
+    Architecture :
+    - async-compatible
+    - non bloquant pour FastAPI
+    - compatible LangGraph
+    - résilient aux erreurs externes
+
+    Pipeline :
+        opening
+            -> cache MongoDB
+            -> enrichissement requête
+            -> recherche YouTube
+            -> reranking pédagogique
     """
 
-    opening = state.get("opening")
-    cache = YouTubeCacheService()
+    try:
 
-    # =========================
-    # 1. CACHE (uniquement si opening connue)
-    # =========================
-    if opening:
-        cached = cache.get(opening)
-        if cached:
-            state["videos"] = cached
-            return state
+        opening = state.get("opening")
+        moves = state.get("moves", [])
+        evaluation = state.get("evaluation")
 
-    # =========================
-    # 2. CONSTRUCTION QUERY
-    # =========================
-    query = None
+        logger.info(
+            f"[VIDEO NODE] Starting retrieval | opening={opening}"
+        )
 
-    # Cas 1 : opening connue → enrichie
-    if opening:
-        enrich = LichessEnrichmentService()
-        query = enrich.enrich_opening(opening)
+        cache_service = YouTubeCacheService()
 
-    # Cas 2 : fallback moves
-    elif state.get("moves"):
-        moves = state["moves"]
-        moves_text = " ".join([m.get("san", "") for m in moves[:3]])
-        query = f"chess opening {moves_text} explanation"
+        # =================================================
+        # 1. CACHE LOOKUP
+        # =================================================
 
-    # Cas 3 : fallback evaluation
-    elif state.get("evaluation"):
-        query = "chess strategy middlegame plan explanation"
+        if opening:
 
-    else:
-        return state
+            cached_videos = await asyncio.to_thread(
+                cache_service.get,
+                opening,
+            )
 
-    # =========================
-    # 3. APPEL YOUTUBE
-    # =========================
-    service = YouTubeService()
-    videos = service.search_videos(query, opening)
+            if cached_videos:
 
-    videos_dict = [video.dict() for video in videos]
+                logger.info(
+                    f"[VIDEO NODE] Cache hit | opening={opening}"
+                )
 
-    # =========================
-    # 4. RE-RANKING (si opening connue)
-    # =========================
-    if opening:
-        videos_dict = rerank_videos(videos_dict, opening)
+                return {
+                    **state,
+                    "videos": cached_videos,
+                }
 
-    # =========================
-    # 5. CACHE SET
-    # =========================
-    if opening:
-        cache.set(opening, videos_dict)
+        # =================================================
+        # 2. QUERY GENERATION
+        # =================================================
 
-    # =========================
-    # 6. STATE UPDATE
-    # =========================
-    state["videos"] = videos_dict
+        query: str | None = None
 
-    return state
+        # ---------------------------------------------
+        # Opening enrichment
+        # ---------------------------------------------
+
+        if opening:
+
+            enrichment_service = (
+                LichessEnrichmentService()
+            )
+
+            query = await asyncio.to_thread(
+                enrichment_service.enrich_opening,
+                opening,
+            )
+
+        # ---------------------------------------------
+        # Moves fallback
+        # ---------------------------------------------
+
+        elif moves:
+
+            # IMPORTANT:
+            # Lichess retourne :
+            # { "move": "e2e4" }
+            # et NON "san"
+
+            moves_text = " ".join(
+                [
+                    move.get("move", "")
+                    for move in moves[:3]
+                    if move.get("move")
+                ]
+            )
+
+            query = (
+                f"chess opening {moves_text} explanation"
+            )
+
+        # ---------------------------------------------
+        # Evaluation fallback
+        # ---------------------------------------------
+
+        elif evaluation:
+
+            query = (
+                "chess middlegame strategy "
+                "plan explanation"
+            )
+
+        # ---------------------------------------------
+        # No usable context
+        # ---------------------------------------------
+
+        else:
+
+            logger.warning(
+                "[VIDEO NODE] No usable retrieval context"
+            )
+
+            return {
+                **state,
+                "videos": [],
+            }
+
+        logger.info(
+            f"[VIDEO NODE] Generated query={query}"
+        )
+
+        # =================================================
+        # 3. YOUTUBE SEARCH
+        # =================================================
+
+        youtube_service = YouTubeService()
+
+        # IMPORTANT:
+        # search_videos est sync/blocking
+        # -> asyncio.to_thread obligatoire
+
+        videos = await asyncio.to_thread(
+            lambda: youtube_service.search_videos(
+                query=query,
+                opening=opening,
+            )
+        )
+
+        videos_dict: List[Dict[str, Any]] = [
+            video.dict()
+            for video in videos
+        ]
+
+        logger.info(
+            "[VIDEO NODE] Retrieved "
+            f"{len(videos_dict)} videos"
+        )
+
+        # =================================================
+        # 4. PEDAGOGICAL RERANKING
+        # =================================================
+
+        if opening and videos_dict:
+
+            videos_dict = await asyncio.to_thread(
+                rerank_videos,
+                videos_dict,
+                opening,
+            )
+
+            logger.info(
+                "[VIDEO NODE] Reranking completed"
+            )
+
+        # =================================================
+        # 5. CACHE STORE
+        # =================================================
+
+        if opening and videos_dict:
+
+            await asyncio.to_thread(
+                cache_service.set,
+                opening,
+                videos_dict,
+            )
+
+            logger.info(
+                f"[VIDEO NODE] Cache updated | opening={opening}"
+            )
+
+        # =================================================
+        # 6. SUCCESS
+        # =================================================
+
+        return {
+            **state,
+            "videos": videos_dict,
+        }
+
+    except Exception as e:
+
+        logger.exception(
+            f"[VIDEO NODE] Unexpected error: {e}"
+        )
+
+        return {
+            **state,
+            "videos": [],
+            "error": str(e),
+        }

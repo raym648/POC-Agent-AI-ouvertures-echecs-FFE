@@ -1,48 +1,131 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/services/video_reranker.py
 
+from typing import Any, Dict, List
 
-from typing import List, Dict
 
+def compute_score(
+    video: Dict[str, Any],
+    opening: str,
+) -> float:
+    """
+    Calcule un score de pertinence pédagogique
+    pour une vidéo YouTube d'échecs.
+    """
 
-def compute_score(video: Dict, opening: str) -> float:
     score = 0.0
 
-    title = video.get("title", "").lower()
-    description = video.get("description", "").lower()
-    channel = video.get("channel_title", "").lower()
+    opening_lower = opening.lower()
 
-    # =========================
-    # 1. Présence opening
-    # =========================
-    if opening.lower() in title:
+    title = (
+        video.get("title", "")
+        or ""
+    ).lower()
+
+    description = (
+        video.get("description", "")
+        or ""
+    ).lower()
+
+    # IMPORTANT:
+    # youtube_service.py sérialise:
+    # "channel"
+    # et NON "channel_title"
+
+    channel = (
+        video.get("channel", "")
+        or ""
+    ).lower()
+
+    # =================================================
+    # 1. Matching ouverture
+    # =================================================
+
+    if opening_lower in title:
         score += 5.0
 
-    if opening.lower() in description:
+    if opening_lower in description:
         score += 2.0
 
-    # =========================
-    # 2. Longueur description
-    # =========================
-    score += min(len(description) / 100, 3.0)
+    # =================================================
+    # 2. Qualité description
+    # =================================================
 
-    # =========================
-    # 3. Autorité chaîne (heuristique)
-    # =========================
+    score += min(
+        len(description) / 100,
+        3.0,
+    )
+
+    # =================================================
+    # 3. Autorité chaîne
+    # =================================================
+
     authority_channels = [
         "chessnetwork",
         "agadmator",
         "hanging pawns",
-        "gothamchess"
+        "gothamchess",
+        "daniel naroditsky",
+        "saint louis chess club",
     ]
 
-    if any(auth in channel for auth in authority_channels):
+    if any(
+        authority in channel
+        for authority in authority_channels
+    ):
         score += 4.0
+
+    # =================================================
+    # 4. Keywords pédagogiques
+    # =================================================
+
+    educational_keywords = [
+        "opening",
+        "theory",
+        "lesson",
+        "guide",
+        "explained",
+        "strategy",
+        "course",
+    ]
+
+    if any(
+        keyword in title
+        for keyword in educational_keywords
+    ):
+        score += 2.0
 
     return score
 
 
-def rerank_videos(videos: List[Dict], opening: str) -> List[Dict]:
-    for video in videos:
-        video["score"] = compute_score(video, opening)
+def rerank_videos(
+    videos: List[Dict[str, Any]],
+    opening: str,
+) -> List[Dict[str, Any]]:
+    """
+    Trie les vidéos par pertinence décroissante.
+    """
 
-    return sorted(videos, key=lambda x: x["score"], reverse=True)
+    if not videos:
+        return []
+
+    reranked_videos: List[Dict[str, Any]] = []
+
+    for video in videos:
+
+        enriched_video = {
+            **video,
+            "score": compute_score(
+                video,
+                opening,
+            ),
+        }
+
+        reranked_videos.append(
+            enriched_video
+        )
+
+    return sorted(
+        reranked_videos,
+        key=lambda x: x["score"],
+        reverse=True,
+    )

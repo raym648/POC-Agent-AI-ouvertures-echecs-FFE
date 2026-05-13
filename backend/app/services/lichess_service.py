@@ -39,7 +39,6 @@ class LichessService:
 
             return response.json()
 
-
     async def extract_moves(self, fen: str) -> List[Dict]:
         """
         Extrait les meilleurs coups depuis les PVs Lichess.

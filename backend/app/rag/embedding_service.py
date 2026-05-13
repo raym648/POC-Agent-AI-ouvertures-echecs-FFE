@@ -28,7 +28,7 @@ class EmbeddingService:
         if dim != settings.VECTOR_DIMENSION:
             raise ValueError(
                 f"Embedding model dimension mismatch: "
-                f"model={dim}, settings.VECTOR_DIMENSION={settings.VECTOR_DIMENSION}"
+                f"model={dim}, settings.VECTOR_DIMENSION={settings.VECTOR_DIMENSION}"  # noqa :E501
             )
 
         return dim

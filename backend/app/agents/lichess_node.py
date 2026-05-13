@@ -11,18 +11,20 @@ lichess_service = LichessService()
 # OPENING DETECTION
 # =========================================================
 
-def detect_opening(moves: list) -> str | None:
+def detect_opening(
+    moves: list,
+) -> str | None:
     """
     Détection simplifiée d'ouverture.
 
-    Basée sur les premiers coups SAN.
+    Basée sur les premiers coups UCI.
     """
 
     try:
 
         first_moves = " ".join(
             [
-                m.get("san", "")
+                m.get("move", "")
                 for m in moves[:5]
             ]
         )
@@ -33,7 +35,7 @@ def detect_opening(moves: list) -> str | None:
         # SICILIAN DEFENSE
         # =================================================
 
-        if "e4 c5" in first_moves:
+        if "e2e4 c7c5" in first_moves:
 
             return "Sicilian Defense"
 
@@ -41,7 +43,10 @@ def detect_opening(moves: list) -> str | None:
         # RUY LOPEZ
         # =================================================
 
-        if "e4 e5 Nf3 Nc6 Bb5" in first_moves:
+        if (
+            "e2e4 e7e5 g1f3 b8c6 f1b5"
+            in first_moves
+        ):
 
             return "Ruy Lopez"
 
@@ -49,7 +54,7 @@ def detect_opening(moves: list) -> str | None:
         # QUEEN'S GAMBIT
         # =================================================
 
-        if "d4 d5 c4" in first_moves:
+        if "d2d4 d7d5 c2c4" in first_moves:
 
             return "Queen's Gambit"
 
@@ -68,7 +73,9 @@ def detect_opening(moves: list) -> str | None:
 # MAIN NODE
 # =========================================================
 
-async def lichess_node(state: AgentState) -> AgentState:
+async def lichess_node(
+    state: AgentState,
+) -> AgentState:
     """
     Node LangGraph Lichess.
 

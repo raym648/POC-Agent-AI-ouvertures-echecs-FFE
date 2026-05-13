@@ -1,69 +1,155 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/opening_detector_node.py
 
+import logging
+
 from app.agents.state import AgentState
+
+
+logger = logging.getLogger(__name__)
 
 
 def opening_detector_node(state: AgentState) -> AgentState:
     """
-    Détecte une ouverture d'échecs à partir
-    des premiers coups retournés par Lichess.
+    Détection simplifiée d'ouverture d'échecs
+    basée principalement sur la FEN.
 
     IMPORTANT :
-    Les moves Lichess sont au format :
+    Les moves Lichess représentent souvent
+    des réponses candidates et NON
+    l'historique réel des coups joués.
 
-    {
-        "move": "e2e4",
-        "evaluation": 19
-    }
-
-    et NON au format SAN.
+    Donc :
+    - la FEN est la source de vérité
+    - les moves servent uniquement
+      d'enrichissement secondaire
     """
 
+    logger.info(
+        "[OPENING NODE] Starting opening detection"
+    )
+
+    # =====================================================
+    # VALIDATION
+    # =====================================================
+
     if not state.get("is_valid"):
+
+        logger.warning(
+            "[OPENING NODE] Invalid state"
+        )
+
         return state
 
     try:
 
-        opening = None
+        fen = (
+            state.get("fen", "")
+            .lower()
+            .strip()
+        )
 
-        moves = state.get("moves") or []
+        moves = state.get("moves", [])
 
-        if moves:
+        logger.info(
+            f"[OPENING NODE] fen={fen}"
+        )
 
-            first_moves = [
-                move.get("move", "").lower()
-                for move in moves[:5]
-            ]
+        logger.info(
+            f"[OPENING NODE] moves={moves}"
+        )
 
-            joined_moves = " ".join(first_moves)
+        opening = "chess opening strategy"
 
-            # =====================================================
-            # SICILIAN DEFENSE
-            # =====================================================
+        # =====================================================
+        # KING PAWN OPENING
+        # =====================================================
 
-            if any("c7c5" in move for move in first_moves):
-                opening = "sicilian defense"
+        # pion blanc avancé vers e4/e3
 
-            # =====================================================
-            # KING'S PAWN GAME
-            # =====================================================
+        if "4p3" in fen:
 
-            elif any("e2e4" in move for move in first_moves):
-                opening = "king pawn opening"
+            opening = "king pawn opening"
 
-            # =====================================================
-            # QUEEN'S GAMBIT
-            # =====================================================
+            logger.info(
+                "[OPENING NODE] Matched king pawn opening"
+            )
 
-            elif any("d2d4" in move for move in first_moves):
-                opening = "queen's gambit"
+        # =====================================================
+        # QUEEN PAWN OPENING
+        # =====================================================
 
-            # =====================================================
-            # FALLBACK
-            # =====================================================
+        elif "3p4" in fen:
 
-        if not opening:
-            opening = "chess opening strategy"
+            opening = "queen pawn opening"
+
+            logger.info(
+                "[OPENING NODE] Matched queen pawn opening"
+            )
+
+        # =====================================================
+        # ENGLISH OPENING
+        # =====================================================
+
+        elif "2p5" in fen:
+
+            opening = "english opening"
+
+            logger.info(
+                "[OPENING NODE] Matched english opening"
+            )
+
+        # =====================================================
+        # SICILIAN DEFENSE
+        # =====================================================
+
+        elif any(
+            move.get("move") == "c7c5"
+            for move in moves
+        ):
+
+            opening = "sicilian defense"
+
+            logger.info(
+                "[OPENING NODE] Matched sicilian defense"
+            )
+
+        # =====================================================
+        # FRENCH DEFENSE
+        # =====================================================
+
+        elif any(
+            move.get("move") == "e7e6"
+            for move in moves
+        ):
+
+            opening = "french defense"
+
+            logger.info(
+                "[OPENING NODE] Matched french defense"
+            )
+
+        # =====================================================
+        # CARO-KANN DEFENSE
+        # =====================================================
+
+        elif any(
+            move.get("move") == "c7c6"
+            for move in moves
+        ):
+
+            opening = "caro-kann defense"
+
+            logger.info(
+                "[OPENING NODE] Matched caro-kann defense"
+            )
+
+        # =====================================================
+        # FINAL RESULT
+        # =====================================================
+
+        logger.info(
+            f"[OPENING NODE] Final opening={opening}"
+        )
 
         return {
             **state,
@@ -71,6 +157,10 @@ def opening_detector_node(state: AgentState) -> AgentState:
         }
 
     except Exception as e:
+
+        logger.exception(
+            f"[OPENING NODE] Unexpected error: {e}"
+        )
 
         return {
             **state,
