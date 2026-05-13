@@ -18,7 +18,9 @@ stockfish_service = StockfishService(
 # NODE
 # =========================================================
 
-def stockfish_node(state: AgentState) -> AgentState:
+async def stockfish_node(
+    state: AgentState,
+) -> AgentState:
     """
     Node LangGraph Stockfish.
 

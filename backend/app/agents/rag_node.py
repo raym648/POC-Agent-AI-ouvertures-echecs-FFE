@@ -1,24 +1,37 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/agents/rag_node.py
 
+import asyncio
+import logging
+
 from app.agents.state import AgentState
-from app.rag.embedding_service import embedding_service
-from app.rag.milvus_service import milvus_service
 from app.core.config import settings
+from app.rag.embedding_service import (
+    embedding_service,
+)
+from app.rag.milvus_service import (
+    milvus_service,
+)
 
 
-def rag_node(state: AgentState) -> AgentState:
+logger = logging.getLogger(__name__)
+
+
+async def rag_node(
+    state: AgentState,
+) -> AgentState:
     """
     Node LangGraph RAG.
 
-    Workflow spécialisé opening-based :
+    Pipeline :
         opening
             -> embedding
-                -> Milvus search
+            -> vector search Milvus
 
-    IMPORTANT :
-    - ne dépend plus de validate_fen
-    - ne dépend plus de is_valid
-    - ne dépend plus du workflow FEN
+    Architecture :
+    - compatible FastAPI async
+    - compatible LangGraph async
+    - évite le blocage event loop
+    - compatible services sync via asyncio.to_thread
     """
 
     try:
@@ -31,27 +44,80 @@ def rag_node(state: AgentState) -> AgentState:
 
         if not opening:
 
+            logger.warning(
+                "[RAG NODE] Missing opening in state"
+            )
+
             return {
                 **state,
                 "rag_context": [],
                 "error": "Missing opening",
             }
 
+        logger.info(
+            "[RAG NODE] Starting retrieval "
+            f"| opening={opening}"
+        )
+
         # =================================================
-        # EMBEDDING
+        # EMBEDDING GENERATION
         # =================================================
 
-        embedding = embedding_service.embed_text(
-            opening
+        # IMPORTANT:
+        # SentenceTransformer.encode()
+        # est sync/blocking
+        #
+        # -> asyncio.to_thread obligatoire
+
+        embedding = await asyncio.to_thread(
+            embedding_service.embed_text,
+            opening,
+        )
+
+        if not embedding:
+
+            logger.warning(
+                "[RAG NODE] Empty embedding generated "
+                f"| opening={opening}"
+            )
+
+            return {
+                **state,
+                "rag_context": [],
+                "error": (
+                    "Failed to generate embedding"
+                ),
+            }
+
+        logger.info(
+            "[RAG NODE] Embedding generated successfully"
         )
 
         # =================================================
         # VECTOR SEARCH
         # =================================================
 
-        results = milvus_service.search(
-            embedding,
-            top_k=settings.RAG_TOP_K,
+        # IMPORTANT:
+        # milvus_service.search(...)
+        # utilise :
+        #
+        # search(query_embedding, top_k=...)
+        #
+        # donc kwargs requis.
+        #
+        # asyncio.to_thread supporte mieux
+        # lambda + kwargs explicites.
+
+        results = await asyncio.to_thread(
+            lambda: milvus_service.search(
+                embedding,
+                top_k=settings.RAG_TOP_K,
+            )
+        )
+
+        logger.info(
+            "[RAG NODE] Retrieved "
+            f"{len(results)} RAG documents"
         )
 
         # =================================================
@@ -65,6 +131,10 @@ def rag_node(state: AgentState) -> AgentState:
         }
 
     except Exception as e:
+
+        logger.exception(
+            f"[RAG NODE] Unexpected error: {e}"
+        )
 
         return {
             **state,

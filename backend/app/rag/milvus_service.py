@@ -4,47 +4,114 @@
 Service de gestion Milvus pour le RAG.
 
 Responsabilités :
-- Connexion à Milvus
-- Création / chargement de collection
-- Insertion validée
-- Recherche vectorielle robuste
+- connexion Milvus
+- création / chargement collection
+- insertion vectorielle validée
+- recherche vectorielle robuste
 """
 
 from __future__ import annotations
+
+import logging
 
 from typing import Any, Dict, List
 
 from pymilvus import (
     Collection,
     CollectionSchema,
+    connections,
     DataType,
     FieldSchema,
-    connections,
     utility,
 )
 
 from app.core.config import settings
 
 
+logger = logging.getLogger(__name__)
+
+
 class MilvusService:
+    """
+    Service centralisé d'accès Milvus.
+    """
+
     def __init__(self) -> None:
-        self.collection_name = settings.VECTOR_COLLECTION_NAME
-        self.vector_dim = settings.VECTOR_DIMENSION
+
+        self.collection_name = (
+            settings.VECTOR_COLLECTION_NAME
+        )
+
+        self.vector_dim = (
+            settings.VECTOR_DIMENSION
+        )
+
+        logger.info(
+            "[MILVUS] Initializing service"
+        )
 
         self._connect()
-        self.collection = self._get_or_create_collection()
+
+        self.collection = (
+            self._get_or_create_collection()
+        )
+
         self.collection.load()
 
+        logger.info(
+            "[MILVUS] Collection loaded "
+            f"| name={self.collection_name}"
+        )
+
+    # =================================================
+    # CONNECTION
+    # =================================================
+
     def _connect(self) -> None:
+        """
+        Initialise la connexion Milvus.
+        """
+
+        logger.info(
+            "[MILVUS] Connecting to server "
+            f"| host={settings.MILVUS_HOST}"
+            f" port={settings.MILVUS_PORT}"
+        )
+
         connections.connect(
             alias="default",
             host=settings.MILVUS_HOST,
             port=settings.MILVUS_PORT,
         )
 
-    def _get_or_create_collection(self) -> Collection:
-        if utility.has_collection(self.collection_name):
-            return Collection(self.collection_name)
+    # =================================================
+    # COLLECTION
+    # =================================================
+
+    def _get_or_create_collection(
+        self,
+    ) -> Collection:
+        """
+        Charge ou crée la collection Milvus.
+        """
+
+        if utility.has_collection(
+            self.collection_name
+        ):
+
+            logger.info(
+                "[MILVUS] Existing collection found "
+                f"| name={self.collection_name}"
+            )
+
+            return Collection(
+                self.collection_name
+            )
+
+        logger.info(
+            "[MILVUS] Creating collection "
+            f"| name={self.collection_name}"
+        )
 
         fields = [
             FieldSchema(
@@ -102,7 +169,9 @@ class MilvusService:
 
         schema = CollectionSchema(
             fields=fields,
-            description="Chess openings vector store",
+            description=(
+                "Chess openings vector store"
+            ),
         )
 
         collection = Collection(
@@ -110,29 +179,58 @@ class MilvusService:
             schema=schema,
         )
 
+        # =============================================
+        # VECTOR INDEX
+        # =============================================
+
         collection.create_index(
             field_name="embedding",
             index_params={
                 "metric_type": "COSINE",
                 "index_type": "IVF_FLAT",
-                "params": {"nlist": 128},
+                "params": {
+                    "nlist": 128,
+                },
             },
+        )
+
+        logger.info(
+            "[MILVUS] Vector index created"
         )
 
         return collection
 
-    def insert_data(self, documents: List[Dict[str, Any]], embeddings: List[List[float]]) -> int:
+    # =================================================
+    # INSERTION
+    # =================================================
+
+    def insert_data(
+        self,
+        documents: List[Dict[str, Any]],
+        embeddings: List[List[float]],
+    ) -> int:
         """
-        Insère des documents métier vectorisés dans Milvus.
+        Insère des documents vectorisés.
         """
+
         if not documents:
-            raise ValueError("No documents provided for insertion.")
+
+            raise ValueError(
+                "No documents provided for insertion."
+            )
 
         if not embeddings:
-            raise ValueError("No embeddings provided for insertion.")
+
+            raise ValueError(
+                "No embeddings provided for insertion."
+            )
 
         if len(documents) != len(embeddings):
-            raise ValueError("documents and embeddings must have the same length.")
+
+            raise ValueError(
+                "documents and embeddings "
+                "must have same length."
+            )
 
         doc_ids: List[str] = []
         ecos: List[str] = []
@@ -144,23 +242,58 @@ class MilvusService:
         texts: List[str] = []
         vectors: List[List[float]] = []
 
-        for doc, embedding in zip(documents, embeddings):
+        for doc, embedding in zip(
+            documents,
+            embeddings,
+        ):
+
             if len(embedding) != self.vector_dim:
+
                 raise ValueError(
-                    f"Invalid embedding dimension: expected {self.vector_dim}, got {len(embedding)}"
+                    "Invalid embedding dimension: "
+                    f"expected {self.vector_dim}, "
+                    f"got {len(embedding)}"
                 )
 
-            doc_ids.append(doc["doc_id"])
-            ecos.append(doc["eco"])
-            openings.append(doc["opening"])
-            variations.append(doc["variation"])
-            lines_san.append(doc["line_san"])
-            positions_fen.append(doc["position_fen"])
-            source_urls.append(doc["source_url"])
-            texts.append(doc["text"])
-            vectors.append(embedding)
+            doc_ids.append(
+                doc.get("doc_id", "")
+            )
 
-        before_count = self.collection.num_entities
+            ecos.append(
+                doc.get("eco", "")
+            )
+
+            openings.append(
+                doc.get("opening", "")
+            )
+
+            variations.append(
+                doc.get("variation", "")
+            )
+
+            lines_san.append(
+                doc.get("line_san", "")
+            )
+
+            positions_fen.append(
+                doc.get("position_fen", "")
+            )
+
+            source_urls.append(
+                doc.get("source_url", "")
+            )
+
+            texts.append(
+                doc.get("text", "")
+            )
+
+            vectors.append(
+                embedding
+            )
+
+        before_count = (
+            self.collection.num_entities
+        )
 
         self.collection.insert(
             [
@@ -179,27 +312,64 @@ class MilvusService:
         self.collection.flush()
         self.collection.load()
 
-        after_count = self.collection.num_entities
-        return after_count - before_count
+        after_count = (
+            self.collection.num_entities
+        )
 
-    def search(self, query_embedding: List[float], top_k: int = 3) -> List[Dict[str, Any]]:
+        inserted_count = (
+            after_count - before_count
+        )
+
+        logger.info(
+            "[MILVUS] Documents inserted "
+            f"| count={inserted_count}"
+        )
+
+        return inserted_count
+
+    # =================================================
+    # VECTOR SEARCH
+    # =================================================
+
+    def search(
+        self,
+        query_embedding: List[float],
+        top_k: int = 3,
+    ) -> List[Dict[str, Any]]:
         """
-        Recherche vectorielle.
+        Recherche vectorielle Milvus.
         """
+
         if not query_embedding:
+
+            logger.warning(
+                "[MILVUS] Empty query embedding"
+            )
+
             return []
 
         if len(query_embedding) != self.vector_dim:
+
             raise ValueError(
-                f"Invalid query embedding dimension: expected {self.vector_dim}, got {len(query_embedding)}"
+                "Invalid query embedding "
+                f"dimension: expected "
+                f"{self.vector_dim}, "
+                f"got {len(query_embedding)}"
             )
+
+        logger.info(
+            "[MILVUS] Starting vector search "
+            f"| top_k={top_k}"
+        )
 
         results = self.collection.search(
             data=[query_embedding],
             anns_field="embedding",
             param={
                 "metric_type": "COSINE",
-                "params": {"nprobe": 10},
+                "params": {
+                    "nprobe": 10,
+                },
             },
             limit=top_k,
             output_fields=[
@@ -217,20 +387,61 @@ class MilvusService:
         output: List[Dict[str, Any]] = []
 
         for hits in results:
+
             for hit in hits:
+
                 output.append(
                     {
-                        "doc_id": hit.entity.get("doc_id"),
-                        "eco": hit.entity.get("eco"),
-                        "opening": hit.entity.get("opening"),
-                        "variation": hit.entity.get("variation"),
-                        "line_san": hit.entity.get("line_san"),
-                        "position_fen": hit.entity.get("position_fen"),
-                        "source_url": hit.entity.get("source_url"),
-                        "text": hit.entity.get("text"),
-                        "score": float(hit.score),
+                        "doc_id": (
+                            hit.entity.get(
+                                "doc_id"
+                            )
+                        ),
+                        "eco": (
+                            hit.entity.get(
+                                "eco"
+                            )
+                        ),
+                        "opening": (
+                            hit.entity.get(
+                                "opening"
+                            )
+                        ),
+                        "variation": (
+                            hit.entity.get(
+                                "variation"
+                            )
+                        ),
+                        "line_san": (
+                            hit.entity.get(
+                                "line_san"
+                            )
+                        ),
+                        "position_fen": (
+                            hit.entity.get(
+                                "position_fen"
+                            )
+                        ),
+                        "source_url": (
+                            hit.entity.get(
+                                "source_url"
+                            )
+                        ),
+                        "text": (
+                            hit.entity.get(
+                                "text"
+                            )
+                        ),
+                        "score": float(
+                            hit.score
+                        ),
                     }
                 )
+
+        logger.info(
+            "[MILVUS] Search completed "
+            f"| results={len(output)}"
+        )
 
         return output
 

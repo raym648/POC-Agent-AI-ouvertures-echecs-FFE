@@ -1,12 +1,5 @@
 # POC-Agent-AI-ouvertures-echecs-FFE/backend/app/api/v1/moves.py
 
-"""
-Endpoint pour récupérer les coups théoriques.
-
-Utilise le workflow LangGraph "moves"
-pour interroger uniquement Lichess.
-"""
-
 from fastapi import APIRouter, HTTPException
 
 from app.agents.langgraph_agent import run_agent
@@ -20,15 +13,6 @@ router = APIRouter(
 
 @router.get("/{fen:path}")
 async def get_moves(fen: str):
-    """
-    Récupère les coups théoriques d'une position.
-
-    Args:
-        fen (str): position FEN
-
-    Returns:
-        dict: liste des coups théoriques
-    """
 
     try:
 
@@ -56,6 +40,9 @@ async def get_moves(fen: str):
             return {
                 "fen": fen,
                 "moves": [],
+                "opening": result.get("opening"),
+                "videos": result.get("videos", []),
+                "rag_context": result.get("rag_context", []),
                 "message": (
                     "Aucun coup théorique trouvé "
                     "via Lichess."
@@ -69,6 +56,9 @@ async def get_moves(fen: str):
         return {
             "fen": fen,
             "moves": result.get("moves", []),
+            "opening": result.get("opening"),
+            "videos": result.get("videos", []),
+            "rag_context": result.get("rag_context", []),
             "source": result.get("source"),
         }
 
