@@ -37,7 +37,7 @@ marshmallow==3.26.1
 # 🤖 Agents / orchestration
 # ================================
 langgraph==0.2.34
-langchain==0.2.17
+langchain==0.3.30
 
 # ================================
 # 🤖 RAG
