@@ -7,8 +7,6 @@ import {
   OnInit,
   ViewChild,
   effect,
-  signal,
-  computed,
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -42,11 +40,6 @@ import {
   RagItem,
   Video,
 } from '../../core/models/agent.model';
-
-
-type GameMode =
-  | 'human-vs-human'
-  | 'human-vs-ai';
 
 
 @Component({
@@ -85,38 +78,6 @@ export class BoardComponent
 
   private cg?: Api;
 
-  // =====================================================
-  // GAME MODE
-  // =====================================================
-
-  readonly gameMode =
-    signal<GameMode>(
-      'human-vs-human'
-    );
-
-  readonly whitePlayerLabel =
-    computed(() => {
-
-      return this.gameMode() === 'human-vs-ai'
-        ? 'Humain'
-        : 'Blancs';
-    });
-
-  readonly blackPlayerLabel =
-    computed(() => {
-
-      return this.gameMode() === 'human-vs-ai'
-        ? 'Stockfish AI'
-        : 'Noirs';
-    });
-
-  // =====================================================
-  // AI CONTROL
-  // =====================================================
-
-  private isApplyingEngineMove =
-    false;
-
 
   constructor(
     private chess: ChessService,
@@ -143,12 +104,7 @@ export class BoardComponent
         fen,
 
         movable: {
-
-          color:
-            this.gameMode() === 'human-vs-ai'
-              ? 'white'
-              : 'both',
-
+          color: 'both',
           dests: this.buildDests(),
         },
       });
@@ -246,10 +202,7 @@ export class BoardComponent
 
           free: false,
 
-          color:
-            this.gameMode() === 'human-vs-ai'
-              ? 'white'
-              : 'both',
+          color: 'both',
 
           dests: this.buildDests(),
 
@@ -281,31 +234,6 @@ export class BoardComponent
 
 
   // =====================================================
-  // GAME MODE
-  // =====================================================
-
-  setGameMode(
-    mode: GameMode
-  ): void {
-
-    this.gameMode.set(mode);
-
-    this.cg?.set({
-
-      movable: {
-
-        color:
-          mode === 'human-vs-ai'
-            ? 'white'
-            : 'both',
-
-        dests: this.buildDests(),
-      },
-    });
-  }
-
-
-  // =====================================================
   // MOVE HANDLER
   // =====================================================
 
@@ -313,13 +241,6 @@ export class BoardComponent
     from: string;
     to: string;
   }): void {
-
-    if (
-      this.gameMode() === 'human-vs-ai' &&
-      this.chess.turn() !== 'w'
-    ) {
-      return;
-    }
 
     const {
       from,
@@ -336,11 +257,26 @@ export class BoardComponent
     const fen =
       this.chess.getFen();
 
-    this.store.setFen(fen);
+      this.store.setFen(fen);
 
-    this.move$.next();
+      // ===================================================
+      // IMPORTANT:
+      // refresh Chessground legal moves
+      // ===================================================
+
+      this.cg?.set({
+
+        fen,
+
+        movable: {
+          color: 'both',
+          dests: this.buildDests(),
+        },
+      });
+
+      this.move$.next();
   }
-
+      
 
   // =====================================================
   // ANALYSIS
@@ -351,9 +287,9 @@ export class BoardComponent
     const fen =
       this.store.fen();
 
-    this.store.setLoading(true);
+      this.store.setLoading(true);
 
-    this.store.clearError();
+      this.store.clearError();
 
     // ===================================================
     // INITIAL WORKFLOWS
@@ -515,14 +451,6 @@ export class BoardComponent
           this.store.setLoading(
             false
           );
-
-          // ===============================================
-          // AI MOVE
-          // ===============================================
-
-          this.playEngineMoveIfNeeded(
-            response
-          );
         },
 
         // =================================================
@@ -549,92 +477,6 @@ export class BoardComponent
 
 
   // =====================================================
-  // ENGINE MOVE
-  // =====================================================
-
-  private playEngineMoveIfNeeded(
-    response: AgentResponse
-  ): void {
-
-    if (
-      this.gameMode() !== 'human-vs-ai'
-    ) {
-      return;
-    }
-
-    if (
-      this.isApplyingEngineMove
-    ) {
-      return;
-    }
-
-    if (
-      this.chess.turn() !== 'b'
-    ) {
-      return;
-    }
-
-    const bestMove =
-      response.evaluation?.best_move;
-
-    if (
-      !bestMove ||
-      bestMove.length < 4
-    ) {
-      return;
-    }
-
-    const from =
-      bestMove.slice(0, 2);
-
-    const to =
-      bestMove.slice(2, 4);
-
-    this.isApplyingEngineMove =
-      true;
-
-    setTimeout(() => {
-
-      const success =
-        this.chess.move(from, to);
-
-      if (!success) {
-
-        this.isApplyingEngineMove =
-          false;
-
-        return;
-      }
-
-      const updatedFen =
-        this.chess.getFen();
-
-      this.store.setFen(
-        updatedFen
-      );
-
-      this.cg?.set({
-
-        fen: updatedFen,
-
-        movable: {
-
-          color: 'white',
-
-          dests: this.buildDests(),
-        },
-      });
-
-      this.isApplyingEngineMove =
-        false;
-
-      this.move$.next();
-
-    }, 500);
-  }
-
-
-  // =====================================================
   // RESET
   // =====================================================
 
@@ -645,28 +487,23 @@ export class BoardComponent
     const fen =
       this.chess.getFen();
 
-    this.store.setFen(fen);
+      this.store.setFen(fen);
 
-    this.store.clearData();
+      this.store.clearData();
 
-    this.cg?.set({
+      this.cg?.set({
 
-      fen,
+        fen,
 
-      movable: {
+        movable: {
+          color: 'both',
+          dests: this.buildDests(),
+        },
 
-        color:
-          this.gameMode() === 'human-vs-ai'
-            ? 'white'
-            : 'both',
-
-        dests: this.buildDests(),
-      },
-
-      drawable: {
-        autoShapes: [],
-      },
-    });
+        drawable: {
+          autoShapes: [],
+        },
+      });
   }
 
 

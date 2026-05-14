@@ -1,138 +1,101 @@
 /* POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.css */
 
-:host {
-  display: block;
+.board-page {
   width: 100%;
-}
-
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.board-container {
-
-  width: 100%;
-
-  max-width: 640px;
-
-  margin: 24px auto;
-
-  padding: 16px;
-
-  box-sizing: border-box;
-}
-
-
-/* =====================================================
-   TOOLBAR
-===================================================== */
-
-.board-toolbar {
 
   display: flex;
-
+  flex-direction: column;
   align-items: center;
 
-  justify-content: space-between;
-
   gap: 16px;
-
-  margin-bottom: 16px;
 }
 
-.board-toolbar h2 {
-
-  margin: 0;
-
-  font-size: 1.2rem;
-
-  font-weight: 600;
-}
-
-
-/* =====================================================
-   BOARD WRAPPER
-===================================================== */
-
-.board-wrapper {
-
-  width: 100%;
-
+.game-mode-selector {
   display: flex;
+  gap: 12px;
 
-  justify-content: center;
+  margin-bottom: 8px;
 }
 
-
-/* =====================================================
-   CHESSBOARD
-===================================================== */
-
-.chessboard {
-
-  width: 100%;
-
-  max-width: 520px;
-
-  aspect-ratio: 1 / 1;
-
-  display: block;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.reset-button {
-
-  border: none;
-
+.mode-button {
   padding: 10px 16px;
 
+  border: 1px solid #444;
   border-radius: 8px;
+
+  background: #1f1f1f;
+  color: white;
 
   cursor: pointer;
 
-  font-size: 0.95rem;
+  transition: 0.2s ease;
 }
 
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-.board-status {
-
-  margin-top: 16px;
-
-  min-height: 24px;
-
-  font-size: 0.95rem;
+.mode-button:hover {
+  opacity: 0.9;
 }
 
+.mode-button.active {
+  border-color: #4caf50;
+}
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+.player-label {
+  width: 100%;
 
-@media (max-width: 768px) {
+  text-align: center;
 
-  .board-container {
+  font-size: 18px;
+  font-weight: 600;
 
-    padding: 12px;
-  }
+  color: #ffffff;
+}
 
-  .board-toolbar {
+.top-player {
+  margin-bottom: 4px;
+}
 
-    flex-direction: column;
+.bottom-player {
+  margin-top: 4px;
+}
 
-    align-items: stretch;
-  }
+.board-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .reset-button {
+.board {
+  width: 640px;
+  height: 640px;
 
-    width: 100%;
-  }
+  max-width: 90vw;
+  max-height: 90vw;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 12px;
+}
+
+.reset-button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #d32f2f;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.reset-button:hover {
+  opacity: 0.9;
 }
