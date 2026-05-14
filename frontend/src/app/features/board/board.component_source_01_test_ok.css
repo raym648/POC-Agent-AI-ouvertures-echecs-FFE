@@ -1,0 +1,138 @@
+/* POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.css */
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.board-container {
+
+  width: 100%;
+
+  max-width: 640px;
+
+  margin: 24px auto;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.board-toolbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+.board-toolbar h2 {
+
+  margin: 0;
+
+  font-size: 1.2rem;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   BOARD WRAPPER
+===================================================== */
+
+.board-wrapper {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =====================================================
+   CHESSBOARD
+===================================================== */
+
+.chessboard {
+
+  width: 100%;
+
+  max-width: 520px;
+
+  aspect-ratio: 1 / 1;
+
+  display: block;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.reset-button {
+
+  border: none;
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.board-status {
+
+  margin-top: 16px;
+
+  min-height: 24px;
+
+  font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .board-container {
+
+    padding: 12px;
+  }
+
+  .board-toolbar {
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .reset-button {
+
+    width: 100%;
+  }
+}

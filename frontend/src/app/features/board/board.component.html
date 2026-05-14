@@ -1,46 +1,79 @@
 <!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.html -->
+ 
+<div class="board-page">
 
-<div class="board-container">
+  <!-- =============================================== -->
+  <!-- GAME MODE -->
+  <!-- =============================================== -->
 
-  <!-- HEADER -->
-  <div class="board-toolbar">
-
-    <h2>
-      Analyse d'ouverture
-    </h2>
+  <div class="game-mode-selector">
 
     <button
       type="button"
-      class="reset-button"
-      (click)="reset()"
-    >
-      Réinitialiser
+      class="mode-button"
+      [class.active]="gameMode() === 'human-vs-human'"
+      (click)="setGameMode('human-vs-human')">
+
+      Humain vs Humain
+    </button>
+
+    <button
+      type="button"
+      class="mode-button"
+      [class.active]="gameMode() === 'human-vs-ai'"
+      (click)="setGameMode('human-vs-ai')">
+
+      Humain vs AI
     </button>
 
   </div>
 
+  <!-- =============================================== -->
+  <!-- BLACK PLAYER -->
+  <!-- =============================================== -->
 
+  <div class="player-label top-player">
+
+    {{ blackPlayerLabel() }}
+
+  </div>
+
+  <!-- =============================================== -->
   <!-- BOARD -->
+  <!-- =============================================== -->
+
   <div class="board-wrapper">
 
     <div
       #board
-      class="chessboard"
-    ></div>
+      class="board">
+    </div>
 
   </div>
 
+  <!-- =============================================== -->
+  <!-- WHITE PLAYER -->
+  <!-- =============================================== -->
 
-  <!-- STATUS -->
-  <div class="board-status">
+  <div class="player-label bottom-player">
 
-    <div *ngIf="store.loading()">
-      Analyse en cours...
-    </div>
+    {{ whitePlayerLabel() }}
 
-    <div *ngIf="store.error()">
-      {{ store.error() }}
-    </div>
+  </div>
+
+  <!-- =============================================== -->
+  <!-- ACTIONS -->
+  <!-- =============================================== -->
+
+  <div class="actions">
+
+    <button
+      type="button"
+      class="reset-button"
+      (click)="reset()">
+
+      Reset
+    </button>
 
   </div>
 

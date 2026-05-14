@@ -18,8 +18,11 @@ def format_response_node(state: AgentState) -> Dict[str, Any]:
     # =================================================
     # INVALID FEN / VALIDATION FAILURE
     # =================================================
-
-    if not state["is_valid"]:
+    
+    if (
+        state.get("fen") is not None
+        and not state["is_valid"]
+    ):
 
         return {
             "fen": state["fen"],
