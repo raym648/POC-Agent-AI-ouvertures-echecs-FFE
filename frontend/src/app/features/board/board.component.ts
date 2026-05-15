@@ -4,11 +4,12 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewChild,
+  computed,
   effect,
   signal,
-  computed,
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -19,12 +20,9 @@ import type { Api } from 'chessground/api';
 import type { DrawShape } from 'chessground/draw';
 import type { Key } from 'chessground/types';
 
-import type { Square } from 'chess.js';
-
-import { Chess } from 'chess.js';
-
 import {
   Subject,
+  Subscription,
   debounceTime,
   forkJoin,
   of,
@@ -64,7 +62,10 @@ type GameMode =
   ],
 })
 export class BoardComponent
-  implements OnInit, AfterViewInit {
+  implements
+    OnInit,
+    AfterViewInit,
+    OnDestroy {
 
   // =====================================================
   // VIEW
@@ -77,13 +78,30 @@ export class BoardComponent
   // RXJS
   // =====================================================
 
-  private move$ = new Subject<void>();
+  private move$ =
+    new Subject<void>();
+
+  private moveSubscription?:
+    Subscription;
 
   // =====================================================
   // CHESSGROUND
   // =====================================================
 
   private cg?: Api;
+
+  // =====================================================
+  // AI CONTROL
+  // =====================================================
+
+  private engineMoveTimeout?:
+    ReturnType<typeof setTimeout>;
+
+  private isApplyingEngineMove =
+    false;
+
+  private isResetting =
+    false;
 
   // =====================================================
   // GAME MODE
@@ -106,28 +124,19 @@ export class BoardComponent
     computed(() => {
 
       return this.gameMode() === 'human-vs-ai'
-        ? 'Stockfish AI'
+        ? 'AI'
         : 'Noirs';
     });
-
-  // =====================================================
-  // AI CONTROL
-  // =====================================================
-
-  private isApplyingEngineMove =
-    false;
 
 
   constructor(
     private chess: ChessService,
-
     private agent: AgentService,
-
     public store: GameStore,
   ) {
 
     // ===================================================
-    // SYNC FEN -> CHESSGROUND
+    // STORE -> BOARD SYNC
     // ===================================================
 
     effect(() => {
@@ -136,26 +145,20 @@ export class BoardComponent
         return;
       }
 
-      const fen = this.store.fen();
+      if (
+        this.isApplyingEngineMove ||
+        this.isResetting
+      ) {
+        return;
+      }
 
-      this.cg.set({
-
-        fen,
-
-        movable: {
-
-          color:
-            this.gameMode() === 'human-vs-ai'
-              ? 'white'
-              : 'both',
-
-          dests: this.buildDests(),
-        },
-      });
+      this.syncBoard(
+        this.store.fen()
+      );
     });
 
     // ===================================================
-    // BEST MOVES -> ARROWS
+    // ENGINE LINES
     // ===================================================
 
     effect(() => {
@@ -164,7 +167,8 @@ export class BoardComponent
         return;
       }
 
-      const data = this.store.data();
+      const data =
+        this.store.data();
 
       if (!data?.moves?.length) {
 
@@ -218,14 +222,42 @@ export class BoardComponent
 
   ngOnInit(): void {
 
-    this.move$
-      .pipe(
-        debounceTime(400),
-      )
-      .subscribe(() => {
+    this.moveSubscription =
+      this.move$
+        .pipe(
+          debounceTime(250),
+        )
+        .subscribe(() => {
 
-        this.analyze();
-      });
+          if (
+            this.isResetting ||
+            this.isApplyingEngineMove
+          ) {
+            return;
+          }
+
+          this.analyze();
+        });
+  }
+
+
+  // =====================================================
+  // DESTROY
+  // =====================================================
+
+  ngOnDestroy(): void {
+
+    this.moveSubscription
+      ?.unsubscribe();
+
+    if (
+      this.engineMoveTimeout
+    ) {
+
+      clearTimeout(
+        this.engineMoveTimeout
+      );
+    }
   }
 
 
@@ -238,7 +270,8 @@ export class BoardComponent
     this.cg = Chessground(
       this.boardRef.nativeElement,
       {
-        fen: this.store.fen(),
+        fen:
+          this.chess.getFen(),
 
         orientation: 'white',
 
@@ -247,21 +280,30 @@ export class BoardComponent
           free: false,
 
           color:
-            this.gameMode() === 'human-vs-ai'
-              ? 'white'
-              : 'both',
+            this.getMovableColor(),
 
-          dests: this.buildDests(),
+          dests:
+            this.buildDests(),
 
           events: {
 
             after: (
               from: string,
               to: string,
-            ) => this.onMove({
-              from,
-              to,
-            }),
+            ) => {
+
+              if (
+                this.isApplyingEngineMove ||
+                this.isResetting
+              ) {
+                return;
+              }
+
+              this.onMove({
+                from,
+                to,
+              });
+            },
           },
         },
 
@@ -275,7 +317,16 @@ export class BoardComponent
           visible: true,
           autoShapes: [],
         },
+
+        animation: {
+          enabled: true,
+          duration: 180,
+        },
       },
+    );
+
+    this.syncBoard(
+      this.chess.getFen()
     );
   }
 
@@ -288,20 +339,15 @@ export class BoardComponent
     mode: GameMode
   ): void {
 
+    if (
+      this.gameMode() === mode
+    ) {
+      return;
+    }
+
     this.gameMode.set(mode);
 
-    this.cg?.set({
-
-      movable: {
-
-        color:
-          mode === 'human-vs-ai'
-            ? 'white'
-            : 'both',
-
-        dests: this.buildDests(),
-      },
-    });
+    this.reset();
   }
 
 
@@ -314,22 +360,85 @@ export class BoardComponent
     to: string;
   }): void {
 
+    console.log(
+      '[HUMAN MOVE START]',
+      {
+        from: event.from,
+        to: event.to,
+        turnBefore:
+          this.chess.turn(),
+      },
+    );
+
     if (
-      this.gameMode() === 'human-vs-ai' &&
-      this.chess.turn() !== 'w'
+      this.isApplyingEngineMove ||
+      this.isResetting
     ) {
+
+      console.log(
+        '[HUMAN MOVE BLOCKED]',
+        {
+          isApplyingEngineMove:
+            this.isApplyingEngineMove,
+
+          isResetting:
+            this.isResetting,
+        },
+      );
+
       return;
     }
 
-    const {
-      from,
-      to,
-    } = event;
+    // ===================================================
+    // HUMAN VS AI
+    // ===================================================
+
+    if (
+      this.gameMode() ===
+        'human-vs-ai' &&
+      this.chess.turn() !== 'w'
+    ) {
+
+      console.log(
+        '[HUMAN MOVE REFUSED]',
+        {
+          reason:
+            'Not white turn',
+          currentTurn:
+            this.chess.turn(),
+        },
+      );
+
+      this.syncBoard(
+        this.chess.getFen()
+      );
+
+      return;
+    }
 
     const success =
-      this.chess.move(from, to);
+      this.chess.move(
+        event.from,
+        event.to,
+      );
+
+    console.log(
+      '[HUMAN MOVE RESULT]',
+      {
+        success,
+        turnAfter:
+          this.chess.turn(),
+        fen:
+          this.chess.getFen(),
+      },
+    );
 
     if (!success) {
+
+      this.syncBoard(
+        this.chess.getFen()
+      );
+
       return;
     }
 
@@ -337,6 +446,8 @@ export class BoardComponent
       this.chess.getFen();
 
     this.store.setFen(fen);
+
+    this.syncBoard(fen);
 
     this.move$.next();
   }
@@ -348,16 +459,41 @@ export class BoardComponent
 
   analyze(): void {
 
+    console.log(
+      '[ANALYZE START]',
+      {
+        turn:
+          this.chess.turn(),
+        fen:
+          this.chess.getFen(),
+      },
+    );
+
+    if (
+      this.isResetting ||
+      this.isApplyingEngineMove
+    ) {
+
+      console.log(
+        '[ANALYZE BLOCKED]',
+        {
+          isResetting:
+            this.isResetting,
+
+          isApplyingEngineMove:
+            this.isApplyingEngineMove,
+        },
+      );
+
+      return;
+    }
+
     const fen =
-      this.store.fen();
+      this.chess.getFen();
 
     this.store.setLoading(true);
 
     this.store.clearError();
-
-    // ===================================================
-    // INITIAL WORKFLOWS
-    // ===================================================
 
     forkJoin({
 
@@ -370,10 +506,6 @@ export class BoardComponent
     })
       .pipe(
 
-        // ===============================================
-        // SECONDARY WORKFLOWS
-        // ===============================================
-
         switchMap(({
           moves,
           evaluation,
@@ -381,10 +513,6 @@ export class BoardComponent
 
           const opening =
             moves.opening ?? '';
-
-          // =============================================
-          // NO OPENING DETECTED
-          // =============================================
 
           if (!opening) {
 
@@ -406,10 +534,6 @@ export class BoardComponent
               },
             });
           }
-
-          // =============================================
-          // RAG + VIDEOS
-          // =============================================
 
           return forkJoin({
 
@@ -466,16 +590,25 @@ export class BoardComponent
       )
       .subscribe({
 
-        // =================================================
-        // SUCCESS
-        // =================================================
-
         next: ({
           moves,
           evaluation,
           videos,
           vector,
         }) => {
+
+          console.log(
+            '[ANALYZE RESULT]',
+            {
+              turn:
+                this.chess.turn(),
+
+              bestMove:
+                evaluation
+                  ?.evaluation
+                  ?.best_move,
+            },
+          );
 
           const response: AgentResponse = {
 
@@ -516,18 +649,10 @@ export class BoardComponent
             false
           );
 
-          // ===============================================
-          // AI MOVE
-          // ===============================================
-
           this.playEngineMoveIfNeeded(
             response
           );
         },
-
-        // =================================================
-        // ERROR
-        // =================================================
 
         error: (error) => {
 
@@ -549,21 +674,28 @@ export class BoardComponent
 
 
   // =====================================================
-  // ENGINE MOVE
+  // AI MOVE
   // =====================================================
 
   private playEngineMoveIfNeeded(
     response: AgentResponse
   ): void {
 
-    if (
-      this.gameMode() !== 'human-vs-ai'
-    ) {
-      return;
-    }
+    console.log(
+      '[AI CHECK]',
+      {
+        mode:
+          this.gameMode(),
+        turn:
+          this.chess.turn(),
+        isApplyingEngineMove:
+          this.isApplyingEngineMove,
+      },
+    );
 
     if (
-      this.isApplyingEngineMove
+      this.gameMode() !==
+      'human-vs-ai'
     ) {
       return;
     }
@@ -574,8 +706,21 @@ export class BoardComponent
       return;
     }
 
+    if (
+      this.isApplyingEngineMove
+    ) {
+      return;
+    }
+
     const bestMove =
       response.evaluation?.best_move;
+
+    console.log(
+      '[AI BEST MOVE]',
+      {
+        bestMove,
+      },
+    );
 
     if (
       !bestMove ||
@@ -593,44 +738,92 @@ export class BoardComponent
     this.isApplyingEngineMove =
       true;
 
-    setTimeout(() => {
+    if (
+      this.engineMoveTimeout
+    ) {
 
-      const success =
-        this.chess.move(from, to);
-
-      if (!success) {
-
-        this.isApplyingEngineMove =
-          false;
-
-        return;
-      }
-
-      const updatedFen =
-        this.chess.getFen();
-
-      this.store.setFen(
-        updatedFen
+      clearTimeout(
+        this.engineMoveTimeout
       );
+    }
 
-      this.cg?.set({
+    this.engineMoveTimeout =
+      setTimeout(() => {
 
-        fen: updatedFen,
+        console.log(
+          '[AI MOVE START]',
+          {
+            from,
+            to,
+            turnBefore:
+              this.chess.turn(),
+          },
+        );
 
-        movable: {
+        if (
+          this.isResetting
+        ) {
 
-          color: 'white',
+          this.isApplyingEngineMove =
+            false;
 
-          dests: this.buildDests(),
-        },
-      });
+          return;
+        }
 
-      this.isApplyingEngineMove =
-        false;
+        const success =
+          this.chess.move(
+            from,
+            to,
+          );
 
-      this.move$.next();
+        console.log(
+          '[AI MOVE RESULT]',
+          {
+            success,
+            turnAfter:
+              this.chess.turn(),
+            fen:
+              this.chess.getFen(),
+          },
+        );
 
-    }, 500);
+        if (!success) {
+
+          this.isApplyingEngineMove =
+            false;
+
+          this.syncBoard(
+            this.chess.getFen()
+          );
+
+          return;
+        }
+
+        const fen =
+          this.chess.getFen();
+
+        this.store.setFen(fen);
+
+        this.syncBoard(fen);
+
+        // IMPORTANT:
+        // release engine lock
+        // AFTER board sync
+
+        setTimeout(() => {
+
+          this.isApplyingEngineMove =
+            false;
+
+          // =========================================
+          // RE-ANALYZE NEW POSITION
+          // =========================================
+
+          this.move$.next();
+
+        }, 0);
+
+      }, 500);
   }
 
 
@@ -640,33 +833,160 @@ export class BoardComponent
 
   reset(): void {
 
+    console.log(
+      '[RESET START]',
+    );
+
+    this.isResetting = true;
+
+    this.isApplyingEngineMove =
+      false;
+
+    if (
+      this.engineMoveTimeout
+    ) {
+
+      clearTimeout(
+        this.engineMoveTimeout
+      );
+    }
+
     this.chess.reset();
 
     const fen =
       this.chess.getFen();
 
+    this.store.reset();
+
     this.store.setFen(fen);
 
-    this.store.clearData();
+    this.syncBoard(fen);
 
-    this.cg?.set({
+    setTimeout(() => {
+
+      this.isResetting =
+        false;
+
+      console.log(
+        '[RESET END]',
+      );
+
+    }, 150);
+  }
+
+
+  // =====================================================
+  // BOARD SYNC
+  // =====================================================
+
+  private syncBoard(
+    fen: string,
+  ): void {
+
+    if (!this.cg) {
+      return;
+    }
+
+    const turn =
+      this.chess.turn();
+
+    const dests =
+      this.buildDests();
+
+    const movableColor =
+      this.getMovableColor();
+
+    console.log(
+      '[SYNC BOARD]',
+      {
+        fen,
+        turn,
+        movableColor,
+        destsSize:
+          dests.size,
+      },
+    );
+
+    this.cg.set({
 
       fen,
 
+      turnColor:
+        turn === 'w'
+          ? 'white'
+          : 'black',
+
       movable: {
 
-        color:
-          this.gameMode() === 'human-vs-ai'
-            ? 'white'
-            : 'both',
+        free: false,
 
-        dests: this.buildDests(),
+        color:
+          movableColor,
+
+        dests,
+
+        events: {
+
+          after: (
+            from: string,
+            to: string,
+          ) => {
+
+            if (
+              this.isApplyingEngineMove ||
+              this.isResetting
+            ) {
+              return;
+            }
+
+            this.onMove({
+              from,
+              to,
+            });
+          },
+        },
+      },
+
+      highlight: {
+        lastMove: true,
+        check: true,
       },
 
       drawable: {
-        autoShapes: [],
+        enabled: true,
+        visible: true,
+      },
+
+      animation: {
+        enabled: true,
+        duration: 180,
       },
     });
+
+    this.cg.redrawAll();
+  }
+
+
+  // =====================================================
+  // MOVABLE COLOR
+  // =====================================================
+
+  private getMovableColor():
+    'white'
+    | 'black'
+    | 'both'
+    | undefined {
+
+    if (
+      this.gameMode() ===
+      'human-vs-human'
+    ) {
+      return 'both';
+    }
+
+    return this.chess.turn() === 'w'
+      ? 'white'
+      : undefined;
   }
 
 
@@ -674,49 +994,46 @@ export class BoardComponent
   // LEGAL MOVES
   // =====================================================
 
-  private buildDests(): Map<Key, Key[]> {
-
-    const chess = new Chess(
-      this.store.fen(),
-    );
+  private buildDests():
+    Map<Key, Key[]> {
 
     const dests =
       new Map<Key, Key[]>();
 
-    const files = [
-      'a', 'b', 'c', 'd',
-      'e', 'f', 'g', 'h',
-    ] as const;
+    const legalMoves =
+      this.chess.getLegalMoves();
 
-    const ranks = [
-      '1', '2', '3', '4',
-      '5', '6', '7', '8',
-    ] as const;
+    console.log(
+      '[BUILD DESTS]',
+      {
+        turn:
+          this.chess.turn(),
 
-    for (const file of files) {
+        legalMovesCount:
+          legalMoves.length,
 
-      for (const rank of ranks) {
+        legalMoves,
+      },
+    );
 
-        const square =
-          `${file}${rank}` as Square;
+    for (const move of legalMoves) {
 
-        const moves = chess.moves({
-          square,
-          verbose: true,
-        });
+      const from =
+        move.from as Key;
 
-        if (!moves.length) {
-          continue;
-        }
+      const to =
+        move.to as Key;
 
-        dests.set(
+      const existing =
+        dests.get(from);
 
-          square as Key,
+      if (existing) {
 
-          moves.map(
-            move => move.to as Key,
-          ),
-        );
+        existing.push(to);
+
+      } else {
+
+        dests.set(from, [to]);
       }
     }
 
