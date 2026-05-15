@@ -1,5 +1,5 @@
 <!-- POC-Agent-AI-ouvertures-echecs-FFE/frontend/src/app/features/board/board.component.html -->
- 
+
 <div class="board-page">
 
   <!-- =============================================== -->
@@ -14,7 +14,8 @@
       [class.active]="gameMode() === 'human-vs-human'"
       (click)="setGameMode('human-vs-human')">
 
-      Humain vs Humain
+      ♟️ Humain vs Humain
+
     </button>
 
     <button
@@ -23,41 +24,72 @@
       [class.active]="gameMode() === 'human-vs-ai'"
       (click)="setGameMode('human-vs-ai')">
 
-      Humain vs AI
+      🤖 Humain vs AI
+
     </button>
 
   </div>
 
   <!-- =============================================== -->
-  <!-- BLACK PLAYER -->
+  <!-- BOARD CONTAINER -->
   <!-- =============================================== -->
 
-  <div class="player-label top-player">
+  <div class="board-container">
 
-    {{ blackPlayerLabel() }}
-
-  </div>
-
-  <!-- =============================================== -->
-  <!-- BOARD -->
-  <!-- =============================================== -->
-
-  <div class="board-wrapper">
+    <!-- ============================================= -->
+    <!-- BLACK PLAYER -->
+    <!-- ============================================= -->
 
     <div
-      #board
-      class="board">
+      class="player-label top-player">
+
+      <span class="player-badge ai-badge">
+
+        ♚
+
+      </span>
+
+      <span class="player-name">
+
+        {{ blackPlayerLabel() }}
+
+      </span>
+
     </div>
 
-  </div>
+    <!-- ============================================= -->
+    <!-- BOARD -->
+    <!-- ============================================= -->
 
-  <!-- =============================================== -->
-  <!-- WHITE PLAYER -->
-  <!-- =============================================== -->
+    <div class="board-wrapper">
 
-  <div class="player-label bottom-player">
+      <div
+        #board
+        class="board">
+      </div>
 
-    {{ whitePlayerLabel() }}
+    </div>
+
+    <!-- ============================================= -->
+    <!-- WHITE PLAYER -->
+    <!-- ============================================= -->
+
+    <div
+      class="player-label bottom-player">
+
+      <span class="player-badge human-badge">
+
+        ♔
+
+      </span>
+
+      <span class="player-name">
+
+        {{ whitePlayerLabel() }}
+
+      </span>
+
+    </div>
 
   </div>
 
@@ -72,9 +104,34 @@
       class="reset-button"
       (click)="reset()">
 
-      Reset
+      ↺ Reset
+
     </button>
 
   </div>
+
+  <!-- =============================================== -->
+  <!-- STATUS -->
+  <!-- =============================================== -->
+
+  @if (store.loading()) {
+
+    <div class="status loading-status">
+
+      Analyse IA en cours...
+
+    </div>
+
+  }
+
+  @if (store.error()) {
+
+    <div class="status error-status">
+
+      {{ store.error() }}
+
+    </div>
+
+  }
 
 </div>
